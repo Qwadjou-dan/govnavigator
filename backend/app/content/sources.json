@@ -1,0 +1,652 @@
+[
+  {
+    "id": "orc-fees-2026",
+    "title": "Publication of Newly Approved Fees and Charges 2026",
+    "publisher": "Office of the Registrar of Companies",
+    "url": "https://orc.gov.gh/wp-content/uploads/2026/02/FINAL-FEES-AND-CHARGES-2026.pdf",
+    "is_official": true,
+    "retrieved_at": "2026-08-23",
+    "effective_date": "2026-02-02",
+    "note": "The PDF itself carries no printed effective date; the date comes from the separate ORC adjustment notice."
+  },
+  {
+    "id": "orc-fee-notice",
+    "title": "Adjustment of Fees and Charges for Services Provided by the Office of the Registrar of Companies",
+    "publisher": "Office of the Registrar of Companies",
+    "url": "https://orc.gov.gh/ova_doc/adjustment-of-fees-and-charges-for-services-provided-by-the-office-of-the-registrar-of-companies/",
+    "is_official": true,
+    "retrieved_at": "2026-08-23",
+    "effective_date": "2026-02-02"
+  },
+  {
+    "id": "orc-sole-proprietor-guide",
+    "title": "Online Sole Proprietorship Registration",
+    "publisher": "Government of Ghana Open Data (data.gov.gh)",
+    "url": "https://data.gov.gh/sites/default/files/Sole%20Proprietor%20FINAL.pdf",
+    "is_official": true,
+    "retrieved_at": "2026-08-23",
+    "note": "Official Government of Ghana pamphlet, but undated - may predate the February 2026 changes."
+  },
+  {
+    "id": "orc-company-guide",
+    "title": "Registration of a Company Limited by Shares Online",
+    "publisher": "Government of Ghana Open Data (data.gov.gh)",
+    "url": "https://data.gov.gh/sites/default/files/Company%20limited%20by%20shares%203.pdf",
+    "is_official": true,
+    "retrieved_at": "2026-08-23",
+    "note": "Official Government of Ghana pamphlet, but undated."
+  },
+  {
+    "id": "orc-prestige",
+    "title": "Prestige Center",
+    "publisher": "Office of the Registrar of Companies",
+    "url": "https://orc.gov.gh/prestige-center/",
+    "is_official": true,
+    "retrieved_at": "2026-08-23"
+  },
+  {
+    "id": "orc-home",
+    "title": "Office of the Registrar of Companies - home",
+    "publisher": "Office of the Registrar of Companies",
+    "url": "https://orc.gov.gh/",
+    "is_official": true,
+    "retrieved_at": "2026-08-23"
+  },
+  {
+    "id": "gra-tin",
+    "title": "Taxpayer Identification Number (TIN)",
+    "publisher": "Ghana Revenue Authority",
+    "url": "https://gra.gov.gh/tin/",
+    "is_official": true,
+    "retrieved_at": "2026-08-23"
+  },
+  {
+    "id": "gra-ghanacard-pin",
+    "title": "Commencement of the Use of Ghana Card PIN as Taxpayer Identification Number",
+    "publisher": "Ghana Revenue Authority",
+    "url": "https://gra.gov.gh/commencement-of-the-use-of-ghana-card-personal-identification-number-as-taxpayer-identification-number/",
+    "is_official": true,
+    "retrieved_at": "2026-08-23",
+    "effective_date": "2021-04-01"
+  },
+  {
+    "id": "gra-tax-registration",
+    "title": "Tax Registration",
+    "publisher": "Ghana Revenue Authority",
+    "url": "https://gra.gov.gh/domestic-tax/tax-registration/",
+    "is_official": true,
+    "retrieved_at": "2026-08-23"
+  },
+  {
+    "id": "gra-vat",
+    "title": "Value Added Tax",
+    "publisher": "Ghana Revenue Authority",
+    "url": "https://gra.gov.gh/domestic-tax/tax-types/vat/",
+    "is_official": true,
+    "retrieved_at": "2026-08-23"
+  },
+  {
+    "id": "gra-vat-notice",
+    "title": "Notice to All VAT Registered Taxpayers",
+    "publisher": "Ghana Revenue Authority",
+    "url": "https://gra.gov.gh/news/portfolio/notice-to-all-vat-registered-taxpayers/",
+    "is_official": true,
+    "retrieved_at": "2026-08-23",
+    "effective_date": "2026-01-01"
+  },
+  {
+    "id": "gra-portal",
+    "title": "Taxpayers' Portal and App",
+    "publisher": "Ghana Revenue Authority",
+    "url": "https://gra.gov.gh/taxpayers-portal-app/",
+    "is_official": true,
+    "retrieved_at": "2026-08-23"
+  },
+  {
+    "id": "act-1151",
+    "title": "Value Added Tax Act, 2025 (Act 1151)",
+    "publisher": "Republic of Ghana (via African Tax Legislation Atlas)",
+    "url": "https://a-tla.org/ghana/value-added-tax-act-2025-act-1151",
+    "is_official": false,
+    "retrieved_at": "2026-08-23",
+    "effective_date": "2026-01-01",
+    "note": "Secondary host of primary legislation. Verify against the GRA VAT Guidelines PDF."
+  },
+  {
+    "id": "gra-vat-clarification",
+    "title": "VAT Reforms: GHS 750k threshold applies to goods, not services - GRA clarifies",
+    "publisher": "Citi Newsroom",
+    "url": "https://citinewsroom.com/2026/01/vat-reforms-gh%C2%A2750k-threshold-applies-to-goods-not-services-gra-clarifies/",
+    "is_official": false,
+    "retrieved_at": "2026-08-23",
+    "note": "Quotes GRA officials directly. GRA's own VAT web page does not make the goods/services distinction clearly."
+  },
+  {
+    "id": "ssnit-become-employer",
+    "title": "Become an Employer",
+    "publisher": "Social Security and National Insurance Trust",
+    "url": "https://www.ssnit.org.gh/become-an-employer/",
+    "is_official": true,
+    "retrieved_at": "2026-08-23"
+  },
+  {
+    "id": "ssnit-faqs",
+    "title": "Frequently Asked Questions",
+    "publisher": "Social Security and National Insurance Trust",
+    "url": "https://www.ssnit.org.gh/faqs/",
+    "is_official": true,
+    "retrieved_at": "2026-08-23"
+  },
+  {
+    "id": "nia-fees-2026",
+    "title": "NIA Approved Fees and Charges",
+    "publisher": "National Identification Authority",
+    "url": "https://nia.gov.gh/fees-and-charges-2026/",
+    "is_official": true,
+    "retrieved_at": "2026-08-23",
+    "effective_date": "2026-02-02",
+    "note": "Approved under the Fees and Charges (Miscellaneous Provisions) (Amendment) Regulations, 2025 (L.I. 2512)."
+  },
+  {
+    "id": "nia-registration",
+    "title": "Registration of Ghanaians in Ghana",
+    "publisher": "National Identification Authority",
+    "url": "https://nia.gov.gh/service/registration-of-citizens-in-ghana/",
+    "is_official": true,
+    "retrieved_at": "2026-08-23"
+  },
+  {
+    "id": "nia-replacement",
+    "title": "Card Replacement Service",
+    "publisher": "National Identification Authority",
+    "url": "https://nia.gov.gh/service/card-replacement-service/",
+    "is_official": true,
+    "retrieved_at": "2026-08-23"
+  },
+  {
+    "id": "passport-portal",
+    "title": "Ghana Passport Services portal",
+    "publisher": "Ministry of Foreign Affairs and Regional Integration",
+    "url": "https://passport.mfa.gov.gh/",
+    "is_official": true,
+    "retrieved_at": "2026-08-23",
+    "note": "As at retrieval the portal still displayed the pre-November-2025 fee table."
+  },
+  {
+    "id": "passport-form",
+    "title": "Application for a Republic of Ghana Passport (form)",
+    "publisher": "Ministry of Foreign Affairs and Regional Integration",
+    "url": "https://mfa.gov.gh/wp-content/uploads/2018/10/passport-form.pdf",
+    "is_official": true,
+    "retrieved_at": "2026-08-23"
+  },
+  {
+    "id": "passport-reforms",
+    "title": "Minister for Foreign Affairs Outlines Significant Achievements in Passport Reforms",
+    "publisher": "Ministry of Foreign Affairs and Regional Integration",
+    "url": "https://mfa.gov.gh/index.php/minister-for-foreign-affairs-outlines-significant-achievements-in-passport-reforms/",
+    "is_official": true,
+    "retrieved_at": "2026-08-23",
+    "effective_date": "2025-11-13"
+  },
+  {
+    "id": "passport-chip",
+    "title": "Ghana's Chip-Embedded Passport Rollout Begins",
+    "publisher": "Ministry of Foreign Affairs and Regional Integration",
+    "url": "https://mfa.gov.gh/index.php/ghanas-chip-embeded-passport-rollout-begins/",
+    "is_official": true,
+    "retrieved_at": "2026-08-23"
+  },
+  {
+    "id": "passport-berlin",
+    "title": "Passport Application - renewal requirements",
+    "publisher": "Ghana Embassy Berlin (Ministry of Foreign Affairs)",
+    "url": "https://berlin.mfa.gov.gh/consular/passport/",
+    "is_official": true,
+    "retrieved_at": "2026-08-23",
+    "note": "Published by a Ghana mission abroad; domestic renewal requirements may differ."
+  },
+  {
+    "id": "passport-hamburg",
+    "title": "Ghanaian Passport Requirements",
+    "publisher": "Consulate-General of Ghana, Hamburg",
+    "url": "https://hamburg.mfa.gov.gh/wp-content/uploads/2024/10/GHANAIAN-PASSPORT-REQUIREMENT.pdf",
+    "is_official": true,
+    "retrieved_at": "2026-08-23",
+    "note": "Published by a Ghana mission abroad."
+  },
+  {
+    "id": "gna-passport-fee",
+    "title": "Government reduces passport fees from GHS 500 to GHS 350",
+    "publisher": "Ghana News Agency",
+    "url": "https://gna.org.gh/2025/11/government-reduces-passport-fees-from-gh%E2%82%B5500-to-gh%E2%82%B5350/",
+    "is_official": false,
+    "retrieved_at": "2026-08-23",
+    "effective_date": "2025-11-13",
+    "note": "State news agency reporting the ministerial announcement."
+  },
+  {
+    "id": "bdr-births",
+    "title": "Births Registration",
+    "publisher": "Births and Deaths Registry",
+    "url": "https://bdr.gov.gh/births-registration/",
+    "is_official": true,
+    "retrieved_at": "2026-08-23"
+  },
+  {
+    "id": "bdr-home",
+    "title": "Births and Deaths Registry - home",
+    "publisher": "Births and Deaths Registry",
+    "url": "https://bdr.gov.gh/",
+    "is_official": true,
+    "retrieved_at": "2026-08-23"
+  },
+  {
+    "id": "bdr-fees-report",
+    "title": "Births and Deaths Registrar explains current registration fees",
+    "publisher": "MyJoyOnline",
+    "url": "https://www.myjoyonline.com/births-and-deaths-registrar-explains-current-registration-fees/",
+    "is_official": false,
+    "retrieved_at": "2026-08-23",
+    "note": "Quotes the Registrar of Births and Deaths directly. No official fee schedule page could be located."
+  },
+  {
+    "id": "dvla-home",
+    "title": "DVLA official website",
+    "publisher": "Driver and Vehicle Licensing Authority",
+    "url": "https://dvla.gov.gh/index.php",
+    "is_official": true,
+    "retrieved_at": "2026-08-23"
+  },
+  {
+    "id": "dvla-services",
+    "title": "Services",
+    "publisher": "Driver and Vehicle Licensing Authority",
+    "url": "https://www.dvla.gov.gh/services",
+    "is_official": true,
+    "retrieved_at": "2026-08-23"
+  },
+  {
+    "id": "gna-dvla-eyetest",
+    "title": "DVLA: Driver's licence applicants to undergo mandatory eye test",
+    "publisher": "Ghana News Agency",
+    "url": "https://gna.org.gh/2022/04/dvla-drivers-license-applicants-to-undergo-mandatory-eye-test/",
+    "is_official": false,
+    "retrieved_at": "2026-08-23",
+    "effective_date": "2022-07-01",
+    "note": "State news agency reporting an official DVLA statement under Regulation 29 of L.I. 2180."
+  },
+  {
+    "id": "graphic-dvla-fees",
+    "title": "From renewals to replacements: See the DVLA's 2026 licensing fee structure",
+    "publisher": "Graphic Online",
+    "url": "https://www.graphic.com.gh/news/general-news/from-renewals-to-replacements-see-the-dvlas-2026-licensing-fee-structure.html",
+    "is_official": false,
+    "retrieved_at": "2026-08-23",
+    "note": "Reports the DVLA's own 2026 rate summary. The official DVLA fee page could not be retrieved."
+  },
+  {
+    "id": "citi-dvla-fees",
+    "title": "Breakdown of DVLA fees and charges for 2026",
+    "publisher": "Citi Newsroom",
+    "url": "https://www.citinewsroom.com/2026/02/breakdown-of-dvla-fees-and-charges-for-2026/",
+    "is_official": false,
+    "retrieved_at": "2026-08-23"
+  },
+  {
+    "id": "citi-dvla-explainer",
+    "title": "Explainer: How to Get a Driver's License in Ghana in 2026",
+    "publisher": "Citi Newsroom",
+    "url": "https://www.citinewsroom.com/2026/04/explainer-how-to-get-a-drivers-license-in-ghana-in-2026/",
+    "is_official": false,
+    "retrieved_at": "2026-08-23"
+  },
+  {
+    "id": "graphic-dvla-challenge",
+    "title": "DVLA challenged to provide legal basis for delinquency charges on renewal of expired driver's licence",
+    "publisher": "Graphic Online",
+    "url": "https://www.graphic.com.gh/news/general-news/dvla-challenged-to-provide-legal-basis-for-delinquency-charges-on-renewal-of-expired-drivers-licence.html",
+    "is_official": false,
+    "retrieved_at": "2026-08-23"
+  },
+  {
+    "id": "nhis-membership",
+    "title": "Membership",
+    "publisher": "National Health Insurance Authority",
+    "url": "https://www.nhis.gov.gh/membership",
+    "is_official": true,
+    "retrieved_at": "2026-08-23"
+  },
+  {
+    "id": "nhis-faqs",
+    "title": "Frequently Asked Questions",
+    "publisher": "National Health Insurance Authority",
+    "url": "https://www.nhis.gov.gh/faqs",
+    "is_official": true,
+    "retrieved_at": "2026-08-23"
+  },
+  {
+    "id": "gna-nhis-storm",
+    "title": "NHIA launches free NHIS registration campaign (Operation STORM)",
+    "publisher": "Ghana News Agency",
+    "url": "https://gna.org.gh/2026/05/nhia-launches-free-nhis-registration-campaign/",
+    "is_official": false,
+    "retrieved_at": "2026-08-23",
+    "note": "The fee waiver ran 6-31 May 2026 only. Standard fees resumed on 1 June 2026."
+  },
+  {
+    "id": "police-paid-services",
+    "title": "Paid Police Services",
+    "publisher": "Ghana Police Service",
+    "url": "https://police.gov.gh/en/index.php/paid-police-services/",
+    "is_official": true,
+    "retrieved_at": "2026-08-23",
+    "note": "No effective date, revision date or legal instrument is published on this page."
+  },
+  {
+    "id": "police-cdsb",
+    "title": "Criminal Data Service Bureau (CDSB)",
+    "publisher": "Ghana Police Service",
+    "url": "https://police.gov.gh/en/index.php/criminal-data-service-bureau-cdsb/",
+    "is_official": true,
+    "retrieved_at": "2026-08-23"
+  },
+  {
+    "id": "ircc-ghana-police-cert",
+    "title": "How to get a police certificate - Ghana",
+    "publisher": "Immigration, Refugees and Citizenship Canada",
+    "url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/application/medical-police/police-certificates/how/ghana.html",
+    "is_official": false,
+    "retrieved_at": "2026-08-23",
+    "note": "A foreign government's official guidance on the Ghanaian process. Not a Ghanaian authority."
+  },
+  {
+    "id": "ghanapostgps-help",
+    "title": "Get Help",
+    "publisher": "Ghana Post Company Limited (GhanaPostGPS)",
+    "url": "https://www.ghanapostgps.com/get-help/",
+    "is_official": true,
+    "retrieved_at": "2026-08-23"
+  },
+  {
+    "id": "ghanapostgps-home",
+    "title": "GhanaPostGPS - Ghana's Official National Digital Address System",
+    "publisher": "Ghana Post Company Limited",
+    "url": "https://www.ghanapostgps.com/",
+    "is_official": true,
+    "retrieved_at": "2026-08-23"
+  },
+  {
+    "id": "ama-bop",
+    "title": "Business Operating Permit",
+    "publisher": "Accra Metropolitan Assembly",
+    "url": "https://www.ama.gov.gh/bop.php",
+    "is_official": true,
+    "retrieved_at": "2026-08-23"
+  },
+  {
+    "id": "ama-bye-laws-2017",
+    "title": "Accra Metropolitan Assembly Business Licence Bye-Laws, 2017",
+    "publisher": "Accra Metropolitan Assembly (via Business Regulatory Reforms registry)",
+    "url": "https://www.brr.gov.gh/acc/registry/docs/Profession,%20Business%20and%20Trade%20(SELF-EMPLOYED)%20-AMA%20.pdf",
+    "is_official": true,
+    "retrieved_at": "2026-08-23"
+  },
+  {
+    "id": "ama-permitting-guidelines",
+    "title": "All You Need to Know About the Permitting Process in AMA",
+    "publisher": "Accra Metropolitan Assembly",
+    "url": "https://ama.gov.gh/doc/permitting-guidelines.pdf",
+    "is_official": true,
+    "retrieved_at": "2026-08-23"
+  },
+  {
+    "id": "ama-building-permit",
+    "title": "Building Permit",
+    "publisher": "Accra Metropolitan Assembly",
+    "url": "https://ama.gov.gh/building-permit.php",
+    "is_official": true,
+    "retrieved_at": "2026-08-23"
+  },
+  {
+    "id": "peda-building-permit",
+    "title": "Land Use and Spatial Planning - Development and Building Permit",
+    "publisher": "Pru East District Assembly",
+    "url": "https://peda.gov.gh/development-and-building-permit/",
+    "is_official": true,
+    "retrieved_at": "2026-08-23",
+    "note": "Source of the 30-working-day statutory decision period under Regulation 44(10) of L.I. 2384."
+  },
+  {
+    "id": "luspa-guidelines",
+    "title": "Development Permitting Guidelines",
+    "publisher": "Land Use and Spatial Planning Authority",
+    "url": "https://luspa.gov.gh/wp-content/uploads/2023/12/LUSPA-GUIDELINES.pdf",
+    "is_official": true,
+    "retrieved_at": "2026-08-23"
+  },
+  {
+    "id": "fnda-bop",
+    "title": "Business Operating Permit (BOP) Services",
+    "publisher": "Fanteakwa North District Assembly",
+    "url": "https://fnda.gov.gh/business-operating-permitbop-services/",
+    "is_official": true,
+    "retrieved_at": "2026-08-23"
+  },
+  {
+    "id": "nia-faqs",
+    "title": "Frequently Asked Questions",
+    "publisher": "National Identification Authority",
+    "url": "https://nia.gov.gh/faqs/",
+    "is_official": true,
+    "retrieved_at": "2026-08-26",
+    "note": "NIA's own FAQ. The source for the rule that every applicant must appear in person."
+  },
+  {
+    "id": "nia-diaspora",
+    "title": "Registration of Ghanaians Living Abroad",
+    "publisher": "National Identification Authority",
+    "url": "https://nia.gov.gh/service/registration-of-ghanaians-in-diaspora/",
+    "is_official": true,
+    "retrieved_at": "2026-08-26",
+    "note": "The diaspora registration service page, including the regional fee bands and the appointment-booking requirement."
+  },
+  {
+    "id": "gra-file-and-pay",
+    "title": "File and Pay Taxes",
+    "publisher": "Ghana Revenue Authority",
+    "url": "https://gra.gov.gh/file-and-pay-taxes/",
+    "is_official": true,
+    "retrieved_at": "2026-08-26",
+    "note": "The channels GRA offers for filing and payment, including the Taxpayers Portal and the mobile apps."
+  },
+  {
+    "id": "gra-returns",
+    "title": "Returns",
+    "publisher": "Ghana Revenue Authority",
+    "url": "https://gra.gov.gh/domestic-tax/returns/",
+    "is_official": true,
+    "retrieved_at": "2026-08-26",
+    "note": "Lists every return type GRA accepts. Notably it does NOT publish the deadlines on this page."
+  },
+  {
+    "id": "gra-tax-calendar",
+    "title": "Tax Calendar",
+    "publisher": "Ghana Revenue Authority",
+    "url": "https://gra.gov.gh/online-tools/tax-calendar/",
+    "is_official": true,
+    "retrieved_at": "2026-08-26",
+    "note": "GRA's own calendar of recurring monthly deadlines."
+  },
+  {
+    "id": "gra-pit",
+    "title": "Personal Income Tax (PIT)",
+    "publisher": "Ghana Revenue Authority",
+    "url": "https://gra.gov.gh/domestic-tax/personal-income-tax/",
+    "is_official": true,
+    "retrieved_at": "2026-08-26"
+  },
+  {
+    "id": "gra-cit",
+    "title": "Corporate Income Tax (CIT)",
+    "publisher": "Ghana Revenue Authority",
+    "url": "https://gra.gov.gh/domestic-tax/tax-types/corporate-income-tax/",
+    "is_official": true,
+    "retrieved_at": "2026-08-26"
+  },
+  {
+    "id": "gra-paye",
+    "title": "Pay As You Earn (PAYE)",
+    "publisher": "Ghana Revenue Authority",
+    "url": "https://gra.gov.gh/domestic-tax/tax-types/paye/",
+    "is_official": true,
+    "retrieved_at": "2026-08-26"
+  },
+  {
+    "id": "gra-self-assessment",
+    "title": "Submission of Self Assessment Estimates",
+    "publisher": "Ghana Revenue Authority",
+    "url": "https://gra.gov.gh/submission-of-self-assessment-estimates/",
+    "is_official": true,
+    "retrieved_at": "2026-08-26",
+    "note": "Published as a dated notice rather than standing guidance, so the year it names moves."
+  },
+  {
+    "id": "gra-penalties",
+    "title": "Tax Offences and Penalties",
+    "publisher": "Ghana Revenue Authority",
+    "url": "https://gra.gov.gh/domestic-tax/tax-offences-and-penalties/",
+    "is_official": true,
+    "retrieved_at": "2026-08-26",
+    "note": "Penalties are expressed in currency points and penalty units, not cedis."
+  },
+  {
+    "id": "gra-faq",
+    "title": "Domestic Tax FAQ",
+    "publisher": "Ghana Revenue Authority",
+    "url": "https://gra.gov.gh/domestic-tax/domestic-tax-faq/",
+    "is_official": true,
+    "retrieved_at": "2026-08-26"
+  },
+  {
+    "id": "dvla-mandate",
+    "title": "Function and Mandate",
+    "publisher": "Driver and Vehicle Licensing Authority",
+    "url": "https://www.dvla.gov.gh/function_mandate",
+    "is_official": true,
+    "retrieved_at": "2026-08-26",
+    "note": "DVLA's statutory functions under the DVLA Act, 1999 (Act 569)."
+  },
+  {
+    "id": "dvla-pvts",
+    "title": "Accredited Private Vehicle Testing Stations",
+    "publisher": "Driver and Vehicle Licensing Authority",
+    "url": "https://www.dvla.gov.gh/pvts",
+    "is_official": true,
+    "retrieved_at": "2026-08-26"
+  },
+  {
+    "id": "graphic-dvla-vehicle-fees",
+    "title": "From roadworthy tests to custom plates: See how much you will pay to register your vehicle in 2026",
+    "publisher": "Graphic Online",
+    "url": "https://www.graphic.com.gh/news/general-news/from-roadworthy-tests-to-custom-plates-see-how-much-you-will-pay-to-register-your-vehicle-in-2026.html",
+    "is_official": false,
+    "retrieved_at": "2026-08-26",
+    "note": "Reports that DVLA issued a 2026 vehicle price list, but publishes the figures only inside an embedded slide deck we could not read as text. Cited for the existence of the schedule, never for an amount."
+  },
+  {
+    "id": "gra-import-procedures",
+    "title": "Import Procedures",
+    "publisher": "Ghana Revenue Authority",
+    "url": "https://gra.gov.gh/customs/import-procedures/",
+    "is_official": true,
+    "retrieved_at": "2026-08-26",
+    "note": "The customs clearance process end to end, including the ICUMS risk channels."
+  },
+  {
+    "id": "gra-icums",
+    "title": "Integrated Customs Management System (ICUMS)",
+    "publisher": "Ghana Revenue Authority",
+    "url": "https://gra.gov.gh/customs/icums/",
+    "is_official": true,
+    "retrieved_at": "2026-08-26"
+  },
+  {
+    "id": "gpha-home",
+    "title": "Ghana Ports and Harbours Authority",
+    "publisher": "Ghana Ports and Harbours Authority",
+    "url": "https://www.ghanaports.gov.gh/",
+    "is_official": true,
+    "retrieved_at": "2026-08-26",
+    "note": "GPHA's own statement of its mandate: to build, operate, maintain and regulate seaports. Clearance is not among its functions."
+  },
+  {
+    "id": "fda-product-registration",
+    "title": "Product Registration",
+    "publisher": "Food and Drugs Authority",
+    "url": "https://fdaghana.gov.gh/services-2/product-registration/",
+    "is_official": true,
+    "retrieved_at": "2026-08-27",
+    "note": "FDA's index of the product categories it registers, and the G-FIRMS portal used to apply."
+  },
+  {
+    "id": "fda-food-registration",
+    "title": "Food Registration",
+    "publisher": "Food and Drugs Authority",
+    "url": "https://fdaghana.gov.gh/services-2/product-registration/food-registration/",
+    "is_official": true,
+    "retrieved_at": "2026-08-27",
+    "note": "The source for the 30-working-day regular timeline and the premium service."
+  },
+  {
+    "id": "fda-cosmetics",
+    "title": "Cosmetics and Household Chemicals",
+    "publisher": "Food and Drugs Authority",
+    "url": "https://fdaghana.gov.gh/services-2/product-registration/cosmetics-household-chemicals/",
+    "is_official": true,
+    "retrieved_at": "2026-08-27"
+  },
+  {
+    "id": "fda-product-register",
+    "title": "Product Register",
+    "publisher": "Food and Drugs Authority",
+    "url": "https://fdaghana.gov.gh/product-register/",
+    "is_official": true,
+    "retrieved_at": "2026-08-27",
+    "note": "Public search of products already registered - useful for checking a competitor or a supplier."
+  },
+  {
+    "id": "gsa-product-certification",
+    "title": "Product Certification",
+    "publisher": "Ghana Standards Authority",
+    "url": "https://gsa.gov.gh/product-certification/",
+    "is_official": true,
+    "retrieved_at": "2026-08-27",
+    "note": "GSA's own description of the Standard Mark scheme. Publishes no fees, no validity period and no step list."
+  },
+  {
+    "id": "gsa-certification",
+    "title": "Certification",
+    "publisher": "Ghana Standards Authority",
+    "url": "https://gsa.gov.gh/certification/",
+    "is_official": true,
+    "retrieved_at": "2026-08-27"
+  },
+  {
+    "id": "gsa-guidelines",
+    "title": "General Guidelines for Applicants of Product Certification",
+    "publisher": "Ghana Standards Authority",
+    "url": "https://www.gsa.gov.gh/wp-content/uploads/2023/07/GENERAL-GUIDELINES-FOR-APPLICANTS-OF-PRODUCT-CERTIFICATION.pdf",
+    "is_official": true,
+    "retrieved_at": "2026-08-27",
+    "note": "Published as a PDF rather than as a web page."
+  },
+  {
+    "id": "gsa-import-inspection",
+    "title": "Import Inspection",
+    "publisher": "Ghana Standards Authority",
+    "url": "https://gsa.gov.gh/import-inspection/",
+    "is_official": true,
+    "retrieved_at": "2026-08-27"
+  }
+]

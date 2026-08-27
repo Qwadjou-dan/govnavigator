@@ -1,0 +1,27 @@
+# Ranges, not exact pins.
+#
+# Exact pins look reproducible but they break on any Python or platform for
+# which that precise wheel was never built - which is what happens to a team
+# on mixed machines. Lower bounds give us the features we rely on; upper
+# bounds stop a major release changing behaviour underneath us.
+
+fastapi>=0.115.6,<1.0
+uvicorn[standard]>=0.34.0,<1.0
+
+sqlalchemy>=2.0.36,<3.0
+psycopg[binary]>=3.2.10,<4.0
+pgvector>=0.3.6,<1.0
+
+pydantic>=2.10,<3.0
+pydantic-settings>=2.7,<3.0
+
+# Auth. bcrypt is used directly rather than through passlib: passlib is
+# unmaintained and imports the stdlib `crypt` module, which was removed in
+# Python 3.13, so it fails outright on a current Python.
+PyJWT>=2.10,<3.0
+bcrypt>=4.1,<6.0
+
+httpx>=0.28,<1.0
+python-multipart>=0.0.20
+
+pytest>=8.3,<9.0

@@ -1,0 +1,2016 @@
+[
+  {
+    "id": "ghana-card-registration",
+    "name": "Ghana Card Registration (first time)",
+    "short_name": "Get a Ghana Card",
+    "category": "identity",
+    "coverage_tier": 1,
+    "summary": "Registering with the National Identification Authority for a Ghana Card. The PIN on the card is also your Taxpayer Identification Number.",
+    "institution_id": "nia",
+    "dependent_institution_ids": [
+      "bdr",
+      "ghana-post",
+      "passport-office"
+    ],
+    "aliases": [
+      "how I go get Ghana Card",
+      "I wan register for Ghana Card",
+      "where I fit do my national ID",
+      "I never register for national ID before",
+      "NIA registration near me",
+      "national identity card Ghana",
+      "I need Ghana Card for bank account",
+      "Ghana Card for SIM registration",
+      "how much be Ghana Card now",
+      "can I get a Ghana Card for someone else",
+      "register Ghana Card on behalf of my brother",
+      "my friend is abroad, can I do his Ghana Card",
+      "Ghana Card for Ghanaians living abroad",
+      "how do I get a national ID from outside Ghana",
+      "Ghana Card at the embassy"
+    ],
+    "keywords": [
+      "ghana card",
+      "nia",
+      "national identification",
+      "national id",
+      "pin",
+      "vouching",
+      "oath of identity",
+      "on behalf",
+      "proxy",
+      "abroad",
+      "diaspora",
+      "ghana mission",
+      "embassy",
+      "in person"
+    ],
+    "eligibility": [
+      {
+        "text": "Every applicant must appear in person to register, at a designated NIA registration office or a Ghana Mission. Nobody can register on your behalf, and you cannot register on anyone else's.",
+        "source_ref": "nia-faqs"
+      },
+      {
+        "text": "All Ghanaian citizens aged zero and above living in Ghana.",
+        "source_ref": "nia-registration",
+        "only_if": {
+          "where": "in_ghana"
+        }
+      },
+      {
+        "text": "All Ghanaian citizens aged zero and above living outside Ghana.",
+        "source_ref": "nia-diaspora",
+        "only_if": {
+          "where": "abroad"
+        }
+      },
+      {
+        "text": "Children under six are linked to a parent's Ghana Card, and their own biometrics are captured when they turn six.",
+        "source_ref": "nia-faqs"
+      },
+      {
+        "text": "Applicants who cannot travel to a centre - including people who are hospitalised, imprisoned or physically challenged - are served by mobile units or assisted at the centre by a relative or friend. Being assisted is not the same as being represented: the applicant is still present.",
+        "source_ref": "nia-faqs"
+      },
+      {
+        "text": "All foreign nationals legally and permanently resident in Ghana, handled under a separate scheme with its own fees.",
+        "source_ref": "nia-registration"
+      }
+    ],
+    "documents": [
+      {
+        "name": "Birth certificate issued by the Births and Deaths Registry of Ghana",
+        "mandatory": true,
+        "one_of_group": "citizenship",
+        "where_to_obtain": "Births and Deaths Registry",
+        "source_ref": "nia-registration"
+      },
+      {
+        "name": "Valid Ghana passport",
+        "mandatory": true,
+        "one_of_group": "citizenship",
+        "where_to_obtain": "Passport Office",
+        "source_ref": "nia-registration"
+      },
+      {
+        "name": "Oath of Identity form obtained through the vouching process",
+        "mandatory": true,
+        "one_of_group": "citizenship",
+        "where_to_obtain": "At the NIA registration centre",
+        "note": "Either one relative aged 18 or over who has already registered, or two people aged 18 or over holding Ghana Cards from listed professions - teachers, chiefs, magistrates, licensed professionals, civil servants, clergy, security personnel, or current and past elected officials.",
+        "source_ref": "nia-registration"
+      },
+      {
+        "name": "Evidence of acquired citizenship such as a naturalisation or registration certificate",
+        "mandatory": true,
+        "one_of_group": "citizenship",
+        "where_to_obtain": "Ministry of the Interior",
+        "source_ref": "nia-registration"
+      },
+      {
+        "name": "Digital address code of your residence",
+        "mandatory": true,
+        "where_to_obtain": "Free from the GhanaPostGPS app",
+        "source_ref": "nia-registration",
+        "only_if": {
+          "where": "in_ghana"
+        }
+      },
+      {
+        "name": "Other government-issued documents such as a SSNIT card, driver's licence, voter ID or NHIS card",
+        "mandatory": false,
+        "where_to_obtain": "The issuing body",
+        "note": "Optional supporting documents.",
+        "source_ref": "nia-registration",
+        "only_if": {
+          "where": "in_ghana"
+        }
+      },
+      {
+        "name": "A booked registration appointment, paid for at the time of booking",
+        "mandatory": true,
+        "where_to_obtain": "The NIA diaspora registration booking process",
+        "note": "The fee for registering from abroad is paid when the appointment for the registration interview is booked, not on the day.",
+        "source_ref": "nia-diaspora",
+        "only_if": {
+          "where": "abroad"
+        }
+      }
+    ],
+    "steps": [
+      {
+        "order": 1,
+        "action": "Attend an NIA district office or premium centre in person; your documents are verified and the application form completed",
+        "channel": "in_person",
+        "location": "NIA district office or premium centre",
+        "source_ref": "nia-registration",
+        "only_if": {
+          "where": "in_ghana"
+        }
+      },
+      {
+        "order": 2,
+        "action": "Your personal information is captured into the National Identity Register",
+        "channel": "in_person",
+        "location": "NIA office",
+        "source_ref": "nia-registration",
+        "only_if": {
+          "where": "in_ghana"
+        }
+      },
+      {
+        "order": 3,
+        "action": "Your biometrics are captured - fingerprints, irises, photograph and signature",
+        "channel": "in_person",
+        "location": "NIA office",
+        "source_ref": "nia-registration",
+        "only_if": {
+          "where": "in_ghana"
+        }
+      },
+      {
+        "order": 4,
+        "action": "You review and confirm the information recorded",
+        "channel": "in_person",
+        "location": "NIA office",
+        "source_ref": "nia-registration",
+        "only_if": {
+          "where": "in_ghana"
+        }
+      },
+      {
+        "order": 5,
+        "action": "Your Ghana Card is printed and issued",
+        "channel": "in_person",
+        "location": "NIA office",
+        "source_ref": "nia-registration",
+        "only_if": {
+          "where": "in_ghana"
+        }
+      },
+      {
+        "order": 6,
+        "action": "Book a registration appointment and pay the fee for your region at the time of booking",
+        "channel": "online",
+        "location": "NIA diaspora booking",
+        "source_ref": "nia-diaspora",
+        "only_if": {
+          "where": "abroad"
+        }
+      },
+      {
+        "order": 7,
+        "action": "Attend the appointment in person at the designated registration centre or Ghana Mission - attendance in person is required and cannot be delegated",
+        "channel": "in_person",
+        "location": "Designated centre or Ghana Mission",
+        "source_ref": "nia-diaspora",
+        "only_if": {
+          "where": "abroad"
+        }
+      },
+      {
+        "order": 8,
+        "action": "Your completed application form is reviewed and your personal information captured into the National Identity Register",
+        "channel": "in_person",
+        "location": "Registration centre",
+        "source_ref": "nia-diaspora",
+        "only_if": {
+          "where": "abroad"
+        }
+      },
+      {
+        "order": 9,
+        "action": "Your biometrics are captured - ten fingerprints, irises, photograph and signature",
+        "channel": "in_person",
+        "location": "Registration centre",
+        "source_ref": "nia-diaspora",
+        "only_if": {
+          "where": "abroad"
+        }
+      },
+      {
+        "order": 10,
+        "action": "You review and sign or thumbprint the printout of your captured information, correcting anything wrong before it is accepted",
+        "channel": "in_person",
+        "location": "Registration centre",
+        "source_ref": "nia-diaspora",
+        "only_if": {
+          "where": "abroad"
+        }
+      },
+      {
+        "order": 11,
+        "action": "Your Ghana Card is printed and issued to you using your biometrics",
+        "channel": "in_person",
+        "location": "Registration centre",
+        "source_ref": "nia-diaspora",
+        "only_if": {
+          "where": "abroad"
+        }
+      }
+    ],
+    "fees": [
+      {
+        "label": "First-time registration, under 25 years, at a district office",
+        "amount_ghs": 0.0,
+        "effective_date": "2026-02-02",
+        "status": "confirmed",
+        "source_ref": "nia-fees-2026",
+        "only_if": {
+          "where": "in_ghana"
+        }
+      },
+      {
+        "label": "First-time registration, 25 years and above, at a district office",
+        "amount_ghs": 30.0,
+        "effective_date": "2026-02-02",
+        "status": "confirmed",
+        "source_ref": "nia-fees-2026",
+        "only_if": {
+          "where": "in_ghana"
+        }
+      },
+      {
+        "label": "First-time registration at a premium centre",
+        "amount_ghs": 410.0,
+        "effective_date": "2026-02-02",
+        "status": "confirmed",
+        "source_ref": "nia-fees-2026",
+        "only_if": {
+          "where": "in_ghana"
+        }
+      },
+      {
+        "label": "Registration from the ECOWAS sub-region",
+        "amount_text": "Cedi equivalent of USD 55.00",
+        "effective_date": "2026-02-02",
+        "status": "confirmed",
+        "source_ref": "nia-fees-2026",
+        "only_if": {
+          "where": "abroad"
+        }
+      },
+      {
+        "label": "Registration from the rest of Africa",
+        "amount_text": "Cedi equivalent of USD 75.00",
+        "effective_date": "2026-02-02",
+        "status": "confirmed",
+        "source_ref": "nia-fees-2026",
+        "only_if": {
+          "where": "abroad"
+        }
+      },
+      {
+        "label": "Registration from outside Africa",
+        "amount_text": "Cedi equivalent of USD 115.00",
+        "effective_date": "2026-02-02",
+        "status": "confirmed",
+        "source_ref": "nia-fees-2026",
+        "only_if": {
+          "where": "abroad"
+        }
+      },
+      {
+        "label": "Mobile registration service (minimum 7 applicants)",
+        "amount_ghs": 410.0,
+        "effective_date": "2026-02-02",
+        "status": "confirmed",
+        "source_ref": "nia-fees-2026",
+        "only_if": {
+          "where": "in_ghana"
+        }
+      }
+    ],
+    "timeline": {
+      "standard": null,
+      "expedited": null,
+      "status": "not_published",
+      "note": "NIA does not publish a processing or issuance time. Premium centres are presented as same-visit issuance but no official turnaround figure exists.",
+      "source_ref": "nia-registration"
+    },
+    "rejection_causes": [
+      {
+        "text": "Not having any of the four accepted citizenship documents, and no eligible voucher.",
+        "evidence_level": "inferred"
+      },
+      {
+        "text": "Vouchers who do not meet the age or profession criteria.",
+        "evidence_level": "inferred"
+      },
+      {
+        "text": "No digital address code for your residence.",
+        "evidence_level": "inferred"
+      }
+    ],
+    "caveats": [
+      {
+        "kind": "freshness",
+        "text": "NIA fees changed on 2 February 2026 under L.I. 2512. Any guide published before that date quotes superseded amounts."
+      },
+      {
+        "kind": "coverage",
+        "text": "NIA's own pages disagree about diaspora registration: the service page publishes fees and a procedure, while an older FAQ says registration abroad will open 'at a later date'. Confirm with the Ghana Mission nearest the applicant before anyone pays or travels."
+      }
+    ],
+    "related_service_ids": [
+      "birth-certificate",
+      "ghanapost-digital-address",
+      "ghana-card-replacement",
+      "tin-registration",
+      "passport-first-time"
+    ],
+    "source_ids": [
+      "nia-registration",
+      "nia-fees-2026",
+      "nia-faqs",
+      "nia-diaspora"
+    ],
+    "clarifiers": [
+      {
+        "id": "where",
+        "question": "Where will the person being registered actually be?",
+        "options": [
+          {
+            "value": "in_ghana",
+            "label": "In Ghana",
+            "hint": "At an NIA district or premium centre"
+          },
+          {
+            "value": "abroad",
+            "label": "Outside Ghana",
+            "hint": "At a Ghana Mission or designated centre abroad"
+          }
+        ],
+        "default": "in_ghana"
+      }
+    ]
+  },
+  {
+    "id": "ghana-card-replacement",
+    "name": "Ghana Card Replacement",
+    "short_name": "Replace a lost or damaged Ghana Card",
+    "category": "identity",
+    "coverage_tier": 1,
+    "summary": "Replacing a Ghana Card that has been lost, stolen, damaged or defaced. NIA calls this replacement, not renewal.",
+    "institution_id": "nia",
+    "dependent_institution_ids": [
+      "ghana-police"
+    ],
+    "aliases": [
+      "I lost my Ghana Card I need new one",
+      "my Ghana Card don spoil",
+      "my Ghana Card break",
+      "how much be Ghana Card replacement now",
+      "Ghana Card renewal",
+      "someone thief my Ghana Card",
+      "replace my national ID card",
+      "I wan change my name for my Ghana Card"
+    ],
+    "keywords": [
+      "ghana card replacement",
+      "lost ghana card",
+      "damaged card",
+      "police extract",
+      "nia replacement",
+      "personal information update"
+    ],
+    "eligibility": [
+      {
+        "text": "Citizens whose card has been lost, stolen, damaged or defaced.",
+        "source_ref": "nia-replacement"
+      }
+    ],
+    "documents": [
+      {
+        "name": "Police report or police extract",
+        "mandatory": true,
+        "where_to_obtain": "Ghana Police Service",
+        "note": "Required where the card was lost or stolen.",
+        "source_ref": "nia-replacement"
+      },
+      {
+        "name": "The damaged or defaced Ghana Card, together with a police extract",
+        "mandatory": true,
+        "where_to_obtain": "You bring the card",
+        "note": "Required where the card is damaged rather than lost.",
+        "source_ref": "nia-replacement"
+      }
+    ],
+    "steps": [
+      {
+        "order": 1,
+        "action": "An officer reviews your police documentation and the condition of the card",
+        "channel": "in_person",
+        "location": "NIA district office or premium centre",
+        "source_ref": "nia-replacement"
+      },
+      {
+        "order": 2,
+        "action": "A registration officer helps you complete and sign an electronic request form",
+        "channel": "in_person",
+        "location": "NIA office",
+        "source_ref": "nia-replacement"
+      },
+      {
+        "order": 3,
+        "action": "An approval officer reviews your request and supporting documents and grants approval",
+        "channel": "in_person",
+        "location": "NIA office",
+        "source_ref": "nia-replacement"
+      },
+      {
+        "order": 4,
+        "action": "Payment is processed",
+        "channel": "in_person",
+        "location": "NIA office",
+        "source_ref": "nia-replacement"
+      },
+      {
+        "order": 5,
+        "action": "A registration officer captures the serial number, PIN and your biometrics - ten fingerprints, irises and photograph",
+        "channel": "in_person",
+        "location": "NIA office",
+        "source_ref": "nia-replacement"
+      },
+      {
+        "order": 6,
+        "action": "A new Ghana Card is printed and issued to you",
+        "channel": "in_person",
+        "location": "NIA office",
+        "source_ref": "nia-replacement"
+      }
+    ],
+    "fees": [
+      {
+        "label": "Card replacement at a district office",
+        "amount_ghs": 200.0,
+        "effective_date": "2026-02-02",
+        "status": "confirmed",
+        "source_ref": "nia-fees-2026"
+      },
+      {
+        "label": "Card replacement at a premium centre",
+        "amount_ghs": 520.0,
+        "effective_date": "2026-02-02",
+        "status": "confirmed",
+        "source_ref": "nia-fees-2026"
+      },
+      {
+        "label": "Record update only, at a district office",
+        "amount_ghs": 0.0,
+        "effective_date": "2026-02-02",
+        "status": "confirmed",
+        "note": "Updating your details without replacing the card is free at a district office.",
+        "source_ref": "nia-fees-2026"
+      },
+      {
+        "label": "Record update with card replacement, at a district office",
+        "amount_ghs": 200.0,
+        "effective_date": "2026-02-02",
+        "status": "confirmed",
+        "source_ref": "nia-fees-2026"
+      },
+      {
+        "label": "Nationality update at a district office",
+        "amount_ghs": 200.0,
+        "effective_date": "2026-02-02",
+        "status": "confirmed",
+        "source_ref": "nia-fees-2026"
+      },
+      {
+        "label": "Card replacement from the ECOWAS sub-region",
+        "amount_text": "Cedi equivalent of USD 55.00",
+        "effective_date": "2026-02-02",
+        "status": "confirmed",
+        "source_ref": "nia-fees-2026"
+      }
+    ],
+    "timeline": {
+      "standard": null,
+      "expedited": null,
+      "status": "not_published",
+      "note": "NIA publishes no processing time for replacement.",
+      "source_ref": "nia-replacement"
+    },
+    "rejection_causes": [
+      {
+        "text": "No police report or extract for a lost or stolen card.",
+        "evidence_level": "inferred"
+      }
+    ],
+    "caveats": [
+      {
+        "kind": "freshness",
+        "text": "NIA fees changed on 2 February 2026 under L.I. 2512."
+      },
+      {
+        "kind": "scope",
+        "text": "If you only need to correct your details and not the card itself, that is a record update and is free at a district office."
+      }
+    ],
+    "related_service_ids": [
+      "ghana-card-registration",
+      "police-clearance"
+    ],
+    "source_ids": [
+      "nia-replacement",
+      "nia-fees-2026"
+    ]
+  },
+  {
+    "id": "passport-first-time",
+    "name": "Ghana Passport - first-time application",
+    "short_name": "Apply for a passport",
+    "category": "travel",
+    "coverage_tier": 1,
+    "summary": "Applying for a Ghanaian passport for the first time, through the Passport Office of the Ministry of Foreign Affairs.",
+    "institution_id": "passport-office",
+    "dependent_institution_ids": [
+      "nia",
+      "bdr",
+      "ghana-police"
+    ],
+    "aliases": [
+      "I wan get passport for the first time",
+      "how I go apply for Ghana passport",
+      "I never get passport before wetin I need",
+      "first time passport application",
+      "how much be passport now",
+      "where be passport office for Accra",
+      "I need passport to travel",
+      "passport application online",
+      "which documents I need for passport",
+      "passport for my pikin",
+      "child passport Ghana"
+    ],
+    "keywords": [
+      "passport",
+      "mfa",
+      "guarantor",
+      "witness",
+      "biometric",
+      "passport application centre",
+      "32 page",
+      "48 page"
+    ],
+    "eligibility": [
+      {
+        "text": "Ghanaian citizens by birth, naturalisation or registration.",
+        "source_ref": "passport-form"
+      },
+      {
+        "text": "Applicants under 18 need parental or legal-guardian consent on the form.",
+        "source_ref": "passport-form"
+      }
+    ],
+    "documents": [
+      {
+        "name": "Completed passport application form",
+        "mandatory": true,
+        "where_to_obtain": "passport.mfa.gov.gh",
+        "source_ref": "passport-portal"
+      },
+      {
+        "name": "Evidence of citizenship and identity - birth certificate, Ghana Card, old passport, voter ID, or a dual citizenship, naturalisation or registration certificate",
+        "mandatory": true,
+        "one_of_group": "citizenship",
+        "where_to_obtain": "The issuing body",
+        "source_ref": "passport-portal"
+      },
+      {
+        "name": "Two guarantors who are living relatives",
+        "mandatory": true,
+        "where_to_obtain": "Your relatives",
+        "note": "The form states guarantors agree jointly and severally to pay any expenses the government incurs if you are repatriated or die abroad. This is why the relationship requirement is strict.",
+        "source_ref": "passport-form"
+      },
+      {
+        "name": "Endorsement by an eligible witness",
+        "mandatory": true,
+        "where_to_obtain": "A person in a listed profession",
+        "note": "The form lists clergy, military officers, civil servants, medical practitioners, legal professionals, educators and registered professionals.",
+        "source_ref": "passport-form"
+      },
+      {
+        "name": "Proof of profession",
+        "mandatory": false,
+        "where_to_obtain": "Employer, school or ORC",
+        "note": "Employed applicants need an employer letter or work ID; students a student ID; self-employed a business registration certificate. Unemployed and informal-sector applicants do not need this.",
+        "source_ref": "passport-portal"
+      },
+      {
+        "name": "Parental consent",
+        "mandatory": false,
+        "where_to_obtain": "Parent or legal guardian",
+        "note": "Required for applicants under 18.",
+        "source_ref": "passport-form"
+      },
+      {
+        "name": "Proof of name change by affidavit or Gazette publication",
+        "mandatory": false,
+        "where_to_obtain": "Commissioner for Oaths or Ghana Publishing Company",
+        "note": "Required only if your name has changed.",
+        "source_ref": "passport-form"
+      }
+    ],
+    "steps": [
+      {
+        "order": 1,
+        "action": "Create an account and complete the application online",
+        "channel": "online",
+        "location": "passport.mfa.gov.gh",
+        "source_ref": "passport-portal"
+      },
+      {
+        "order": 2,
+        "action": "Pay the fee - Ecobank, GCB, Zenith Bank or the Ghana.Gov platform, by card or mobile money",
+        "channel": "online",
+        "location": "Bank or Ghana.Gov",
+        "source_ref": "passport-portal"
+      },
+      {
+        "order": 3,
+        "action": "Print the completed form, have it endorsed by an eligible witness and complete the guarantor sections",
+        "channel": "in_person",
+        "location": "",
+        "source_ref": "passport-form"
+      },
+      {
+        "order": 4,
+        "action": "Submit it in person at a passport application centre - the form requires personal submission",
+        "channel": "in_person",
+        "location": "One of 14 application centres nationwide",
+        "source_ref": "passport-form"
+      },
+      {
+        "order": 5,
+        "action": "Have your biometrics captured at the centre",
+        "channel": "in_person",
+        "location": "Application centre",
+        "source_ref": "passport-portal"
+      },
+      {
+        "order": 6,
+        "action": "Track the status through the e-tracking system",
+        "channel": "online",
+        "location": "passport.mfa.gov.gh",
+        "source_ref": "passport-chip"
+      },
+      {
+        "order": 7,
+        "action": "Receive the passport by courier nationwide, or collect it",
+        "channel": "either",
+        "location": "Courier or application centre",
+        "note": "The Ministry states the courier fee is already included in the GH¢350 standard fee.",
+        "source_ref": "passport-reforms"
+      }
+    ],
+    "fees": [
+      {
+        "label": "Standard application, 32-page ordinary booklet",
+        "amount_ghs": 350.0,
+        "effective_date": "2025-11-13",
+        "status": "disputed",
+        "note": "The Ministry announced this reduced fee effective 13 November 2025. The official application portal was still displaying GH¢500 when we last checked. Both are official sources and they disagree - confirm at the point of payment.",
+        "source_ref": "passport-reforms"
+      },
+      {
+        "label": "24-hour expedited service",
+        "amount_ghs": 2000.0,
+        "effective_date": "2025-11-13",
+        "status": "confirmed",
+        "source_ref": "passport-reforms"
+      },
+      {
+        "label": "Fees still shown on the application portal",
+        "amount_text": "32-page standard GH¢500, 48-page standard GH¢644, 32-page expedited GH¢700, 48-page expedited GH¢800",
+        "status": "disputed",
+        "note": "These are the pre-November-2025 amounts. Shown here because the official portal still displays them.",
+        "source_ref": "passport-portal"
+      },
+      {
+        "label": "Current 48-page booklet fee",
+        "status": "not_published",
+        "note": "No official source published a 48-page figure after the November 2025 reduction.",
+        "source_ref": "passport-reforms"
+      }
+    ],
+    "timeline": {
+      "standard": "15 working days",
+      "expedited": "A 24-hour service exists at GH¢2,000. Earlier announcements mentioned 5 working days and 3 days - these figures have not been reconciled publicly",
+      "status": "disputed",
+      "note": "The standard 15 working days is consistent across Ministry statements. The expedited tiers are not.",
+      "source_ref": "passport-reforms"
+    },
+    "rejection_causes": [
+      {
+        "text": "The guarantor section is incomplete, or the guarantors are not living relatives as the form requires.",
+        "evidence_level": "official",
+        "source_ref": "passport-form"
+      },
+      {
+        "text": "The form has not been endorsed by a witness in one of the listed professional categories.",
+        "evidence_level": "official",
+        "source_ref": "passport-form"
+      },
+      {
+        "text": "The application was not submitted in person by the applicant.",
+        "evidence_level": "official",
+        "source_ref": "passport-form"
+      },
+      {
+        "text": "A name change is not evidenced by an affidavit or Gazette publication.",
+        "evidence_level": "official",
+        "source_ref": "passport-form"
+      },
+      {
+        "text": "Guides widely claim that a name mismatch against your Ghana Card causes rejection. We could not find any official source stating this rule, so it is repeated here only as an unverified claim - though matching your names is sensible anyway.",
+        "evidence_level": "secondary"
+      }
+    ],
+    "caveats": [
+      {
+        "kind": "dispute",
+        "text": "Two official sources disagree about the standard fee. The Ministry announced GH¢350 from 13 November 2025; the application portal still showed GH¢500. Take money for the higher figure or confirm before you travel."
+      },
+      {
+        "kind": "scope",
+        "text": "The live official portal is passport.mfa.gov.gh. The domain passport.gov.gh does not resolve - any site using that name is not the official Passport Office portal."
+      },
+      {
+        "kind": "coverage",
+        "text": "Rejection-rate percentages circulate widely online for Ghanaian passport applications. None is traceable to an official publication, so we do not repeat any figure."
+      }
+    ],
+    "related_service_ids": [
+      "ghana-card-registration",
+      "birth-certificate",
+      "passport-renewal",
+      "police-clearance"
+    ],
+    "source_ids": [
+      "passport-portal",
+      "passport-form",
+      "passport-reforms",
+      "passport-chip",
+      "gna-passport-fee"
+    ]
+  },
+  {
+    "id": "passport-renewal",
+    "name": "Ghana Passport Renewal",
+    "short_name": "Renew your passport",
+    "category": "travel",
+    "coverage_tier": 1,
+    "summary": "Replacing an expiring or expired Ghanaian passport. Renewal goes through the same application system and centres as a first application, with the old booklet presented.",
+    "institution_id": "passport-office",
+    "dependent_institution_ids": [
+      "nia",
+      "ghana-police",
+      "bdr"
+    ],
+    "aliases": [
+      "my passport don expire how I go renew am",
+      "Ghana passport renewal",
+      "I wan renew my passport",
+      "my passport go expire soon",
+      "how much be passport renewal",
+      "I need new passport book my old one full",
+      "renew expired Ghanaian passport",
+      "I lost my passport I need replacement",
+      "how long e take to renew passport"
+    ],
+    "keywords": [
+      "passport renewal",
+      "expired passport",
+      "old passport",
+      "six months",
+      "police report",
+      "affidavit"
+    ],
+    "eligibility": [
+      {
+        "text": "You must already hold a Ghanaian passport.",
+        "source_ref": "passport-berlin"
+      },
+      {
+        "text": "An application for renewal may be submitted from six months before the date of expiry.",
+        "source_ref": "passport-berlin"
+      }
+    ],
+    "documents": [
+      {
+        "name": "Completed application form",
+        "mandatory": true,
+        "where_to_obtain": "passport.mfa.gov.gh",
+        "source_ref": "passport-portal"
+      },
+      {
+        "name": "Your old Ghana passport",
+        "mandatory": true,
+        "where_to_obtain": "You hold it",
+        "source_ref": "passport-berlin"
+      },
+      {
+        "name": "Proof of Ghanaian citizenship - originals only",
+        "mandatory": true,
+        "where_to_obtain": "The issuing body",
+        "source_ref": "passport-berlin"
+      },
+      {
+        "name": "Identity support documents such as school certificates, driver's licence or ID cards - originals only",
+        "mandatory": true,
+        "where_to_obtain": "The issuing body",
+        "note": "All supporting documents must be submitted as originals together with photocopies; the photocopies are returned to you.",
+        "source_ref": "passport-berlin"
+      },
+      {
+        "name": "Copy of birth certificate and of a parent's Ghana Card or passport",
+        "mandatory": false,
+        "where_to_obtain": "Births and Deaths Registry / NIA",
+        "note": "Required for renewals for applicants under 18.",
+        "source_ref": "passport-berlin"
+      },
+      {
+        "name": "Police report and affidavit",
+        "mandatory": false,
+        "where_to_obtain": "Ghana Police Service and a Commissioner for Oaths",
+        "note": "Required if your previous passport is lost or missing.",
+        "source_ref": "passport-form"
+      }
+    ],
+    "steps": [
+      {
+        "order": 1,
+        "action": "Apply online through the passport portal, from six months before expiry",
+        "channel": "online",
+        "location": "passport.mfa.gov.gh",
+        "source_ref": "passport-portal"
+      },
+      {
+        "order": 2,
+        "action": "Pay the fee",
+        "channel": "online",
+        "location": "Bank or Ghana.Gov",
+        "source_ref": "passport-portal"
+      },
+      {
+        "order": 3,
+        "action": "Print and endorse the form",
+        "channel": "in_person",
+        "location": "",
+        "source_ref": "passport-form"
+      },
+      {
+        "order": 4,
+        "action": "Submit in person at an application centre with your old passport and the original documents",
+        "channel": "in_person",
+        "location": "Passport application centre",
+        "source_ref": "passport-berlin"
+      },
+      {
+        "order": 5,
+        "action": "Have your biometrics captured",
+        "channel": "in_person",
+        "location": "Application centre",
+        "source_ref": "passport-portal"
+      },
+      {
+        "order": 6,
+        "action": "Track the status, then collect or receive the passport by courier",
+        "channel": "either",
+        "location": "",
+        "source_ref": "passport-chip"
+      }
+    ],
+    "fees": [
+      {
+        "label": "Renewal fee",
+        "status": "not_published",
+        "note": "No official source publishes a renewal fee separate from the first-application fee. The standard 32-page fee of GH¢350 from 13 November 2025 is the best available figure, and the application portal still shows GH¢500. Confirm at the point of payment.",
+        "source_ref": "passport-reforms"
+      }
+    ],
+    "timeline": {
+      "standard": "15 working days, the same as a first application",
+      "expedited": "The 24-hour service at GH¢2,000 is available",
+      "status": "confirmed",
+      "note": "The one renewal-specific timing rule is that you may apply from six months before expiry.",
+      "source_ref": "passport-reforms"
+    },
+    "rejection_causes": [
+      {
+        "text": "Applying earlier than six months before expiry.",
+        "evidence_level": "official",
+        "source_ref": "passport-berlin"
+      },
+      {
+        "text": "Submitting photocopies where originals are required.",
+        "evidence_level": "official",
+        "source_ref": "passport-berlin"
+      },
+      {
+        "text": "No police report and affidavit where the old passport is lost.",
+        "evidence_level": "official",
+        "source_ref": "passport-form"
+      }
+    ],
+    "caveats": [
+      {
+        "kind": "coverage",
+        "text": "The clearest official renewal document lists come from Ghana's missions abroad in Berlin and Hamburg. We could not find an equivalent page published for applications made inside Ghana, so requirements at a domestic centre may differ. Confirm before you travel to a centre."
+      }
+    ],
+    "related_service_ids": [
+      "passport-first-time",
+      "ghana-card-registration",
+      "police-clearance"
+    ],
+    "source_ids": [
+      "passport-berlin",
+      "passport-hamburg",
+      "passport-form",
+      "passport-portal",
+      "passport-reforms",
+      "passport-chip"
+    ]
+  },
+  {
+    "id": "birth-certificate",
+    "name": "Birth Registration and Birth Certificate",
+    "short_name": "Register a birth / get a birth certificate",
+    "category": "civil",
+    "coverage_tier": 1,
+    "summary": "Registering a birth with the Births and Deaths Registry and obtaining a certificate. The birth must be registered in the district where it occurred.",
+    "institution_id": "bdr",
+    "dependent_institution_ids": [
+      "nia"
+    ],
+    "aliases": [
+      "how I go get birth certificate for my pikin",
+      "I wan register my baby birth",
+      "I no get birth certificate how I go get am",
+      "where I fit get birth certificate",
+      "my birth certificate lost I need another one",
+      "how much be birth certificate now",
+      "late birth registration",
+      "I need birth certificate for passport",
+      "certified true copy of birth certificate",
+      "birth and death registry near me"
+    ],
+    "keywords": [
+      "birth certificate",
+      "birth registration",
+      "births and deaths registry",
+      "late registration",
+      "weighing card",
+      "certified copy"
+    ],
+    "eligibility": [
+      {
+        "text": "The registration can be made by the father, the mother or both parents, the next of kin of either parent, the occupier of the premises where the child was born, an adult present at the birth, or a caretaker.",
+        "source_ref": "bdr-births"
+      }
+    ],
+    "documents": [
+      {
+        "name": "Evidence of birth - the maternal health record book",
+        "mandatory": true,
+        "where_to_obtain": "The health facility where the birth occurred",
+        "note": "This is the route for registering an infant.",
+        "source_ref": "bdr-births"
+      },
+      {
+        "name": "Evidence of birth for late registration - weighing card or baptismal certificate",
+        "mandatory": true,
+        "where_to_obtain": "Health facility or church",
+        "note": "The Registry states this evidence must date from no more than five years after the birth. This is the hardest constraint for adults who were never registered.",
+        "source_ref": "bdr-births"
+      },
+      {
+        "name": "Evidence of nationality - Ghana Card, passport or naturalisation certificate",
+        "mandatory": false,
+        "where_to_obtain": "NIA, Passport Office or Ministry of the Interior",
+        "note": "Required for late registration where applicable.",
+        "source_ref": "bdr-births"
+      },
+      {
+        "name": "Bio-data for the birth: the child's name, date and place of birth, and each parent's name, age, occupation, religion, nationality and educational background",
+        "mandatory": true,
+        "where_to_obtain": "You provide this",
+        "source_ref": "bdr-births"
+      }
+    ],
+    "steps": [
+      {
+        "order": 1,
+        "action": "Visit the Births and Deaths Registry office in the district where the birth occurred",
+        "channel": "in_person",
+        "location": "District BDR office",
+        "note": "The district-of-occurrence rule matters - going to an office elsewhere is a common wasted trip.",
+        "source_ref": "bdr-births"
+      },
+      {
+        "order": 2,
+        "action": "Present the required evidence documents",
+        "channel": "in_person",
+        "location": "District BDR office",
+        "source_ref": "bdr-births"
+      },
+      {
+        "order": 3,
+        "action": "Provide the bio-data for the birth event",
+        "channel": "in_person",
+        "location": "District BDR office",
+        "source_ref": "bdr-births"
+      },
+      {
+        "order": 4,
+        "action": "Pay through the Ghana.gov platform where a fee applies",
+        "channel": "online",
+        "location": "Ghana.gov",
+        "source_ref": "bdr-fees-report"
+      }
+    ],
+    "fees": [
+      {
+        "label": "Registration of a child aged 0 to 12 months",
+        "amount_ghs": 0.0,
+        "status": "secondary",
+        "note": "The Registrar of Births and Deaths described this as completely free. No official fee schedule page could be located.",
+        "source_ref": "bdr-fees-report"
+      },
+      {
+        "label": "Late registration, child aged 1 to 5 years",
+        "amount_ghs": 13.0,
+        "status": "secondary",
+        "note": "Attributed to the Registrar in an October 2025 news report. No effective date was published.",
+        "source_ref": "bdr-fees-report"
+      },
+      {
+        "label": "Late registration, child over 5 years",
+        "amount_ghs": 25.0,
+        "status": "secondary",
+        "note": "Attributed to the Registrar in an October 2025 news report. No effective date was published.",
+        "source_ref": "bdr-fees-report"
+      },
+      {
+        "label": "Certified true copy of an existing registration",
+        "status": "not_published",
+        "note": "The Registry lists this as a service but publishes no fee.",
+        "source_ref": "bdr-home"
+      }
+    ],
+    "timeline": {
+      "standard": null,
+      "expedited": null,
+      "status": "not_published",
+      "note": "The Births and Deaths Registry publishes no processing time for registration or for certified copies.",
+      "source_ref": "bdr-births"
+    },
+    "rejection_causes": [
+      {
+        "text": "Attending an office outside the district where the birth occurred.",
+        "evidence_level": "official",
+        "source_ref": "bdr-births"
+      },
+      {
+        "text": "For late registration, having no documentary evidence dated within five years of the birth.",
+        "evidence_level": "official",
+        "source_ref": "bdr-births"
+      },
+      {
+        "text": "Incomplete parental bio-data.",
+        "evidence_level": "inferred"
+      }
+    ],
+    "caveats": [
+      {
+        "kind": "coverage",
+        "text": "The fee amounts here come from a news report quoting the Registrar, not from an official schedule. We could not retrieve any official BDR fee page. Treat them as indicative and confirm at the district office."
+      }
+    ],
+    "related_service_ids": [
+      "ghana-card-registration",
+      "passport-first-time"
+    ],
+    "source_ids": [
+      "bdr-births",
+      "bdr-home",
+      "bdr-fees-report"
+    ]
+  },
+  {
+    "id": "drivers-licence-new",
+    "name": "Driver's Licence - first-time application",
+    "short_name": "Get a driver's licence",
+    "category": "vehicles",
+    "coverage_tier": 1,
+    "summary": "Applying for a Ghanaian driver's licence for the first time through the Driver and Vehicle Licensing Authority, including the mandatory eye test and the theory and practical tests.",
+    "institution_id": "dvla",
+    "dependent_institution_ids": [
+      "nia"
+    ],
+    "aliases": [
+      "I want to get my driver's licence",
+      "how do I apply for a driving licence",
+      "I wan go do my licence",
+      "how much be DVLA licence",
+      "I dey learn drive how I go get my licence",
+      "apply for DVLA licence for the first time",
+      "I want to do my driving test",
+      "new driver licence application",
+      "where do I go to do licence at DVLA",
+      "class B licence"
+    ],
+    "keywords": [
+      "driver licence",
+      "driving licence",
+      "dvla",
+      "eye test",
+      "driving school",
+      "theory test",
+      "practical test",
+      "class b",
+      "biometric licence"
+    ],
+    "eligibility": [
+      {
+        "text": "You must be 18 years or above to qualify to apply for a driver's licence.",
+        "source_ref": "dvla-home"
+      },
+      {
+        "text": "Every licence holder is required by law to take an eye test. Since 1 July 2022 it is done at a designated optical centre by a registered optometrist or ophthalmologist, not at a DVLA office, under Regulation 29 of L.I. 2180.",
+        "source_ref": "gna-dvla-eyetest"
+      },
+      {
+        "text": "A Ghana Card is used for identity verification.",
+        "status": "secondary",
+        "source_ref": "citi-dvla-explainer"
+      },
+      {
+        "text": "First-time applicants must complete training at a DVLA-certified driving school - reported as a 48-hour course, with no exemption for experienced drivers.",
+        "status": "secondary",
+        "source_ref": "citi-dvla-explainer"
+      }
+    ],
+    "documents": [
+      {
+        "name": "Ghana Card",
+        "mandatory": true,
+        "where_to_obtain": "National Identification Authority",
+        "status": "secondary",
+        "source_ref": "citi-dvla-explainer"
+      },
+      {
+        "name": "Eye test certificate from a DVLA-accredited optical centre",
+        "mandatory": true,
+        "where_to_obtain": "An accredited optical centre",
+        "status": "secondary",
+        "source_ref": "gna-dvla-eyetest"
+      },
+      {
+        "name": "Driving school certificate or proof of training",
+        "mandatory": true,
+        "where_to_obtain": "A DVLA-registered driving school",
+        "status": "secondary",
+        "source_ref": "citi-dvla-explainer"
+      },
+      {
+        "name": "Completed application",
+        "mandatory": true,
+        "where_to_obtain": "DVLA office or online.dvla.gov.gh",
+        "source_ref": "dvla-services"
+      }
+    ],
+    "steps": [
+      {
+        "order": 1,
+        "action": "Complete training at a DVLA-registered driving school",
+        "channel": "in_person",
+        "location": "A registered driving school",
+        "status": "secondary",
+        "source_ref": "citi-dvla-explainer"
+      },
+      {
+        "order": 2,
+        "action": "Take the mandatory eye test at a DVLA-accredited optical centre",
+        "channel": "in_person",
+        "location": "Accredited optical centre",
+        "source_ref": "gna-dvla-eyetest"
+      },
+      {
+        "order": 3,
+        "action": "Register and apply online, or in person at any DVLA office or premium, prestige or ultra centre",
+        "channel": "either",
+        "location": "online.dvla.gov.gh or a DVLA centre",
+        "source_ref": "dvla-home"
+      },
+      {
+        "order": 4,
+        "action": "Have your biometrics captured for the smart card licence",
+        "channel": "in_person",
+        "location": "DVLA centre",
+        "source_ref": "dvla-home"
+      },
+      {
+        "order": 5,
+        "action": "Sit the computer-based theory test",
+        "channel": "in_person",
+        "location": "DVLA testing centre",
+        "note": "The pass mark is reported as 70%. DVLA has said tests are offered in local languages.",
+        "status": "secondary",
+        "source_ref": "citi-dvla-explainer"
+      },
+      {
+        "order": 6,
+        "action": "Take the practical driving test with a DVLA examiner",
+        "channel": "in_person",
+        "location": "DVLA testing centre",
+        "status": "secondary",
+        "source_ref": "citi-dvla-explainer"
+      },
+      {
+        "order": 7,
+        "action": "Collect the licence card at the DVLA office, or receive it by courier",
+        "channel": "either",
+        "location": "DVLA centre",
+        "source_ref": "dvla-home"
+      }
+    ],
+    "fees": [
+      {
+        "label": "New licence, Category B - standard",
+        "amount_ghs": 565.0,
+        "status": "secondary",
+        "note": "From the DVLA's 2026 rate summary as reported by news outlets. DVLA's own fee page could not be retrieved.",
+        "source_ref": "citi-dvla-fees"
+      },
+      {
+        "label": "New licence, Category B - prestige (expedited)",
+        "amount_ghs": 935.0,
+        "status": "secondary",
+        "source_ref": "citi-dvla-fees"
+      },
+      {
+        "label": "Foreign licence conversion - standard",
+        "amount_ghs": 487.0,
+        "status": "secondary",
+        "source_ref": "citi-dvla-fees"
+      },
+      {
+        "label": "Driving school course fee",
+        "status": "not_published",
+        "note": "Paid to a private driving school, not to DVLA. Schools set their own prices.",
+        "source_ref": "dvla-services"
+      },
+      {
+        "label": "Eye test fee",
+        "status": "not_published",
+        "note": "Paid to a private optical centre, not to DVLA.",
+        "source_ref": "gna-dvla-eyetest"
+      }
+    ],
+    "timeline": {
+      "standard": "Reported as 2 to 4 weeks for the biometric smart card",
+      "expedited": "Prestige and Ultra centres offer faster service, but DVLA publishes no service level",
+      "status": "secondary",
+      "note": "DVLA publishes no official turnaround time.",
+      "source_ref": "citi-dvla-explainer"
+    },
+    "rejection_causes": [
+      {
+        "text": "Failing the computer-based theory test or the practical driving test.",
+        "evidence_level": "inferred"
+      },
+      {
+        "text": "Failing the mandatory eye test.",
+        "evidence_level": "official",
+        "source_ref": "gna-dvla-eyetest"
+      }
+    ],
+    "caveats": [
+      {
+        "kind": "coverage",
+        "text": "DVLA's official fee page could not be read automatically, so every amount here comes from news outlets reporting DVLA's own 2026 rate summary. Confirm at a DVLA office before paying."
+      },
+      {
+        "kind": "coverage",
+        "text": "DVLA does not publish a consolidated document checklist. The document list here is assembled from official statements and reputable reporting. Some blogs list a medical certificate, birth certificate or BECE certificate - none of these appears on any official DVLA source."
+      }
+    ],
+    "related_service_ids": [
+      "ghana-card-registration",
+      "drivers-licence-renewal"
+    ],
+    "source_ids": [
+      "dvla-home",
+      "dvla-services",
+      "gna-dvla-eyetest",
+      "citi-dvla-explainer",
+      "citi-dvla-fees",
+      "graphic-dvla-fees"
+    ]
+  },
+  {
+    "id": "drivers-licence-renewal",
+    "name": "Driver's Licence Renewal",
+    "short_name": "Renew your driver's licence",
+    "category": "vehicles",
+    "coverage_tier": 1,
+    "summary": "Renewing a Ghanaian driver's licence, including what an expired licence costs in additional charges.",
+    "institution_id": "dvla",
+    "dependent_institution_ids": [
+      "nia"
+    ],
+    "aliases": [
+      "my licence has expired how do I renew it",
+      "renew my driver's licence",
+      "my licence don expire wetin I go do",
+      "I wan renew my licence how much",
+      "DVLA licence renewal fee",
+      "can I renew my licence online",
+      "my licence expired 2 years ago will they charge me extra",
+      "change my old licence for new one",
+      "delinquency charge for expired licence"
+    ],
+    "keywords": [
+      "licence renewal",
+      "expired licence",
+      "delinquency charge",
+      "dvla renewal",
+      "eye test",
+      "smart card"
+    ],
+    "eligibility": [
+      {
+        "text": "You must hold an existing Ghanaian driver's licence.",
+        "source_ref": "dvla-services"
+      },
+      {
+        "text": "The mandatory eye test applies to renewals as well as new applications.",
+        "source_ref": "gna-dvla-eyetest"
+      },
+      {
+        "text": "Ghanaian driver's licences are described as renewing on a two-year cycle, though this is not stated on an official DVLA page.",
+        "status": "secondary",
+        "source_ref": "citi-dvla-explainer"
+      }
+    ],
+    "documents": [
+      {
+        "name": "Your existing or expired driver's licence",
+        "mandatory": true,
+        "where_to_obtain": "You hold it",
+        "source_ref": "dvla-services"
+      },
+      {
+        "name": "Ghana Card",
+        "mandatory": true,
+        "where_to_obtain": "National Identification Authority",
+        "source_ref": "dvla-home"
+      },
+      {
+        "name": "Eye test certificate from an accredited optical centre",
+        "mandatory": true,
+        "where_to_obtain": "Accredited optical centre",
+        "status": "secondary",
+        "source_ref": "gna-dvla-eyetest"
+      },
+      {
+        "name": "Police report and replacement form",
+        "mandatory": false,
+        "where_to_obtain": "Ghana Police Service and DVLA",
+        "note": "Needed only where the licence is lost or damaged rather than simply expired.",
+        "source_ref": "dvla-home"
+      }
+    ],
+    "steps": [
+      {
+        "order": 1,
+        "action": "Take the mandatory eye test at an accredited optical centre",
+        "channel": "in_person",
+        "location": "Accredited optical centre",
+        "source_ref": "gna-dvla-eyetest"
+      },
+      {
+        "order": 2,
+        "action": "Start the renewal online through your DVLA account, or in person at any DVLA centre",
+        "channel": "either",
+        "location": "online.dvla.gov.gh or a DVLA centre",
+        "source_ref": "dvla-home"
+      },
+      {
+        "order": 3,
+        "action": "Pay the renewal fee, plus any delinquency charge if the licence has already expired",
+        "channel": "either",
+        "location": "",
+        "source_ref": "graphic-dvla-fees"
+      },
+      {
+        "order": 4,
+        "action": "Have your biometrics or photograph re-captured where required for the new card",
+        "channel": "in_person",
+        "location": "DVLA centre",
+        "source_ref": "dvla-home"
+      },
+      {
+        "order": 5,
+        "action": "Track the status through your account, then collect the card or receive it by courier",
+        "channel": "either",
+        "location": "",
+        "source_ref": "dvla-home"
+      }
+    ],
+    "fees": [
+      {
+        "label": "Renewal before expiry",
+        "amount_ghs": 127.0,
+        "status": "secondary",
+        "note": "From the DVLA's 2026 rate summary as reported by two independent outlets. DVLA's own fee page could not be retrieved.",
+        "source_ref": "graphic-dvla-fees"
+      },
+      {
+        "label": "Expired 1 day to 6 months",
+        "amount_ghs": 204.25,
+        "status": "secondary",
+        "note": "GH¢127.00 plus a GH¢77.25 delinquency charge.",
+        "source_ref": "graphic-dvla-fees"
+      },
+      {
+        "label": "Expired 7 to 12 months",
+        "amount_ghs": 279.25,
+        "status": "secondary",
+        "source_ref": "graphic-dvla-fees"
+      },
+      {
+        "label": "Expired up to 2 years",
+        "amount_ghs": 315.25,
+        "status": "secondary",
+        "source_ref": "graphic-dvla-fees"
+      },
+      {
+        "label": "Expired up to 4 years",
+        "amount_ghs": 352.25,
+        "status": "secondary",
+        "source_ref": "graphic-dvla-fees"
+      },
+      {
+        "label": "Expired beyond 4 years",
+        "amount_ghs": 404.25,
+        "status": "secondary",
+        "source_ref": "graphic-dvla-fees"
+      }
+    ],
+    "timeline": {
+      "standard": null,
+      "expedited": null,
+      "status": "not_published",
+      "note": "DVLA publishes no renewal turnaround time. Premium, Prestige and Ultra centres are marketed as faster but carry no stated service level.",
+      "source_ref": "dvla-home"
+    },
+    "rejection_causes": [
+      {
+        "text": "Failing the mandatory eye test.",
+        "evidence_level": "official",
+        "source_ref": "gna-dvla-eyetest"
+      }
+    ],
+    "caveats": [
+      {
+        "kind": "dispute",
+        "text": "The delinquency charges for expired licences were publicly challenged in 2026 by CUTS International, which argued they have no clear legal backing in L.I. 2180 and called for their suspension. They may be revised or withdrawn - confirm the current amount at a DVLA office."
+      },
+      {
+        "kind": "coverage",
+        "text": "DVLA's official fee page could not be read automatically. These amounts come from news outlets reporting DVLA's own 2026 schedule; the bands cross-check consistently across three outlets."
+      }
+    ],
+    "related_service_ids": [
+      "drivers-licence-new",
+      "ghana-card-registration"
+    ],
+    "source_ids": [
+      "dvla-home",
+      "dvla-services",
+      "gna-dvla-eyetest",
+      "graphic-dvla-fees",
+      "citi-dvla-fees",
+      "citi-dvla-explainer",
+      "graphic-dvla-challenge"
+    ]
+  },
+  {
+    "id": "nhis-registration",
+    "name": "NHIS Registration and Renewal",
+    "short_name": "Register or renew NHIS",
+    "category": "health",
+    "coverage_tier": 1,
+    "summary": "Joining or renewing membership of the National Health Insurance Scheme. Membership is legally required of every resident, and several groups are exempt from the processing fee.",
+    "institution_id": "nhia",
+    "dependent_institution_ids": [
+      "nia",
+      "ssnit",
+      "bdr"
+    ],
+    "aliases": [
+      "how do I register for NHIS",
+      "I want to get health insurance card",
+      "renew my NHIS card",
+      "my NHIS don expire",
+      "I wan do my health insurance",
+      "how much be NHIS renewal",
+      "renew NHIS with MoMo",
+      "renew NHIS on phone",
+      "929 NHIS renewal",
+      "register my newborn baby for NHIS",
+      "is NHIS free for pregnant women",
+      "NHIS card for old people"
+    ],
+    "keywords": [
+      "nhis",
+      "national health insurance",
+      "nhia",
+      "mynhis",
+      "929",
+      "exempt",
+      "premium",
+      "renewal"
+    ],
+    "eligibility": [
+      {
+        "text": "Every person resident in Ghana other than the Armed Forces and the Ghana Police Service must belong to a health insurance scheme licensed under the Act.",
+        "source_ref": "nhis-faqs"
+      },
+      {
+        "text": "Exempt groups who do not pay the processing fee: pregnant women, indigents, categories of differently-abled persons determined by the Minister, persons with mental disorder, SSNIT contributors, SSNIT pensioners, persons above seventy years of age, and other categories prescribed by the Minister.",
+        "source_ref": "nhis-membership"
+      },
+      {
+        "text": "There is no age floor - newborn babies can be registered.",
+        "source_ref": "nhis-membership"
+      },
+      {
+        "text": "A Ghana Card is required to register on the MyNHIS app.",
+        "source_ref": "nhis-membership"
+      }
+    ],
+    "documents": [
+      {
+        "name": "Ghana Card",
+        "mandatory": true,
+        "where_to_obtain": "National Identification Authority",
+        "note": "Mandatory for registering through the MyNHIS app.",
+        "source_ref": "nhis-membership"
+      },
+      {
+        "name": "Personal details - name, date of birth, age, marital status, phone number and residential address",
+        "mandatory": true,
+        "where_to_obtain": "You provide this at the interview",
+        "source_ref": "nhis-membership"
+      },
+      {
+        "name": "Photograph and biometrics - fingerprints from all ten fingers",
+        "mandatory": true,
+        "where_to_obtain": "Captured at the NHIS office",
+        "source_ref": "nhis-membership"
+      },
+      {
+        "name": "Proof of pregnancy for the pregnancy exemption - a current antenatal card, a doctor or midwife note, an endorsed pregnancy test, or an ultrasound report",
+        "mandatory": false,
+        "where_to_obtain": "Health facility",
+        "source_ref": "nhis-membership"
+      },
+      {
+        "name": "SSNIT number or active contributor status, for the SSNIT exemption",
+        "mandatory": false,
+        "where_to_obtain": "SSNIT",
+        "source_ref": "nhis-membership"
+      },
+      {
+        "name": "Your old NHIS card or membership number",
+        "mandatory": false,
+        "where_to_obtain": "You hold it",
+        "note": "Needed for renewal.",
+        "source_ref": "nhis-membership"
+      }
+    ],
+    "steps": [
+      {
+        "order": 1,
+        "action": "Attend an interview at an NHIS district office to determine whether you are a premium-paying or exempt member",
+        "channel": "in_person",
+        "location": "NHIS district office",
+        "source_ref": "nhis-membership"
+      },
+      {
+        "order": 2,
+        "action": "Provide your personal information",
+        "channel": "in_person",
+        "location": "NHIS district office",
+        "source_ref": "nhis-membership"
+      },
+      {
+        "order": 3,
+        "action": "Have your photograph and fingerprints from all ten fingers captured",
+        "channel": "in_person",
+        "location": "NHIS district office",
+        "source_ref": "nhis-membership"
+      },
+      {
+        "order": 4,
+        "action": "Select your preferred primary care provider - a clinic, health centre, polyclinic or primary hospital",
+        "channel": "in_person",
+        "location": "NHIS district office",
+        "source_ref": "nhis-membership"
+      },
+      {
+        "order": 5,
+        "action": "Pay the premium and processing fee unless you are in an exempt group, and receive your membership",
+        "channel": "in_person",
+        "location": "NHIS district office",
+        "source_ref": "nhis-membership"
+      },
+      {
+        "order": 6,
+        "action": "Renew every year - at a district office, by dialling *929# on any network, or through the MyNHIS app",
+        "channel": "either",
+        "location": "District office, USSD or app",
+        "note": "Pregnant women and indigents should renew or register in person so the exemption is applied correctly rather than being charged through the app.",
+        "source_ref": "nhis-membership"
+      }
+    ],
+    "fees": [
+      {
+        "label": "Premium and processing fee",
+        "status": "not_published",
+        "note": "The NHIA publishes no amount anywhere on its website. Premiums are set at district level and are not uniform nationally. Ask at your district office.",
+        "source_ref": "nhis-membership"
+      },
+      {
+        "label": "Processing fee for exempt groups",
+        "amount_ghs": 0.0,
+        "status": "confirmed",
+        "note": "Pregnant women, indigents, SSNIT contributors and pensioners, people over seventy and the other listed categories do not pay the processing fee.",
+        "source_ref": "nhis-membership"
+      }
+    ],
+    "timeline": {
+      "standard": "Membership lasts one year and must be renewed annually. A one-month waiting period normally applies before benefits start",
+      "expedited": null,
+      "status": "confirmed",
+      "note": "Renewal by *929# is effectively instant. NHIA publishes no card issuance turnaround.",
+      "source_ref": "nhis-membership"
+    },
+    "rejection_causes": [
+      {
+        "text": "Registering through the MyNHIS app when you are in an exempt group, which can result in being charged incorrectly. Register in person instead.",
+        "evidence_level": "secondary"
+      }
+    ],
+    "caveats": [
+      {
+        "kind": "freshness",
+        "text": "The NHIA waived registration fees, renewal fees and the one-month waiting period nationwide from 6 to 31 May 2026 under Operation STORM. Standard fees and the waiting period resumed on 1 June 2026. Coverage from May 2026 saying NHIS is free is now out of date."
+      },
+      {
+        "kind": "coverage",
+        "text": "The NHIA does not publish contact details or fee amounts in a form we could retrieve. Both need confirming at a district office."
+      }
+    ],
+    "related_service_ids": [
+      "ghana-card-registration",
+      "birth-certificate",
+      "ssnit-employer-registration"
+    ],
+    "source_ids": [
+      "nhis-membership",
+      "nhis-faqs",
+      "gna-nhis-storm"
+    ]
+  },
+  {
+    "id": "police-clearance",
+    "name": "Police Clearance Certificate / Criminal Record Check",
+    "short_name": "Get a police clearance certificate",
+    "category": "justice",
+    "coverage_tier": 1,
+    "summary": "A criminal record check issued by the Criminal Data Service Bureau of the CID, commonly required for visas, immigration and employment.",
+    "institution_id": "ghana-police",
+    "dependent_institution_ids": [
+      "passport-office",
+      "nia"
+    ],
+    "aliases": [
+      "I need a police clearance certificate",
+      "police report for visa",
+      "criminal record check",
+      "police vetting for my job",
+      "I need police clearance for my travel",
+      "dem say make I bring police report before I travel",
+      "good conduct certificate",
+      "fingerprint check at CID",
+      "police clearance for immigration",
+      "how much be police clearance",
+      "nominal vetting",
+      "ordinary vetting"
+    ],
+    "keywords": [
+      "police clearance",
+      "criminal record",
+      "cdsb",
+      "cid",
+      "vetting",
+      "fingerprints",
+      "authentication"
+    ],
+    "clarifiers": [
+      {
+        "id": "residency",
+        "question": "Are you applying from inside Ghana or from abroad?",
+        "options": [
+          {
+            "value": "resident",
+            "label": "I am in Ghana",
+            "hint": "Ordinary vetting"
+          },
+          {
+            "value": "non_resident",
+            "label": "I am outside Ghana",
+            "hint": "Nominal vetting"
+          }
+        ]
+      }
+    ],
+    "eligibility": [
+      {
+        "text": "Certificates are available to people who have lived in Ghana for three months or more.",
+        "status": "secondary",
+        "source_ref": "ircc-ghana-police-cert"
+      },
+      {
+        "text": "A friend or relative may apply on your behalf as your representative.",
+        "status": "secondary",
+        "source_ref": "ircc-ghana-police-cert"
+      }
+    ],
+    "documents": [
+      {
+        "name": "Two passport-size photographs with a RED background",
+        "mandatory": true,
+        "where_to_obtain": "A photo studio",
+        "note": "Red background is specifically required for ordinary vetting by residents. This is an easy and common mistake.",
+        "only_if": {
+          "residency": "resident"
+        },
+        "source_ref": "police-paid-services"
+      },
+      {
+        "name": "Passport",
+        "mandatory": true,
+        "where_to_obtain": "Passport Office",
+        "status": "secondary",
+        "only_if": {
+          "residency": "resident"
+        },
+        "source_ref": "ircc-ghana-police-cert"
+      },
+      {
+        "name": "Completed fingerprint check application form",
+        "mandatory": true,
+        "where_to_obtain": "CID Headquarters, Accra",
+        "status": "secondary",
+        "only_if": {
+          "residency": "resident"
+        },
+        "source_ref": "ircc-ghana-police-cert"
+      },
+      {
+        "name": "Two passport-size photographs with a WHITE background - one if applying through a representative",
+        "mandatory": true,
+        "where_to_obtain": "A photo studio",
+        "status": "secondary",
+        "only_if": {
+          "residency": "non_resident"
+        },
+        "source_ref": "ircc-ghana-police-cert"
+      },
+      {
+        "name": "Completed nominal vetting application form",
+        "mandatory": true,
+        "where_to_obtain": "Ghana Police / CID HQ",
+        "status": "secondary",
+        "only_if": {
+          "residency": "non_resident"
+        },
+        "source_ref": "ircc-ghana-police-cert"
+      },
+      {
+        "name": "Passport data page, parents' full names, current address and telephone number, and the name of the last school you attended",
+        "mandatory": true,
+        "where_to_obtain": "You provide this",
+        "status": "secondary",
+        "only_if": {
+          "residency": "non_resident"
+        },
+        "source_ref": "ircc-ghana-police-cert"
+      },
+      {
+        "name": "Fingerprints taken by a qualified police or security officer",
+        "mandatory": true,
+        "where_to_obtain": "Your local police force where you live",
+        "status": "secondary",
+        "only_if": {
+          "residency": "non_resident"
+        },
+        "source_ref": "ircc-ghana-police-cert"
+      }
+    ],
+    "steps": [
+      {
+        "order": 1,
+        "action": "Choose your channel - Nima Divisional Police Headquarters or CID Headquarters in Accra, your nearest regional police command, the Ghana Police eServices portal, or a representative if you are abroad",
+        "channel": "either",
+        "location": "Nima Divisional Police HQ / CID HQ, Accra",
+        "source_ref": "police-cdsb"
+      },
+      {
+        "order": 2,
+        "action": "Complete the applicable form - fingerprint check if you are resident, nominal vetting if you are abroad",
+        "channel": "either",
+        "location": "",
+        "status": "secondary",
+        "source_ref": "ircc-ghana-police-cert"
+      },
+      {
+        "order": 3,
+        "action": "Submit your documents and photographs with the correct background colour",
+        "channel": "in_person",
+        "location": "Nima Divisional Police HQ or CID HQ",
+        "source_ref": "police-paid-services"
+      },
+      {
+        "order": 4,
+        "action": "Provide fingerprints - at CID HQ if you are in Ghana, or through a qualified officer where you live if abroad",
+        "channel": "in_person",
+        "location": "CID HQ, Accra",
+        "source_ref": "police-cdsb"
+      },
+      {
+        "order": 5,
+        "action": "Pay the fee",
+        "channel": "in_person",
+        "location": "Point of application",
+        "source_ref": "police-paid-services"
+      },
+      {
+        "order": 6,
+        "action": "The Criminal Data Service Bureau conducts the check against its automated criminal records database",
+        "channel": "in_person",
+        "location": "CDSB",
+        "source_ref": "police-cdsb"
+      },
+      {
+        "order": 7,
+        "action": "Collect the certificate where you submitted it",
+        "channel": "in_person",
+        "location": "Point of application",
+        "source_ref": "police-cdsb"
+      },
+      {
+        "order": 8,
+        "action": "If it is for use overseas, pay for authentication as well, and check whether the destination country needs further legalisation",
+        "channel": "in_person",
+        "location": "Ghana Police / Ministry of Foreign Affairs",
+        "source_ref": "police-paid-services"
+      }
+    ],
+    "fees": [
+      {
+        "label": "Police clearance - ordinary vetting (resident)",
+        "amount_ghs": 115.0,
+        "status": "confirmed",
+        "note": "Plus two passport photographs with a red background.",
+        "only_if": {
+          "residency": "resident"
+        },
+        "source_ref": "police-paid-services"
+      },
+      {
+        "label": "Police clearance - nominal vetting (non-resident)",
+        "amount_ghs": 1380.0,
+        "status": "confirmed",
+        "only_if": {
+          "residency": "non_resident"
+        },
+        "source_ref": "police-paid-services"
+      },
+      {
+        "label": "Fingerprint request on CID Form 59",
+        "amount_ghs": 69.0,
+        "status": "confirmed",
+        "source_ref": "police-paid-services"
+      },
+      {
+        "label": "Authentication of police clearance",
+        "amount_ghs": 50.0,
+        "status": "confirmed",
+        "note": "Needed where the certificate will be used abroad.",
+        "source_ref": "police-paid-services"
+      },
+      {
+        "label": "Employment vetting",
+        "status": "not_published",
+        "note": "The Ghana Police lists this category but publishes no amount for it.",
+        "source_ref": "police-paid-services"
+      }
+    ],
+    "timeline": {
+      "standard": "Reported as around ten working days",
+      "expedited": null,
+      "status": "secondary",
+      "note": "The Ghana Police publishes no processing time on its paid services page.",
+      "source_ref": "ircc-ghana-police-cert"
+    },
+    "rejection_causes": [
+      {
+        "text": "Photographs with the wrong background colour - red is required for resident ordinary vetting and white for non-resident nominal vetting.",
+        "evidence_level": "official",
+        "source_ref": "police-paid-services"
+      },
+      {
+        "text": "Fingerprints not taken by a qualified police or security officer, for applicants abroad.",
+        "evidence_level": "secondary",
+        "source_ref": "ircc-ghana-police-cert"
+      },
+      {
+        "text": "Incomplete biographical data on the nominal vetting form, such as parents' full names or last school attended.",
+        "evidence_level": "secondary",
+        "source_ref": "ircc-ghana-police-cert"
+      },
+      {
+        "text": "Omitting authentication where the destination country requires it.",
+        "evidence_level": "inferred"
+      }
+    ],
+    "caveats": [
+      {
+        "kind": "freshness",
+        "text": "The Ghana Police publishes these fees with no effective date, no revision history and no legal instrument reference. They are current as published but there is no way to tell how recently they were set."
+      },
+      {
+        "kind": "coverage",
+        "text": "The detailed document lists come from Immigration, Refugees and Citizenship Canada's guidance on the Ghanaian process - a foreign government's official page, not a Ghanaian authority."
+      }
+    ],
+    "related_service_ids": [
+      "passport-first-time",
+      "ghana-card-replacement"
+    ],
+    "source_ids": [
+      "police-paid-services",
+      "police-cdsb",
+      "ircc-ghana-police-cert"
+    ]
+  }
+]

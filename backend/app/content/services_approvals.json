@@ -1,0 +1,202 @@
+[
+  {
+    "id": "vehicle-ownership-transfer",
+    "name": "Changing a vehicle into your name after buying it",
+    "short_name": "Change of ownership",
+    "category": "vehicles",
+    "coverage_tier": 2,
+    "summary": "Transferring a used vehicle from the seller's name into yours at DVLA. A different transaction from registering a vehicle for the first time.",
+    "institution_id": "dvla",
+    "dependent_institution_ids": [],
+    "aliases": [
+      "I bought a pre-owned car from someone, how can I change the ownership to my name",
+      "change of ownership of a vehicle",
+      "transfer car ownership Ghana",
+      "how do I put the car in my name",
+      "I bought a used car, what do I do",
+      "second hand car ownership change",
+      "the car is still in the seller's name",
+      "I buy car from someone, how I go change the name",
+      "transfer of vehicle ownership DVLA",
+      "change owner of my motorbike"
+    ],
+    "keywords": [
+      "change of ownership", "transfer of ownership", "transfer", "used car", "pre-owned",
+      "second hand", "seller", "buyer", "previous owner", "put it in my name", "DVLA"
+    ],
+    "eligibility": [
+      {"text": "Transfer of vehicle ownership is one of the services DVLA offers, separate from first registration and from renewal of registration.", "source_ref": "dvla-services"},
+      {"text": "This is the route when the vehicle is already on the register in somebody else's name. Registering a vehicle for the first time is a different transaction with a different document set.", "source_ref": "dvla-services", "status": "secondary"},
+      {"text": "Until the transfer is done the vehicle remains recorded against the seller. That matters for anything the register is used to decide - which is the reason to do it promptly rather than eventually.", "source_ref": "dvla-mandate", "status": "secondary"},
+      {"text": "DVLA inspects and tests motor vehicles as a statutory function, so expect the vehicle to be seen rather than only its paperwork.", "source_ref": "dvla-mandate"}
+    ],
+    "documents": [
+      {"name": "The vehicle's existing registration documents, from the seller", "mandatory": true, "where_to_obtain": "The person selling you the vehicle", "note": "Get these before money changes hands. A seller who cannot produce them is the single most common way this goes wrong.", "source_ref": "dvla-services", "status": "secondary"},
+      {"name": "Proof of the sale - a receipt or bill of sale signed by both of you", "mandatory": true, "where_to_obtain": "You and the seller", "source_ref": "dvla-services", "status": "secondary"},
+      {"name": "Your Ghana Card", "mandatory": true, "where_to_obtain": "National Identification Authority", "source_ref": "dvla-services", "status": "secondary"},
+      {"name": "The seller's identification", "mandatory": true, "where_to_obtain": "The seller", "note": "Both parties are normally required to be identifiable to the transaction.", "source_ref": "dvla-services", "status": "secondary"},
+      {"name": "The vehicle itself", "mandatory": true, "where_to_obtain": "You now own it", "source_ref": "dvla-mandate"}
+    ],
+    "steps": [
+      {"order": 1, "action": "Before paying, confirm the vehicle is registered in the seller's own name and that they hold the registration documents", "channel": "in_person", "location": "With the seller", "status": "secondary", "source_ref": "dvla-services"},
+      {"order": 2, "action": "Agree the sale in writing, signed by both parties", "channel": "in_person", "location": "With the seller", "status": "secondary", "source_ref": "dvla-services"},
+      {"order": 3, "action": "Apply for transfer of ownership at a DVLA office, with the seller's cooperation", "channel": "in_person", "location": "A DVLA office", "source_ref": "dvla-services"},
+      {"order": 4, "action": "Present the vehicle if DVLA requires inspection, and pay the transfer fee", "channel": "in_person", "location": "A DVLA office", "status": "secondary", "source_ref": "dvla-mandate"},
+      {"order": 5, "action": "Collect the registration documents showing you as the owner", "channel": "in_person", "location": "A DVLA office", "status": "secondary", "source_ref": "dvla-services"}
+    ],
+    "fees": [
+      {"label": "Transfer of ownership", "amount_ghs": null, "status": "not_published", "note": "DVLA's 2026 price list covers transfers, but publishes the figures only inside a slide deck rather than as text we could read. Ask at the office before you go.", "source_ref": "graphic-dvla-vehicle-fees"}
+    ],
+    "timeline": {"standard": null, "expedited": null, "status": "not_published", "note": "DVLA publishes no turnaround time for a transfer.", "source_ref": "dvla-services"},
+    "rejection_causes": [
+      {"text": "The seller cannot produce the registration documents, or the vehicle turns out not to be registered in their name.", "evidence_level": "inferred"},
+      {"text": "The seller becomes unreachable after payment. A transfer generally needs their cooperation, which is why the paperwork belongs before the money.", "evidence_level": "inferred"},
+      {"text": "Treating this as a fresh registration. It is a transfer of an existing record, and asking for the wrong transaction wastes the trip.", "evidence_level": "inferred"}
+    ],
+    "caveats": [
+      {"kind": "coverage", "text": "DVLA names transfer of ownership as a service but publishes no document checklist, no fee and no timeline for it. Everything here beyond 'DVLA does this, and it is not the same as first registration' is our reading rather than DVLA's published word - which is why this card is marked Tier 2. Ring the office and confirm before you travel."},
+      {"kind": "scope", "text": "Insurance is a separate matter with a private insurer, not with DVLA. Transferring the registration does not transfer or renew cover."}
+    ],
+    "related_service_ids": ["vehicle-registration", "drivers-licence-renewal", "ghana-card-registration"],
+    "source_ids": ["dvla-services", "dvla-mandate", "graphic-dvla-vehicle-fees"]
+  },
+
+  {
+    "id": "fda-product-registration",
+    "name": "Registering a product with the FDA before you sell it",
+    "short_name": "FDA product approval",
+    "category": "business",
+    "coverage_tier": 1,
+    "summary": "The approval a regulated product needs from the Food and Drugs Authority before it goes on the market, and how long each category takes.",
+    "institution_id": "fda",
+    "dependent_institution_ids": ["gsa", "orc"],
+    "aliases": [
+      "I want FDA to approve my product before sending it to the market",
+      "FDA product registration",
+      "how do I register my product with FDA",
+      "I want to sell my food product",
+      "approval for my cosmetics",
+      "get my drink approved",
+      "FDA approval Ghana",
+      "register my herbal medicine",
+      "I make soap, do I need approval",
+      "how do I get my product certified before selling",
+      "product must be approved before market"
+    ],
+    "keywords": [
+      "FDA", "food and drugs authority", "product registration", "approval", "market authorisation",
+      "food", "drug", "cosmetic", "household chemical", "medical device", "herbal", "supplement",
+      "tobacco", "act 851", "G-FIRMS", "premium service", "shelf life", "label"
+    ],
+    "clarifiers": [
+      {
+        "id": "product_kind",
+        "question": "What kind of product is it?",
+        "options": [
+          {"value": "food", "label": "Food, drink or food supplement", "hint": "Including feed for animals"},
+          {"value": "cosmetic", "label": "Cosmetic, household chemical or medical device", "hint": "Soap, cream, cleaning products, devices"},
+          {"value": "medicine", "label": "Drug, herbal or biological medicine", "hint": "Including vaccines and nutraceuticals"}
+        ]
+      }
+    ],
+    "eligibility": [
+      {"text": "The FDA registers products in six groups: food; drugs and nutraceuticals; herbal and homeopathic medicines; vaccines and biological products; medical devices, cosmetics and household chemicals; and tobacco and substances of abuse.", "source_ref": "fda-product-registration"},
+      {"text": "The FDA operates under the Public Health Act, 2012 (Act 851).", "source_ref": "fda-product-registration"},
+      {"text": "If your product is not in one of those groups, the FDA is probably not the right body. Conformity to a published standard is the Ghana Standards Authority's Standard Mark, which is a different question from safety.", "source_ref": "gsa-product-certification", "status": "secondary"},
+      {"text": "The FDA processes new applications, renewals and variations, so an approval is not permanent - a change to the product or its label may need a variation.", "source_ref": "fda-food-registration"},
+      {"text": "Applications for food and feed intended for animal consumption go through the same food route.", "source_ref": "fda-food-registration", "only_if": {"product_kind": "food"}},
+      {"text": "Cosmetics, household chemicals and medical devices are handled together as one registration stream.", "source_ref": "fda-cosmetics", "only_if": {"product_kind": "cosmetic"}}
+    ],
+    "documents": [
+      {"name": "A G-FIRMS account", "mandatory": true, "where_to_obtain": "gfirms.fdaghana.gov.gh", "note": "The FDA's e-services portal, used for product registration and facility licensing submissions.", "source_ref": "fda-product-registration"},
+      {"name": "The application form for your product category", "mandatory": true, "where_to_obtain": "The FDA product registration pages", "note": "Food has separate forms for imported and locally made products.", "source_ref": "fda-food-registration"},
+      {"name": "Your business registration", "mandatory": true, "where_to_obtain": "Office of the Registrar of Companies", "status": "secondary", "source_ref": "fda-product-registration"},
+      {"name": "Product samples for analysis", "mandatory": false, "where_to_obtain": "Your own production", "note": "The FDA excludes applications requiring laboratory confirmation from its faster premium timelines, so samples and testing apply to some products and not others. Confirm for yours.", "source_ref": "fda-food-registration"},
+      {"name": "Your product label and packaging artwork", "mandatory": false, "where_to_obtain": "Your own designer", "note": "The FDA lists label evaluation as a service it charges for, so labels are assessed rather than assumed.", "source_ref": "fda-food-registration", "status": "secondary"}
+    ],
+    "steps": [
+      {"order": 1, "action": "Create an account on the G-FIRMS portal", "channel": "online", "location": "gfirms.fdaghana.gov.gh", "source_ref": "fda-product-registration"},
+      {"order": 2, "action": "Complete the application form for your product category and submit it with the supporting documents", "channel": "online", "location": "G-FIRMS", "source_ref": "fda-food-registration"},
+      {"order": 3, "action": "Supply samples and allow site verification where your product needs them", "channel": "in_person", "location": "Your premises or an FDA laboratory", "note": "These are the applications the FDA excludes from its premium timelines.", "source_ref": "fda-food-registration"},
+      {"order": 4, "action": "Wait for the assessment and respond to any queries raised", "channel": "online", "location": "G-FIRMS", "status": "secondary", "source_ref": "fda-food-registration"},
+      {"order": 5, "action": "Receive the registration and check it appears on the FDA's public product register", "channel": "online", "location": "The FDA Product Register", "source_ref": "fda-product-register"}
+    ],
+    "fees": [
+      {"label": "Registration fee", "amount_ghs": null, "status": "not_published", "note": "The FDA does not publish a fee schedule on the product registration pages. Fees vary by product category and by whether the product is imported or locally made. Ask the FDA, or check the fee schedule in the guideline document for your category.", "source_ref": "fda-product-registration"},
+      {"label": "Premium service", "amount_text": "Three times the regular fee", "status": "confirmed", "note": "The FDA's own wording. It buys a shorter timeline, not a different outcome.", "source_ref": "fda-food-registration"}
+    ],
+    "timeline": {
+      "standard": "30 working days for a regular application",
+      "expedited": "Premium service: 15 working days for a new low-risk application, 10 for a renewal, 5 for a request",
+      "status": "confirmed",
+      "note": "Premium timelines exclude anything needing laboratory confirmation, site verification, supermarket products, or a due diligence request - so a product that needs testing does not get the fast route at any price.",
+      "source_ref": "fda-food-registration"
+    },
+    "rejection_causes": [
+      {"text": "Putting the product on the market before the registration is granted.", "evidence_level": "inferred"},
+      {"text": "Assuming premium service will speed up a product that needs laboratory confirmation. The FDA excludes those from premium timelines.", "evidence_level": "official", "source_ref": "fda-food-registration"},
+      {"text": "A label that does not survive evaluation, so the file goes back and forth.", "evidence_level": "inferred"},
+      {"text": "Changing the formulation or the label after approval without applying for a variation.", "evidence_level": "inferred"}
+    ],
+    "caveats": [
+      {"kind": "coverage", "text": "The FDA publishes its categories and its timelines clearly, but not its fees or a single document checklist - those live in per-category guideline PDFs. Treat the document list here as the shape of what is wanted, and get the definitive list from the guideline for your category."},
+      {"kind": "scope", "text": "Whether your particular product is regulated, and under which category, is a determination for the FDA. We can tell you what the categories are and how the process runs; we cannot classify your product for you."}
+    ],
+    "related_service_ids": ["gsa-product-certification", "business-name-registration", "import-clearance", "business-operating-permit"],
+    "source_ids": ["fda-product-registration", "fda-food-registration", "fda-cosmetics", "fda-product-register", "gsa-product-certification"]
+  },
+
+  {
+    "id": "gsa-product-certification",
+    "name": "Getting the Ghana Standards Authority Standard Mark for your product",
+    "short_name": "GSA Standard Mark",
+    "category": "business",
+    "coverage_tier": 2,
+    "summary": "Third-party certification that a product conforms to a published standard, and the Standard Mark that goes on the packaging.",
+    "institution_id": "gsa",
+    "dependent_institution_ids": ["fda"],
+    "aliases": [
+      "GSA product certification",
+      "Ghana Standards Authority certification",
+      "how do I get the standard mark",
+      "I want my product certified to a standard",
+      "certification mark for my product",
+      "GSA approval for my goods",
+      "quality certification Ghana",
+      "standards certification for my factory"
+    ],
+    "keywords": [
+      "standards", "standard mark", "certification", "conformity", "GSA", "quality",
+      "product certification", "certification mark", "attestation", "import inspection"
+    ],
+    "eligibility": [
+      {"text": "GSA product certification is 'assessment and impartial third-party attestation that fulfilment of specified requirement has been demonstrated' - that a product conforms to a defined standard for performance, safety, interoperability or sustainability.", "source_ref": "gsa-product-certification"},
+      {"text": "A certified product carries the Standard Mark on its packaging and certificate, with a reference number or the name of the product standard, as a third-party guarantee of compliance.", "source_ref": "gsa-product-certification"},
+      {"text": "This answers a different question from FDA registration. The FDA decides whether a regulated product may be sold at all; GSA attests that a product meets a published standard. A food or cosmetic product may need the FDA regardless of whether it seeks the Standard Mark.", "source_ref": "fda-product-registration", "status": "secondary"},
+      {"text": "GSA also inspects imports, which is a separate function from certifying a producer's own product.", "source_ref": "gsa-import-inspection"}
+    ],
+    "documents": [
+      {"name": "Application for Licence to Use the Standard Mark", "mandatory": true, "where_to_obtain": "Ghana Standards Authority", "source_ref": "gsa-product-certification"},
+      {"name": "The supporting documents named in GSA's applicant guidelines", "mandatory": true, "where_to_obtain": "GSA's General Guidelines for Applicants of Product Certification", "note": "Published as a PDF rather than as a web page, which is why we cannot list the contents here.", "source_ref": "gsa-guidelines"}
+    ],
+    "steps": [
+      {"order": 1, "action": "Read GSA's General Guidelines for Applicants of Product Certification and identify the standard your product would be certified against", "channel": "online", "location": "gsa.gov.gh", "source_ref": "gsa-guidelines"},
+      {"order": 2, "action": "Submit the Application for Licence to Use the Standard Mark with its supporting documents", "channel": "either", "location": "Ghana Standards Authority", "source_ref": "gsa-product-certification"},
+      {"order": 3, "action": "Allow assessment of the product and of how its production is supervised and controlled", "channel": "in_person", "location": "Your premises", "note": "GSA's description of certification includes that 'production has been supervised and controlled', so the process looks at how you make it, not only at the finished item.", "source_ref": "gsa-product-certification"}
+    ],
+    "fees": [
+      {"label": "Certification", "amount_ghs": null, "status": "not_published", "note": "GSA publishes no fee for product certification on its website. Ask GSA directly.", "source_ref": "gsa-product-certification"}
+    ],
+    "timeline": {"standard": null, "expedited": null, "status": "not_published", "note": "GSA publishes no timeline for product certification.", "source_ref": "gsa-product-certification"},
+    "rejection_causes": [
+      {"text": "Applying to GSA for something the FDA regulates, or the reverse. They answer different questions.", "evidence_level": "inferred"},
+      {"text": "Treating certification as a test of one sample. GSA's own wording covers how production is supervised and controlled.", "evidence_level": "official", "source_ref": "gsa-product-certification"}
+    ],
+    "caveats": [
+      {"kind": "coverage", "text": "This is a Tier 2 card and deliberately short. GSA describes what certification means and names the application form, but publishes no step list, no fee, no timeline and no validity period on its website - the detail sits inside guideline PDFs. Get the specifics from GSA before planning around them."},
+      {"kind": "scope", "text": "Whether the Standard Mark is required for your product, or is a commercial choice that helps you sell, depends on the product and the market you are selling into. That is a question for GSA."}
+    ],
+    "related_service_ids": ["fda-product-registration", "business-name-registration", "import-clearance"],
+    "source_ids": ["gsa-product-certification", "gsa-certification", "gsa-guidelines", "gsa-import-inspection", "fda-product-registration"]
+  }
+]

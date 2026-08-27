@@ -1,0 +1,334 @@
+[
+  {
+    "id": "orc",
+    "name": "Office of the Registrar of Companies",
+    "abbreviation": "ORC",
+    "mandate": "Registers business names, companies and partnerships, maintains the companies register, and receives annual returns and beneficial ownership filings. Formerly the Registrar-General's Department (RGD).",
+    "official_url": "https://orc.gov.gh",
+    "portal_url": "https://rgdonline.gegov.gov.gh/orc-app/",
+    "phone": "0308249841 / 0599525774",
+    "email": "info@orc.gov.gh",
+    "head_office": "Opposite the Ghana News Agency, inside the Registrar-General's Department premises, P.O. Box 2559, Accra",
+    "digital_address": "GA-143-6447",
+    "opening_hours": "Monday to Friday, 9:00am - 4:00pm",
+    "offices": [
+      "Head office, Accra",
+      "ORC-UMB Kasoa service point",
+      "Tema Industrial Hub",
+      "Zonal offices in the regions",
+      "Prestige Centre (expedited service)"
+    ],
+    "coverage_tier": 1
+  },
+  {
+    "id": "gra",
+    "name": "Ghana Revenue Authority",
+    "abbreviation": "GRA",
+    "mandate": "Administers domestic taxes and customs. Issues Taxpayer Identification Numbers to organisations, registers taxpayers for VAT and other tax types, and operates the taxpayers' portal.",
+    "official_url": "https://gra.gov.gh",
+    "portal_url": "https://taxpayersportal.com",
+    "phone": "Toll-free 080 090 0110 / 020 926 7047",
+    "email": "info@gra.gov.gh",
+    "head_office": "Off Starlet 91 Road, Ministries, Accra. P.O. Box 2202, Accra",
+    "digital_address": "",
+    "opening_hours": "Monday to Friday, office hours",
+    "offices": [
+      "Taxpayer Service Centres nationwide",
+      "Large Taxpayer Office",
+      "Medium Taxpayer Office",
+      "Small Taxpayer Office",
+      "TIN Centres in Accra and Tema"
+    ],
+    "coverage_tier": 1
+  },
+  {
+    "id": "nia",
+    "name": "National Identification Authority",
+    "abbreviation": "NIA",
+    "mandate": "Registers Ghanaians and legally resident foreign nationals, maintains the National Identity Register, and issues the Ghana Card. The Ghana Card PIN also serves as the Taxpayer Identification Number for individuals.",
+    "official_url": "https://nia.gov.gh",
+    "portal_url": "",
+    "phone": "0302 999 306 / 0302 999 307 / 0549 889 525",
+    "email": "info@nia.gov.gh",
+    "head_office": "No. 8 Nelson Mandela Avenue, South Legon, Accra",
+    "digital_address": "GA-237-1033",
+    "opening_hours": "Monday to Friday, office hours",
+    "offices": [
+      "District offices nationwide",
+      "Premium Centres",
+      "Mobile registration teams (minimum 7 applicants)"
+    ],
+    "coverage_tier": 1
+  },
+  {
+    "id": "passport-office",
+    "name": "Passport Office, Ministry of Foreign Affairs and Regional Integration",
+    "abbreviation": "Passport Office",
+    "mandate": "Issues Ghanaian passports and travel documents, and operates the online passport application system and application centres.",
+    "official_url": "https://mfa.gov.gh",
+    "portal_url": "https://passport.mfa.gov.gh",
+    "phone": "24-hour hotline 0302 75 4200",
+    "email": "",
+    "head_office": "Passport Head Office, Accra (reported to operate 24 hours)",
+    "digital_address": "",
+    "opening_hours": "Head office operates 24 hours; application centres during office hours",
+    "offices": [
+      "14 application centres including Accra, Ridge, Tema, Kumasi, Takoradi, Sunyani, Ho, Tamale, Koforidua, Cape Coast and Wa",
+      "Premium centres in Accra, Kumasi and Tamale"
+    ],
+    "coverage_tier": 1,
+    "notes": "The live official domain is passport.mfa.gov.gh. Any site claiming to be passport.gov.gh is not an official Passport Office portal."
+  },
+  {
+    "id": "dvla",
+    "name": "Driver and Vehicle Licensing Authority",
+    "abbreviation": "DVLA",
+    "mandate": "Licenses drivers and vehicles, registers vehicles, certifies roadworthiness, and registers driving schools and instructors. Established by the DVLA Act 569 (1999); operates under the Road Traffic Regulations, 2012 (L.I. 2180).",
+    "official_url": "https://www.dvla.gov.gh",
+    "portal_url": "https://online.dvla.gov.gh",
+    "phone": "030 274 6760 / Toll-free 0800 160 160",
+    "email": "info@dvla.gov.gh",
+    "head_office": "Jawaharlal Nehru Road, Cantonments, Accra",
+    "digital_address": "GA-037-0248",
+    "opening_hours": "Monday to Friday, 8:00am - 5:00pm; closed weekends",
+    "offices": [
+      "Over 50 service centres across all 16 regions",
+      "Premium, Prestige and Ultra centres",
+      "DVLA Express mobile units"
+    ],
+    "coverage_tier": 1
+  },
+  {
+    "id": "ssnit",
+    "name": "Social Security and National Insurance Trust",
+    "abbreviation": "SSNIT",
+    "mandate": "Administers the basic national social security scheme under the National Pensions Act, 2008 (Act 766). Registers employers and members and collects Tier 1 contributions.",
+    "official_url": "https://www.ssnit.org.gh",
+    "portal_url": "https://portal.ssnit.org.gh",
+    "phone": "0302 611 622 / WhatsApp 0500 003 050",
+    "email": "contactcentre@ssnit.org.gh",
+    "head_office": "Pension House, Accra",
+    "digital_address": "GA-107-4293",
+    "opening_hours": "Monday to Friday, 8:00am - 4:30pm; self-service portal 24/7",
+    "offices": [
+      "Branches nationwide"
+    ],
+    "coverage_tier": 1
+  },
+  {
+    "id": "bdr",
+    "name": "Births and Deaths Registry",
+    "abbreviation": "BDR",
+    "mandate": "Registers births and deaths occurring in Ghana and issues birth and death certificates and certified copies.",
+    "official_url": "https://bdr.gov.gh",
+    "portal_url": "",
+    "phone": "Call centre 030 3941 225 / 030 3941 222; client service 030 4941 228",
+    "email": "",
+    "head_office": "Accra (street address not published on the official site)",
+    "digital_address": "",
+    "opening_hours": "Monday to Friday, office hours",
+    "offices": [
+      "District offices nationwide - a birth must be registered in the district where it occurred"
+    ],
+    "coverage_tier": 1
+  },
+  {
+    "id": "nhia",
+    "name": "National Health Insurance Authority",
+    "abbreviation": "NHIA",
+    "mandate": "Administers the National Health Insurance Scheme, registers and renews members, accredits providers and pays claims.",
+    "official_url": "https://www.nhis.gov.gh",
+    "portal_url": "https://www.nhis.gov.gh",
+    "phone": "Not published on the official website",
+    "email": "",
+    "head_office": "Accra (contact page not published in a retrievable form)",
+    "digital_address": "",
+    "opening_hours": "Monday to Friday, office hours",
+    "offices": [
+      "District offices nationwide",
+      "MyNHIS mobile app",
+      "USSD *929# on any network"
+    ],
+    "coverage_tier": 1
+  },
+  {
+    "id": "ghana-police",
+    "name": "Ghana Police Service",
+    "abbreviation": "GPS",
+    "mandate": "Maintains law and order. The Criminal Data Service Bureau of the CID conducts criminal record checks and issues police clearance certificates.",
+    "official_url": "https://police.gov.gh",
+    "portal_url": "https://eservices.police.gov.gh",
+    "phone": "+233 302 773906 / +233 302 787373",
+    "email": "",
+    "head_office": "CID Headquarters, Accra",
+    "digital_address": "",
+    "opening_hours": "Monday to Friday, office hours",
+    "offices": [
+      "Nima Divisional Police Headquarters, Accra (police clearance)",
+      "CID Headquarters, Accra (fingerprints and authentication)",
+      "Regional police commands"
+    ],
+    "coverage_tier": 1
+  },
+  {
+    "id": "ghana-post",
+    "name": "Ghana Post Company Limited",
+    "abbreviation": "Ghana Post",
+    "mandate": "Operates the national postal service and owns GhanaPostGPS, the national digital addressing system that assigns a permanent address to every 5m x 5m square in the country.",
+    "official_url": "https://www.ghanapostgps.com",
+    "portal_url": "https://www.ghanapostgps.com/map/",
+    "phone": "+233 302 668 138 / +233 542 527 004",
+    "email": "gps@ghanapost.com.gh",
+    "head_office": "G.P.O., Asafoatse Nettey Road, Accra",
+    "digital_address": "GA-183-8164",
+    "opening_hours": "App and web map available at all times",
+    "offices": [
+      "GhanaPostGPS mobile app (Android and iOS)",
+      "Web map at ghanapostgps.com"
+    ],
+    "coverage_tier": 1
+  },
+  {
+    "id": "ama",
+    "name": "Accra Metropolitan Assembly",
+    "abbreviation": "AMA",
+    "mandate": "The local authority for the Accra Metropolis. Issues business operating permits and development or building permits, and collects property rates. Used here as the worked example for all 261 Metropolitan, Municipal and District Assemblies.",
+    "official_url": "https://ama.gov.gh",
+    "portal_url": "",
+    "phone": "+233 302 665 951 / +233 243 211 345",
+    "email": "info@ama.gov.gh",
+    "head_office": "H72 Independence Avenue, Kinbu Garden, Accra. P.O. Box GP 385, Accra Central",
+    "digital_address": "GA-143-6657",
+    "opening_hours": "Monday to Friday, office hours",
+    "offices": [
+      "Head office",
+      "Sub-metro and revenue offices"
+    ],
+    "coverage_tier": 1,
+    "notes": "Ghana has 261 MMDAs. Each sets its own permit fees annually through a fee-fixing resolution, so no national figure exists."
+  },
+  {
+    "id": "lands-commission",
+    "name": "Lands Commission",
+    "abbreviation": "Lands Commission",
+    "mandate": "Manages public lands, maintains the land register, and conducts official searches on land title.",
+    "official_url": "https://www.lc.gov.gh",
+    "coverage_tier": 2
+  },
+  {
+    "id": "epa",
+    "name": "Environmental Protection Authority",
+    "abbreviation": "EPA",
+    "mandate": "Issues environmental permits and regulates activities with environmental impact.",
+    "official_url": "https://www.epa.gov.gh",
+    "coverage_tier": 2
+  },
+  {
+    "id": "gnfs",
+    "name": "Ghana National Fire Service",
+    "abbreviation": "GNFS",
+    "mandate": "Fire safety certification and inspection of premises and building plans.",
+    "official_url": "https://gnfs.gov.gh",
+    "coverage_tier": 2
+  },
+  {
+    "id": "fda",
+    "name": "Food and Drugs Authority",
+    "abbreviation": "FDA",
+    "mandate": "Registers food, drugs, herbal and homeopathic medicines, vaccines and biological products, medical devices, cosmetics, household chemicals, tobacco and food supplements, and licenses the premises that make them, under the Public Health Act, 2012 (Act 851). Approval is about SAFETY of a regulated product.",
+    "official_url": "https://fdaghana.gov.gh",
+    "coverage_tier": 1,
+    "portal_url": "https://gfirms.fdaghana.gov.gh/irims-portal-live"
+  },
+  {
+    "id": "gipc",
+    "name": "Ghana Investment Promotion Centre",
+    "abbreviation": "GIPC",
+    "mandate": "Registers enterprises with foreign participation and administers minimum capital requirements for foreign investors.",
+    "official_url": "https://gipc.gov.gh",
+    "coverage_tier": 2
+  },
+  {
+    "id": "gis",
+    "name": "Ghana Immigration Service",
+    "abbreviation": "GIS",
+    "mandate": "Manages entry, residence and work permits for non-Ghanaians, and border control.",
+    "official_url": "https://gis.gov.gh",
+    "coverage_tier": 2
+  },
+  {
+    "id": "npra",
+    "name": "National Pensions Regulatory Authority",
+    "abbreviation": "NPRA",
+    "mandate": "Regulates occupational pension schemes, including the Tier 2 schemes employers must arrange with licensed corporate trustees.",
+    "official_url": "https://npra.gov.gh",
+    "coverage_tier": 2
+  },
+  {
+    "id": "luspa",
+    "name": "Land Use and Spatial Planning Authority",
+    "abbreviation": "LUSPA",
+    "mandate": "Sets national spatial planning standards and development permitting guidelines that District Planning Authorities apply.",
+    "official_url": "https://luspa.gov.gh",
+    "coverage_tier": 2
+  },
+  {
+    "id": "nita",
+    "name": "National Information Technology Agency",
+    "abbreviation": "NITA",
+    "mandate": "Digital government infrastructure and standards, including the Ghana.GOV service and payment platform.",
+    "official_url": "https://nita.gov.gh",
+    "coverage_tier": 2
+  },
+  {
+    "id": "gpha",
+    "name": "Ghana Ports and Harbours Authority",
+    "abbreviation": "GPHA",
+    "mandate": "Builds, operates, maintains and regulates Ghana's seaports at Tema and Takoradi. GPHA handles the ship, the berth and the cargo on the terminal - it does not clear goods through customs, which is GRA Customs Division's job.",
+    "official_url": "https://www.ghanaports.gov.gh/",
+    "portal_url": "",
+    "phone": "+233 (0) 303 219120",
+    "email": "headquarters@ghanaports.gov.gh",
+    "head_office": "P.O. Box 150, Tema, Ghana",
+    "digital_address": "",
+    "opening_hours": "",
+    "offices": [
+      "Port of Tema - P.O. Box 488, Tema, +233 (0) 303 219120",
+      "Port of Takoradi - P.O. Box 708, Takoradi, +233 (0) 3120 24073"
+    ],
+    "coverage_tier": 2,
+    "notes": "People routinely believe GPHA clears their goods. It does not. Route clearance questions to GRA Customs and name GPHA for what it actually controls: the port, the terminal and the handling charges."
+  },
+  {
+    "id": "moti",
+    "name": "Ministry of Trade and Industry",
+    "abbreviation": "MoTI",
+    "mandate": "The ministry responsible for trade policy. It issues the Import Declaration Form (IDF) that a customs declaration requires.",
+    "official_url": "https://moti.gov.gh/",
+    "portal_url": "",
+    "phone": "",
+    "email": "",
+    "head_office": "Accra",
+    "digital_address": "",
+    "opening_hours": "",
+    "offices": [],
+    "coverage_tier": 2,
+    "notes": "Tier 2 directory entry. Named because the IDF is a documented requirement for import clearance."
+  },
+  {
+    "id": "gsa",
+    "name": "Ghana Standards Authority",
+    "abbreviation": "GSA",
+    "mandate": "Sets national standards and certifies that a product conforms to them, awarding the Standard Mark. Also inspects imports. Certification is about CONFORMITY to a standard - a different question from whether a regulated product is safe to sell, which is the FDA's.",
+    "official_url": "https://gsa.gov.gh/",
+    "portal_url": "",
+    "phone": "",
+    "email": "",
+    "head_office": "Accra",
+    "digital_address": "",
+    "opening_hours": "",
+    "offices": [],
+    "coverage_tier": 1,
+    "notes": "Tier 2 directory entry, named as a possible permit issuer in the import clearance path."
+  }
+]

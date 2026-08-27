@@ -1,0 +1,930 @@
+[
+  {
+    "id": "income-tax-self-employed",
+    "name": "Filing and paying income tax as a self-employed person or sole proprietor",
+    "short_name": "Pay tax on my business",
+    "category": "tax",
+    "coverage_tier": 1,
+    "summary": "What a person trading in their own name owes GRA each year, when the return and the four instalments are due, and how to file them.",
+    "institution_id": "gra",
+    "dependent_institution_ids": [
+      "orc"
+    ],
+    "aliases": [
+      "how can I pay taxes as a business owner",
+      "how do I pay tax on my business",
+      "I get shop, how I go pay tax",
+      "paying tax as a sole proprietor",
+      "self employed tax Ghana",
+      "how do I file my income tax return",
+      "annual tax return for my business",
+      "quarterly tax instalments",
+      "I dey do business, wetin I go pay give GRA",
+      "tax for small business owner",
+      "how much tax do I pay on my business",
+      "do I have to pay tax on my business",
+      "filing taxes GRA"
+    ],
+    "keywords": [
+      "income tax",
+      "personal income tax",
+      "PIT",
+      "self-employed",
+      "sole proprietor",
+      "tax return",
+      "self assessment",
+      "instalment",
+      "quarterly",
+      "taxpayers portal",
+      "DT 103",
+      "DT 104",
+      "year of assessment",
+      "act 896",
+      "file and pay",
+      "chargeable income"
+    ],
+    "eligibility": [
+      {
+        "text": "You must pay income tax if you are an employee, a sole proprietor or a person in partnership and you earn income above GH¢490 per month.",
+        "source_ref": "gra-pit"
+      },
+      {
+        "text": "This is the route for a business you own personally - a business name, a sole proprietorship, or trading in your own name. The business and you are the same taxpayer.",
+        "source_ref": "gra-pit"
+      },
+      {
+        "text": "If your business is a registered limited company, the company is a separate taxpayer and files corporate income tax instead. You would still file personally on anything you draw from it.",
+        "source_ref": "gra-cit"
+      },
+      {
+        "text": "You need a Taxpayer Identification Number before you can file. For individuals this is the PIN on your Ghana Card.",
+        "source_ref": "gra-tax-registration"
+      },
+      {
+        "text": "Very small informal operators - dressmakers, hairdressers, barbers, susu collectors, chop bar owners, food sellers, butchers, kiosk and table-top operators, garage owners and artisans - may instead buy the Income Tax Stamp.",
+        "source_ref": "gra-faq"
+      }
+    ],
+    "documents": [
+      {
+        "name": "Your TIN or Ghana Card PIN",
+        "mandatory": true,
+        "where_to_obtain": "GRA, or the PIN already printed on your Ghana Card",
+        "source_ref": "gra-tax-registration"
+      },
+      {
+        "name": "Your business records for the year - sales, purchases, expenses",
+        "mandatory": true,
+        "where_to_obtain": "Your own books",
+        "note": "Chargeable income is worked out from these. GRA does not publish a prescribed format for a small trader's records.",
+        "source_ref": "gra-pit",
+        "status": "secondary"
+      },
+      {
+        "name": "Form DT 0103, Personal Income Tax Return",
+        "mandatory": true,
+        "where_to_obtain": "Taxpayers Portal, or any GRA Taxpayer Service Centre",
+        "note": "This is the annual return.",
+        "source_ref": "gra-pit"
+      },
+      {
+        "name": "Form DT 0104, Personal Income Tax Self-Assessment Estimate",
+        "mandatory": true,
+        "where_to_obtain": "Taxpayers Portal, or any GRA Taxpayer Service Centre",
+        "note": "Your own estimate of what you expect to owe for the year ahead. It is what the four instalments are calculated from.",
+        "source_ref": "gra-pit"
+      },
+      {
+        "name": "Form DT 0104A, Revised Self-Assessment Estimate",
+        "mandatory": false,
+        "where_to_obtain": "Taxpayers Portal or a GRA office",
+        "note": "Only if your estimate turns out to be wrong during the year.",
+        "source_ref": "gra-pit"
+      },
+      {
+        "name": "A Taxpayers Portal account",
+        "mandatory": false,
+        "where_to_obtain": "taxpayersportal.com",
+        "note": "Not required - you can file at a Taxpayer Service Centre - but it is the channel GRA points at first.",
+        "source_ref": "gra-file-and-pay"
+      }
+    ],
+    "steps": [
+      {
+        "order": 1,
+        "action": "Register for tax if you have not already, so you have a TIN or a Ghana Card PIN linked to your business",
+        "channel": "either",
+        "location": "taxpayersportal.com or a GRA Taxpayer Service Centre",
+        "source_ref": "gra-tax-registration"
+      },
+      {
+        "order": 2,
+        "action": "Submit your self-assessment estimate for the year, on Form DT 0104, by the date the first quarterly instalment is due",
+        "channel": "either",
+        "location": "Taxpayers Portal or a GRA office",
+        "note": "If you do not submit an estimate, the Commissioner-General may raise an assessment on you using best judgment - a figure you did not choose.",
+        "source_ref": "gra-self-assessment"
+      },
+      {
+        "order": 3,
+        "action": "Pay the tax in four quarterly instalments across the year",
+        "channel": "either",
+        "location": "Taxpayers Portal, the GRA mobile app, or a GRA office",
+        "source_ref": "gra-cit"
+      },
+      {
+        "order": 4,
+        "action": "Keep your records as you go - the annual return is built from them",
+        "channel": "either",
+        "location": "Your own books",
+        "status": "secondary",
+        "source_ref": "gra-pit"
+      },
+      {
+        "order": 5,
+        "action": "File the annual return on Form DT 0103 within four months of the year end, and pay anything still outstanding",
+        "channel": "either",
+        "location": "Taxpayers Portal or a GRA Taxpayer Service Centre",
+        "source_ref": "gra-faq"
+      }
+    ],
+    "fees": [
+      {
+        "label": "Income tax owed",
+        "amount_text": "Graduated - the first GH¢490 a month is taxed at 0%",
+        "status": "confirmed",
+        "note": "Above that the rate rises in bands with income. GRA publishes a calculator; the amount depends entirely on your chargeable income, so no single figure exists.",
+        "source_ref": "gra-paye"
+      },
+      {
+        "label": "Penalty for filing the return late",
+        "amount_text": "500 currency points, and a further 10 currency points for each day the failure continues",
+        "status": "confirmed",
+        "note": "GRA states the penalty in currency points rather than cedis. Ask GRA what a currency point is worth before assuming a cedi figure.",
+        "source_ref": "gra-penalties"
+      },
+      {
+        "label": "Penalty for not paying by the due date",
+        "amount_text": "A fine set in penalty units, and in some cases imprisonment",
+        "status": "confirmed",
+        "note": "The range depends on how much tax is involved. See the offences page for the bands.",
+        "source_ref": "gra-penalties"
+      },
+      {
+        "label": "Filing a return",
+        "amount_ghs": 0.0,
+        "status": "confirmed",
+        "note": "GRA charges nothing to file. What you pay is the tax itself.",
+        "source_ref": "gra-file-and-pay"
+      }
+    ],
+    "timeline": {
+      "standard": "Annual return: not later than four months after the end of the year. For a 31 December year end that is 30 April.",
+      "expedited": null,
+      "status": "confirmed",
+      "note": "The four instalments fall due through the year - see the corporate quarters, which GRA publishes explicitly. GRA does not publish an equivalent dated list for individuals.",
+      "source_ref": "gra-faq"
+    },
+    "rejection_causes": [
+      {
+        "text": "Filing without a TIN or Ghana Card PIN linked to the business.",
+        "evidence_level": "inferred"
+      },
+      {
+        "text": "Not submitting a self-assessment estimate, and then being assessed on the Commissioner-General's best judgment instead of your own figures.",
+        "evidence_level": "official",
+        "source_ref": "gra-self-assessment"
+      },
+      {
+        "text": "Records that do not support the figures on the return.",
+        "evidence_level": "inferred"
+      },
+      {
+        "text": "Treating the four instalments as optional and paying everything at the year end.",
+        "evidence_level": "inferred"
+      }
+    ],
+    "caveats": [
+      {
+        "kind": "scope",
+        "text": "This sets out what GRA requires and when. It is not tax advice: how much you owe depends on your own figures, and what is deductible against them is a question for a tax practitioner, not for us."
+      },
+      {
+        "kind": "coverage",
+        "text": "GRA publishes the four-month annual deadline and the corporate quarterly dates, but does not publish a dated instalment calendar for individuals in the same place. Confirm your instalment dates with your Taxpayer Service Centre."
+      }
+    ],
+    "related_service_ids": [
+      "tin-registration",
+      "company-income-tax",
+      "vat-returns",
+      "paye-employer",
+      "income-tax-stamp",
+      "business-name-registration"
+    ],
+    "source_ids": [
+      "gra-pit",
+      "gra-faq",
+      "gra-self-assessment",
+      "gra-cit",
+      "gra-file-and-pay",
+      "gra-penalties",
+      "gra-tax-registration",
+      "gra-paye"
+    ]
+  },
+  {
+    "id": "company-income-tax",
+    "name": "Filing and paying corporate income tax for a limited company",
+    "short_name": "Company tax return",
+    "category": "tax",
+    "coverage_tier": 1,
+    "summary": "What a registered company owes GRA on its profits, the four quarterly instalment dates GRA publishes, and how the annual return is filed.",
+    "institution_id": "gra",
+    "dependent_institution_ids": [
+      "orc"
+    ],
+    "aliases": [
+      "corporate income tax",
+      "my company tax return",
+      "how does my company pay tax",
+      "CIT Ghana",
+      "company profits tax",
+      "limited company tax filing",
+      "quarterly instalments for my company",
+      "25 percent company tax"
+    ],
+    "keywords": [
+      "corporate income tax",
+      "CIT",
+      "company tax",
+      "limited company",
+      "quarterly instalment",
+      "annual return",
+      "year of assessment",
+      "profits",
+      "taxpayers portal"
+    ],
+    "eligibility": [
+      {
+        "text": "Every registered company must file its annual returns for each year of assessment.",
+        "source_ref": "gra-cit"
+      },
+      {
+        "text": "This applies to companies incorporated in Ghana and to companies incorporated elsewhere that have Ghanaian operations.",
+        "source_ref": "gra-cit"
+      },
+      {
+        "text": "A company is a separate taxpayer from its owners. Money you draw out of it is taxed on you separately.",
+        "source_ref": "gra-cit",
+        "status": "secondary"
+      },
+      {
+        "text": "This is not the same as the annual return you file at the Office of the Registrar of Companies. Both exist, they go to different institutions, and doing one does not do the other.",
+        "source_ref": "gra-cit",
+        "status": "secondary"
+      }
+    ],
+    "documents": [
+      {
+        "name": "The company's TIN",
+        "mandatory": true,
+        "where_to_obtain": "GRA",
+        "source_ref": "gra-tax-registration"
+      },
+      {
+        "name": "Financial statements for the year of assessment",
+        "mandatory": true,
+        "where_to_obtain": "Your accountant or auditor",
+        "status": "secondary",
+        "source_ref": "gra-cit"
+      },
+      {
+        "name": "Self-assessment estimate of the year's tax",
+        "mandatory": true,
+        "where_to_obtain": "Taxpayers Portal or a GRA office",
+        "note": "All businesses are required to submit a tax estimate for the year.",
+        "source_ref": "gra-self-assessment"
+      },
+      {
+        "name": "A Taxpayers Portal account",
+        "mandatory": false,
+        "where_to_obtain": "taxpayersportal.com",
+        "source_ref": "gra-file-and-pay"
+      }
+    ],
+    "steps": [
+      {
+        "order": 1,
+        "action": "Submit the company's self-assessment estimate for the year, by the due date of the first quarterly instalment",
+        "channel": "either",
+        "location": "Taxpayers Portal or a DTRD Taxpayer Service Centre",
+        "source_ref": "gra-self-assessment"
+      },
+      {
+        "order": 2,
+        "action": "Pay the first instalment on or before 31 March",
+        "channel": "either",
+        "location": "Taxpayers Portal or a GRA office",
+        "source_ref": "gra-cit"
+      },
+      {
+        "order": 3,
+        "action": "Pay the second instalment on or before 30 June",
+        "channel": "either",
+        "location": "Taxpayers Portal or a GRA office",
+        "source_ref": "gra-cit"
+      },
+      {
+        "order": 4,
+        "action": "Pay the third instalment on or before 30 September",
+        "channel": "either",
+        "location": "Taxpayers Portal or a GRA office",
+        "source_ref": "gra-cit"
+      },
+      {
+        "order": 5,
+        "action": "Pay the fourth instalment on or before 31 December",
+        "channel": "either",
+        "location": "Taxpayers Portal or a GRA office",
+        "source_ref": "gra-cit"
+      },
+      {
+        "order": 6,
+        "action": "File the annual return within four months of the year end, either at a DTRD Taxpayer Service Centre or electronically through the Taxpayers Portal",
+        "channel": "either",
+        "location": "DTRD Taxpayer Service Centre or Taxpayers Portal",
+        "source_ref": "gra-faq"
+      }
+    ],
+    "fees": [
+      {
+        "label": "General corporate income tax rate",
+        "amount_text": "25% of chargeable income",
+        "status": "confirmed",
+        "note": "GRA states rates vary by industry and location, from 5% to 35%. 25% is the general rate.",
+        "source_ref": "gra-cit"
+      },
+      {
+        "label": "Penalty for filing the return late",
+        "amount_text": "500 currency points, and a further 10 currency points for each day the failure continues",
+        "status": "confirmed",
+        "source_ref": "gra-penalties"
+      },
+      {
+        "label": "Filing a return",
+        "amount_ghs": 0.0,
+        "status": "confirmed",
+        "source_ref": "gra-file-and-pay"
+      }
+    ],
+    "timeline": {
+      "standard": "Annual return: not later than four months after the end of the year. Instalments: 31 March, 30 June, 30 September and 31 December.",
+      "expedited": null,
+      "status": "confirmed",
+      "note": "The quarterly dates above are GRA's own, quoted from the corporate income tax page.",
+      "source_ref": "gra-cit"
+    },
+    "rejection_causes": [
+      {
+        "text": "Confusing the GRA tax return with the Registrar of Companies annual return. They are different filings to different institutions.",
+        "evidence_level": "inferred"
+      },
+      {
+        "text": "Missing a quarterly instalment and treating the annual return as the only obligation.",
+        "evidence_level": "inferred"
+      },
+      {
+        "text": "Not submitting a self-assessment estimate, and being assessed on best judgment instead.",
+        "evidence_level": "official",
+        "source_ref": "gra-self-assessment"
+      }
+    ],
+    "caveats": [
+      {
+        "kind": "scope",
+        "text": "Which rate applies to your company, and what is deductible, depends on its industry and circumstances. That is a question for a tax practitioner. What is set out here is the process and the dates."
+      },
+      {
+        "kind": "coverage",
+        "text": "GRA's corporate income tax page publishes the instalment dates but not the annual return deadline. The four-month rule quoted here comes from GRA's domestic tax FAQ, which states it for all taxpayers."
+      }
+    ],
+    "related_service_ids": [
+      "company-limited-by-shares",
+      "income-tax-self-employed",
+      "vat-returns",
+      "paye-employer",
+      "tin-registration"
+    ],
+    "source_ids": [
+      "gra-cit",
+      "gra-faq",
+      "gra-self-assessment",
+      "gra-file-and-pay",
+      "gra-penalties",
+      "gra-tax-registration"
+    ]
+  },
+  {
+    "id": "paye-employer",
+    "name": "PAYE - deducting and filing tax for your employees",
+    "short_name": "PAYE for my workers",
+    "category": "tax",
+    "coverage_tier": 1,
+    "summary": "The tax an employer deducts from staff wages and pays to GRA on their behalf, and the monthly return that goes with it.",
+    "institution_id": "gra",
+    "dependent_institution_ids": [
+      "ssnit"
+    ],
+    "aliases": [
+      "PAYE for my workers",
+      "how do I pay tax for my employees",
+      "employee tax deductions",
+      "I get workers, how I go pay dem tax",
+      "monthly PAYE return",
+      "pay as you earn Ghana",
+      "deducting tax from salary",
+      "employer tax obligations"
+    ],
+    "keywords": [
+      "PAYE",
+      "pay as you earn",
+      "employer",
+      "employee",
+      "salary",
+      "wages",
+      "deduction",
+      "DT 107",
+      "DT 108",
+      "monthly return",
+      "15th"
+    ],
+    "eligibility": [
+      {
+        "text": "PAYE is a tax deducted from an employee's income and is paid by an employer on behalf of the employee.",
+        "source_ref": "gra-paye"
+      },
+      {
+        "text": "If you have employees, deducting and remitting PAYE is your obligation as the employer, not theirs.",
+        "source_ref": "gra-paye"
+      },
+      {
+        "text": "Income up to GH¢490 a month is taxed at 0%, so an employee earning below that has nothing deducted - but you may still have to file.",
+        "source_ref": "gra-paye",
+        "status": "secondary"
+      },
+      {
+        "text": "PAYE is separate from SSNIT contributions. Having done one does not do the other.",
+        "source_ref": "gra-paye",
+        "status": "secondary"
+      }
+    ],
+    "documents": [
+      {
+        "name": "Your TIN as an employer",
+        "mandatory": true,
+        "where_to_obtain": "GRA",
+        "source_ref": "gra-tax-registration"
+      },
+      {
+        "name": "Form DT 0107, Monthly PAYE Deductions Return",
+        "mandatory": true,
+        "where_to_obtain": "Taxpayers Portal or a GRA office",
+        "source_ref": "gra-paye"
+      },
+      {
+        "name": "Form DT 0107A, Employer's Monthly PAYE Tax Deductions Schedule",
+        "mandatory": true,
+        "where_to_obtain": "Taxpayers Portal or a GRA office",
+        "note": "The employee-by-employee breakdown that accompanies the return.",
+        "source_ref": "gra-paye"
+      },
+      {
+        "name": "Form DT 0107C, Disengaged Employees Schedule",
+        "mandatory": false,
+        "where_to_obtain": "Taxpayers Portal or a GRA office",
+        "note": "Only where staff have left during the period.",
+        "source_ref": "gra-paye"
+      },
+      {
+        "name": "Form DT 0108, Annual PAYE Deductions Return",
+        "mandatory": true,
+        "where_to_obtain": "Taxpayers Portal or a GRA office",
+        "note": "The annual return, with schedules DT 0108A and DT 0108B.",
+        "source_ref": "gra-paye"
+      },
+      {
+        "name": "Payroll records for each employee",
+        "mandatory": true,
+        "where_to_obtain": "Your own records",
+        "status": "secondary",
+        "source_ref": "gra-paye"
+      }
+    ],
+    "steps": [
+      {
+        "order": 1,
+        "action": "Deduct tax from each employee's pay every month, using the graduated rates",
+        "channel": "either",
+        "location": "Your payroll",
+        "source_ref": "gra-paye"
+      },
+      {
+        "order": 2,
+        "action": "File the monthly PAYE return with its schedule, on or before the fifteenth day of the month following the month in which the deduction was made",
+        "channel": "either",
+        "location": "Taxpayers Portal or a GRA office",
+        "source_ref": "gra-paye"
+      },
+      {
+        "order": 3,
+        "action": "Pay the deducted tax to GRA by the same fifteenth-day deadline",
+        "channel": "either",
+        "location": "Taxpayers Portal, the GRA app, or a GRA office",
+        "source_ref": "gra-tax-calendar"
+      },
+      {
+        "order": 4,
+        "action": "File the annual PAYE return with its employee schedules after the year end",
+        "channel": "either",
+        "location": "Taxpayers Portal or a GRA office",
+        "source_ref": "gra-paye"
+      }
+    ],
+    "fees": [
+      {
+        "label": "What you deduct from each employee",
+        "amount_text": "Graduated — 0% on the first GH¢490 a month, rising to 35%",
+        "status": "confirmed",
+        "note": "The exact deduction depends on the employee's pay. GRA publishes a PAYE calculator; the bands are listed below.",
+        "source_ref": "gra-paye"
+      },
+      {
+        "label": "First GH¢490 of monthly income",
+        "amount_text": "0%",
+        "status": "confirmed",
+        "source_ref": "gra-paye"
+      },
+      {
+        "label": "Next GH¢110 a month",
+        "amount_text": "5%",
+        "status": "confirmed",
+        "source_ref": "gra-paye"
+      },
+      {
+        "label": "Next GH¢130 a month",
+        "amount_text": "10%",
+        "status": "confirmed",
+        "source_ref": "gra-paye"
+      },
+      {
+        "label": "Top band",
+        "amount_text": "35% on monthly income above GH¢50,000",
+        "status": "confirmed",
+        "note": "The bands between are graduated. GRA publishes a PAYE calculator.",
+        "source_ref": "gra-paye"
+      },
+      {
+        "label": "Non-resident employees",
+        "amount_text": "25% flat on chargeable income",
+        "status": "confirmed",
+        "source_ref": "gra-paye"
+      },
+      {
+        "label": "Penalty for filing late",
+        "amount_text": "500 currency points, and a further 10 currency points for each day the failure continues",
+        "status": "confirmed",
+        "source_ref": "gra-penalties"
+      },
+      {
+        "label": "Filing",
+        "amount_ghs": 0.0,
+        "status": "confirmed",
+        "source_ref": "gra-file-and-pay"
+      }
+    ],
+    "timeline": {
+      "standard": "Monthly: on or before the fifteenth day of the month following the deduction.",
+      "expedited": null,
+      "status": "confirmed",
+      "note": "GRA's tax calendar lists the 15th of each month for PAYE and withholding taxes.",
+      "source_ref": "gra-paye"
+    },
+    "rejection_causes": [
+      {
+        "text": "Filing the return but not remitting the money, or the other way round. Both are due on the 15th.",
+        "evidence_level": "inferred"
+      },
+      {
+        "text": "Submitting the return without the employee schedule.",
+        "evidence_level": "inferred"
+      },
+      {
+        "text": "Assuming staff below the tax-free threshold mean nothing has to be filed.",
+        "evidence_level": "inferred"
+      }
+    ],
+    "caveats": [
+      {
+        "kind": "freshness",
+        "text": "The rate bands quoted here are the ones GRA published for 2024 on its PAYE page. Bands are revised in the annual budget - check the current year's rates before running payroll on them."
+      }
+    ],
+    "related_service_ids": [
+      "ssnit-employer-registration",
+      "income-tax-self-employed",
+      "company-income-tax",
+      "tin-registration"
+    ],
+    "source_ids": [
+      "gra-paye",
+      "gra-tax-calendar",
+      "gra-file-and-pay",
+      "gra-penalties",
+      "gra-tax-registration"
+    ]
+  },
+  {
+    "id": "vat-returns",
+    "name": "Filing your monthly VAT return",
+    "short_name": "File VAT returns",
+    "category": "tax",
+    "coverage_tier": 1,
+    "summary": "What a VAT-registered business files each month, when it is due, and what the rate and levies add up to under the 2026 VAT Act.",
+    "institution_id": "gra",
+    "dependent_institution_ids": [],
+    "aliases": [
+      "I need to file VAT returns",
+      "monthly VAT return",
+      "when is my VAT due",
+      "how do I file VAT",
+      "VAT filing deadline",
+      "charging VAT and paying it over",
+      "e-VAT Ghana",
+      "when is my VAT due",
+      "VAT deadline",
+      "what date is VAT due",
+      "when do I pay my VAT",
+      "VAT due date",
+      "last working day VAT"
+    ],
+    "keywords": [
+      "VAT return",
+      "VAT filing",
+      "monthly return",
+      "last working day",
+      "e-VAT",
+      "NHIL",
+      "GETFund",
+      "act 1151",
+      "standard rate",
+      "taxpayers portal",
+      "due",
+      "due date",
+      "deadline",
+      "when",
+      "last working day of the month",
+      "late filing"
+    ],
+    "eligibility": [
+      {
+        "text": "Every VAT-registered business must file a return each month, whether or not it made any taxable supplies in that month.",
+        "source_ref": "gra-vat",
+        "status": "secondary"
+      },
+      {
+        "text": "If you are not yet registered, registration comes first - the thresholds changed on 1 January 2026 under Act 1151.",
+        "source_ref": "gra-vat"
+      },
+      {
+        "text": "The VAT Flat Rate Scheme has been abolished, so a business that used to file under it now files at the standard rate.",
+        "source_ref": "gra-vat"
+      }
+    ],
+    "documents": [
+      {
+        "name": "Your VAT registration and TIN",
+        "mandatory": true,
+        "where_to_obtain": "GRA",
+        "source_ref": "gra-tax-registration"
+      },
+      {
+        "name": "Records of taxable supplies made and received in the month",
+        "mandatory": true,
+        "where_to_obtain": "Your own books",
+        "status": "secondary",
+        "source_ref": "gra-vat"
+      },
+      {
+        "name": "VAT Standard Rate Return",
+        "mandatory": true,
+        "where_to_obtain": "Taxpayers Portal or a GRA office",
+        "source_ref": "gra-returns"
+      },
+      {
+        "name": "NHIL, GETFund Levy and COVID-19 Levy Return",
+        "mandatory": true,
+        "where_to_obtain": "Taxpayers Portal or a GRA office",
+        "note": "GRA lists this as a return type alongside the VAT return. The COVID-19 levy itself was abolished from 1 January 2026.",
+        "source_ref": "gra-returns"
+      }
+    ],
+    "steps": [
+      {
+        "order": 1,
+        "action": "Charge VAT and the levies on your taxable supplies through the month, and keep the records",
+        "channel": "either",
+        "location": "Your business",
+        "source_ref": "gra-vat"
+      },
+      {
+        "order": 2,
+        "action": "File the return by the last working day of the month immediately following the month the return relates to",
+        "channel": "either",
+        "location": "Taxpayers Portal or a GRA office",
+        "source_ref": "gra-vat"
+      },
+      {
+        "order": 3,
+        "action": "Pay what is due by the same deadline",
+        "channel": "either",
+        "location": "Taxpayers Portal, the GRA app, or a GRA office",
+        "source_ref": "gra-vat"
+      }
+    ],
+    "fees": [
+      {
+        "label": "VAT standard rate",
+        "amount_text": "15%",
+        "effective_date": "2026-01-01",
+        "status": "confirmed",
+        "source_ref": "gra-vat"
+      },
+      {
+        "label": "National Health Insurance Levy",
+        "amount_text": "2.5%",
+        "effective_date": "2026-01-01",
+        "status": "confirmed",
+        "source_ref": "gra-vat"
+      },
+      {
+        "label": "GETFund Levy",
+        "amount_text": "2.5%",
+        "effective_date": "2026-01-01",
+        "status": "confirmed",
+        "source_ref": "gra-vat"
+      },
+      {
+        "label": "COVID-19 Health Recovery Levy",
+        "amount_text": "Abolished",
+        "effective_date": "2026-01-01",
+        "status": "confirmed",
+        "note": "The 1% levy has been abolished under the 2026 reforms.",
+        "source_ref": "gra-vat"
+      },
+      {
+        "label": "Penalty for filing late",
+        "amount_text": "500 currency points, and a further 10 currency points for each day the failure continues",
+        "status": "confirmed",
+        "source_ref": "gra-penalties"
+      },
+      {
+        "label": "Filing",
+        "amount_ghs": 0.0,
+        "status": "confirmed",
+        "source_ref": "gra-file-and-pay"
+      }
+    ],
+    "timeline": {
+      "standard": "Monthly: by the last working day of the month immediately following the month to which the return relates.",
+      "expedited": null,
+      "status": "confirmed",
+      "source_ref": "gra-vat"
+    },
+    "rejection_causes": [
+      {
+        "text": "Not filing in a month with no sales. The return is still due.",
+        "evidence_level": "inferred"
+      },
+      {
+        "text": "Still filing under the flat rate scheme, which no longer exists.",
+        "evidence_level": "official",
+        "source_ref": "gra-vat"
+      },
+      {
+        "text": "Treating the last working day as the last calendar day when the month ends at a weekend.",
+        "evidence_level": "inferred"
+      }
+    ],
+    "caveats": [
+      {
+        "kind": "freshness",
+        "text": "VAT changed substantially on 1 January 2026 under Act 1151: the flat rate scheme was removed, the COVID-19 levy abolished and the goods threshold raised. Any guide written before that date is describing a system that no longer exists."
+      }
+    ],
+    "related_service_ids": [
+      "vat-registration",
+      "income-tax-self-employed",
+      "company-income-tax",
+      "tin-registration"
+    ],
+    "source_ids": [
+      "gra-vat",
+      "gra-returns",
+      "gra-file-and-pay",
+      "gra-penalties",
+      "gra-tax-registration"
+    ]
+  },
+  {
+    "id": "income-tax-stamp",
+    "name": "Income Tax Stamp for small informal-sector businesses",
+    "short_name": "Tax stamp",
+    "category": "tax",
+    "coverage_tier": 2,
+    "summary": "The simplified route GRA offers small operators in the informal sector instead of filing a full income tax return.",
+    "institution_id": "gra",
+    "dependent_institution_ids": [],
+    "aliases": [
+      "tax stamp",
+      "income tax stamp",
+      "small trader tax",
+      "tax for my kiosk",
+      "tax for table top business",
+      "I be hairdresser, wetin I go pay",
+      "chop bar tax",
+      "artisan tax Ghana"
+    ],
+    "keywords": [
+      "tax stamp",
+      "informal sector",
+      "kiosk",
+      "table top",
+      "artisan",
+      "dressmaker",
+      "hairdresser",
+      "barber",
+      "susu",
+      "chop bar",
+      "butcher",
+      "garage"
+    ],
+    "eligibility": [
+      {
+        "text": "The Income Tax Stamp is designed for individuals operating in the informal sector, for example small-scale self-employed dressmakers and tailors, hairdressers, beauticians and barbers, susu collectors, chop bar owners, cooked food sellers, butchers, container, kiosk and table-top operators, garage owners and artisans.",
+        "source_ref": "gra-faq"
+      }
+    ],
+    "documents": [
+      {
+        "name": "Identification",
+        "mandatory": true,
+        "where_to_obtain": "Your Ghana Card",
+        "status": "secondary",
+        "source_ref": "gra-faq"
+      }
+    ],
+    "steps": [
+      {
+        "order": 1,
+        "action": "Ask at your nearest GRA Taxpayer Service Centre which stamp applies to your trade and what it costs",
+        "channel": "in_person",
+        "location": "GRA Taxpayer Service Centre",
+        "source_ref": "gra-faq",
+        "status": "secondary"
+      }
+    ],
+    "fees": [
+      {
+        "label": "Cost of the stamp",
+        "amount_ghs": null,
+        "status": "not_published",
+        "note": "GRA's FAQ describes who the stamp is for but does not publish the amounts, which vary by trade and by locality. Ask at a Taxpayer Service Centre.",
+        "source_ref": "gra-faq"
+      }
+    ],
+    "timeline": {
+      "standard": null,
+      "expedited": null,
+      "status": "not_published",
+      "note": "GRA does not publish a purchase cycle on the page we can cite.",
+      "source_ref": "gra-faq"
+    },
+    "rejection_causes": [],
+    "caveats": [
+      {
+        "kind": "coverage",
+        "text": "This is the thinnest card in our knowledge base. GRA names the trades the stamp is for, but publishes no rate table or process we could find on an official page. Everything beyond who it applies to should be confirmed at a Taxpayer Service Centre before you rely on it."
+      }
+    ],
+    "related_service_ids": [
+      "income-tax-self-employed",
+      "tin-registration",
+      "business-operating-permit"
+    ],
+    "source_ids": [
+      "gra-faq"
+    ]
+  }
+]

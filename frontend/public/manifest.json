@@ -1,0 +1,13 @@
+{
+  "name": "GovNavigator Ghana",
+  "short_name": "GovNavigator",
+  "description": "Find the right government institution, what to bring, what it costs and the steps - with the official source for every claim.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FAF9F6",
+  "theme_color": "#0B7F6B",
+  "orientation": "portrait-primary",
+  "icons": [
+    { "src": "/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}

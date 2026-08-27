@@ -1,0 +1,430 @@
+[
+  {
+    "id": "vehicle-registration",
+    "name": "Registering a vehicle with the DVLA",
+    "short_name": "Register my vehicle",
+    "category": "vehicles",
+    "coverage_tier": 1,
+    "summary": "Putting a vehicle on the register in your name and getting its registration certificate and plates. This is about the vehicle, not about you being allowed to drive it.",
+    "institution_id": "dvla",
+    "dependent_institution_ids": [
+      "gra",
+      "gpha"
+    ],
+    "aliases": [
+      "I want to register my new car",
+      "register my vehicle DVLA",
+      "how do I register my car",
+      "number plate for my car",
+      "new car registration Ghana",
+      "I just bought a car, what do I do",
+      "registering an imported vehicle",
+      "vehicle registration certificate",
+      "I buy car, how I go register am",
+      "plate number for my new car",
+      "register my motorbike"
+    ],
+    "keywords": [
+      "vehicle registration",
+      "register a car",
+      "number plate",
+      "licence plate",
+      "plates",
+      "registration certificate",
+      "roadworthy",
+      "roadworthiness",
+      "vehicle examination",
+      "DVLA",
+      "act 569",
+      "imported vehicle",
+      "customs entry",
+      "PVTS"
+    ],
+    "eligibility": [
+      {
+        "text": "DVLA is the authority that inspects, tests and registers motor vehicles, and issues vehicle registration certificates and vehicle examination certificates, under the DVLA Act, 1999 (Act 569).",
+        "source_ref": "dvla-mandate"
+      },
+      {
+        "text": "This is a different thing from your driver's licence. The licence says you may drive; registration says the vehicle may be on the road. You need both, and having one does nothing for the other.",
+        "source_ref": "dvla-mandate",
+        "status": "secondary"
+      },
+      {
+        "text": "If the vehicle was imported, it must be cleared through customs first. Registration comes after clearance, not before - DVLA registers a vehicle that has already lawfully entered the country.",
+        "source_ref": "gra-import-procedures",
+        "status": "secondary"
+      },
+      {
+        "text": "DVLA also handles transfer of ownership and renewal of registration, which are separate transactions from first registration.",
+        "source_ref": "dvla-services"
+      }
+    ],
+    "documents": [
+      {
+        "name": "Customs clearance documents for the vehicle",
+        "mandatory": true,
+        "where_to_obtain": "Your clearing agent, or GRA Customs",
+        "note": "Required for an imported vehicle. The exact document set DVLA asks for is not published on its website - confirm at the office before you travel.",
+        "source_ref": "gra-import-procedures",
+        "status": "secondary"
+      },
+      {
+        "name": "Proof of ownership - the invoice or bill of sale",
+        "mandatory": true,
+        "where_to_obtain": "The seller or dealer",
+        "status": "secondary",
+        "source_ref": "dvla-services"
+      },
+      {
+        "name": "Your Ghana Card",
+        "mandatory": true,
+        "where_to_obtain": "National Identification Authority",
+        "status": "secondary",
+        "source_ref": "dvla-services"
+      },
+      {
+        "name": "The vehicle itself, for inspection and testing",
+        "mandatory": true,
+        "where_to_obtain": "A DVLA office or an accredited Private Vehicle Testing Station",
+        "note": "DVLA inspects and tests vehicles as a statutory function, so the vehicle has to be physically presented.",
+        "source_ref": "dvla-mandate"
+      }
+    ],
+    "steps": [
+      {
+        "order": 1,
+        "action": "If the vehicle was imported, clear it through customs first and keep the clearance documents",
+        "channel": "either",
+        "location": "The port of entry, through a licensed customs house agent",
+        "source_ref": "gra-import-procedures",
+        "status": "secondary"
+      },
+      {
+        "order": 2,
+        "action": "Present the vehicle for inspection and testing, at a DVLA office or an accredited Private Vehicle Testing Station",
+        "channel": "in_person",
+        "location": "DVLA office or an accredited PVTS",
+        "source_ref": "dvla-mandate"
+      },
+      {
+        "order": 3,
+        "action": "Complete registration at DVLA and pay the applicable fees",
+        "channel": "in_person",
+        "location": "A DVLA office",
+        "source_ref": "dvla-services",
+        "status": "secondary"
+      },
+      {
+        "order": 4,
+        "action": "Collect the vehicle registration certificate and the number plates",
+        "channel": "in_person",
+        "location": "A DVLA office",
+        "source_ref": "dvla-mandate",
+        "status": "secondary"
+      }
+    ],
+    "fees": [
+      {
+        "label": "Vehicle registration",
+        "amount_ghs": null,
+        "status": "not_published",
+        "note": "DVLA has a 2026 vehicle price list covering registration, roadworthiness, transfers and specialised plates across regular, premium and prestige service levels. It is published as a slide deck rather than as text on the DVLA website, and we could not read an amount from it that we would be willing to print. Ask at the office or check the current list before you budget.",
+        "source_ref": "graphic-dvla-vehicle-fees"
+      },
+      {
+        "label": "Roadworthiness test",
+        "amount_ghs": null,
+        "status": "not_published",
+        "note": "Same price list, same problem. The fee also varies by service level.",
+        "source_ref": "graphic-dvla-vehicle-fees"
+      },
+      {
+        "label": "Number plates, including customised and special plates",
+        "amount_ghs": null,
+        "status": "not_published",
+        "note": "DVLA lists customised and special plates as a service. It does not publish their price in a readable form.",
+        "source_ref": "dvla-services"
+      }
+    ],
+    "timeline": {
+      "standard": null,
+      "expedited": null,
+      "status": "not_published",
+      "note": "DVLA publishes no turnaround time for vehicle registration. It does offer premium and mobile service levels, which implies a faster route exists, but no figure is stated.",
+      "source_ref": "dvla-services"
+    },
+    "rejection_causes": [
+      {
+        "text": "Arriving with the vehicle but without the customs clearance documents for an imported vehicle.",
+        "evidence_level": "inferred"
+      },
+      {
+        "text": "Assuming a driver's licence covers the vehicle. It does not - they are separate registrations.",
+        "evidence_level": "inferred"
+      },
+      {
+        "text": "Not presenting the vehicle itself. Inspection and testing are statutory, so the vehicle must be there.",
+        "evidence_level": "official",
+        "source_ref": "dvla-mandate"
+      }
+    ],
+    "caveats": [
+      {
+        "kind": "coverage",
+        "text": "This card is thinner than we would like, and the reason is worth saying: DVLA names its vehicle services on its website but publishes no document checklist, no fee and no timeline against any of them. Everything above that is not marked official is our reading of how the pieces fit, not DVLA's published word. Ring the office before you travel."
+      },
+      {
+        "kind": "freshness",
+        "text": "DVLA revised its fees for 2026. Any figure quoted from an earlier year is superseded."
+      }
+    ],
+    "related_service_ids": [
+      "drivers-licence-new",
+      "drivers-licence-renewal",
+      "import-clearance",
+      "ghana-card-registration",
+      "vehicle-ownership-transfer"
+    ],
+    "source_ids": [
+      "dvla-mandate",
+      "dvla-services",
+      "dvla-pvts",
+      "gra-import-procedures",
+      "graphic-dvla-vehicle-fees"
+    ]
+  },
+  {
+    "id": "import-clearance",
+    "name": "Clearing imported goods through customs at the port",
+    "short_name": "Clear my goods",
+    "category": "business",
+    "coverage_tier": 1,
+    "summary": "Getting a consignment released from Tema or Takoradi: the declaration through ICUMS, the documents it needs, the duty payment and the examination channel.",
+    "institution_id": "gra",
+    "dependent_institution_ids": [
+      "gpha",
+      "moti",
+      "fda",
+      "gsa"
+    ],
+    "aliases": [
+      "I want to clear my goods at the port",
+      "how do I clear my container",
+      "clearing goods at Tema port",
+      "customs clearance Ghana",
+      "clearing agent Tema",
+      "my goods are at the port",
+      "GPHA clearing",
+      "how do I clear my car from the port",
+      "import duty on my goods",
+      "ICUMS declaration",
+      "I dey import goods, how I go clear am",
+      "release my cargo from Takoradi"
+    ],
+    "keywords": [
+      "customs",
+      "clearance",
+      "clearing",
+      "port",
+      "Tema",
+      "Takoradi",
+      "ICUMS",
+      "declaration",
+      "bill of lading",
+      "waybill",
+      "packing list",
+      "IDF",
+      "import declaration form",
+      "customs house agent",
+      "clearing agent",
+      "duty",
+      "examination",
+      "GPHA",
+      "container",
+      "cargo"
+    ],
+    "eligibility": [
+      {
+        "text": "Customs clearance is done by GRA's Customs Division through ICUMS. This is the single most common mix-up at the port: GPHA builds, operates and regulates the seaports - the berth, the terminal and the handling of your cargo - but it does not clear goods. Sending a clearance question to GPHA sends it to the wrong institution.",
+        "source_ref": "gpha-home"
+      },
+      {
+        "text": "The declaration is submitted through ICUMS by a licensed customs house agent.",
+        "source_ref": "gra-import-procedures"
+      },
+      {
+        "text": "You need a TIN from GRA, or your Ghana Card PIN, before a declaration can be made in your name.",
+        "source_ref": "gra-import-procedures"
+      },
+      {
+        "text": "Some goods need a permit from a regulatory agency - food and drugs, standards, and others - before customs will release them.",
+        "source_ref": "gra-import-procedures"
+      }
+    ],
+    "documents": [
+      {
+        "name": "Original waybill or Bill of Lading",
+        "mandatory": true,
+        "where_to_obtain": "Your shipping line or freight forwarder",
+        "source_ref": "gra-import-procedures"
+      },
+      {
+        "name": "Attested invoice",
+        "mandatory": true,
+        "where_to_obtain": "Your supplier",
+        "source_ref": "gra-import-procedures"
+      },
+      {
+        "name": "Packing list",
+        "mandatory": true,
+        "where_to_obtain": "Your supplier",
+        "source_ref": "gra-import-procedures"
+      },
+      {
+        "name": "Import Declaration Form (IDF)",
+        "mandatory": true,
+        "where_to_obtain": "Ministry of Trade and Industry",
+        "source_ref": "gra-import-procedures"
+      },
+      {
+        "name": "Taxpayer Identification Number, or Ghana Card PIN",
+        "mandatory": true,
+        "where_to_obtain": "Ghana Revenue Authority, or the PIN on your Ghana Card",
+        "source_ref": "gra-import-procedures"
+      },
+      {
+        "name": "Permit from the relevant regulatory agency",
+        "mandatory": false,
+        "where_to_obtain": "FDA, Ghana Standards Authority or whichever agency regulates your goods",
+        "note": "Required only for goods that are regulated. Which agency depends entirely on what you are importing.",
+        "source_ref": "gra-import-procedures"
+      }
+    ],
+    "steps": [
+      {
+        "order": 1,
+        "action": "Assemble the documents: bill of lading or waybill, attested invoice, packing list, IDF, your TIN or Ghana Card PIN, and any permit your goods need",
+        "channel": "either",
+        "location": "From your supplier, shipping line and the Ministry of Trade",
+        "source_ref": "gra-import-procedures"
+      },
+      {
+        "order": 2,
+        "action": "Engage a licensed customs house agent to lodge the declaration through ICUMS on your behalf",
+        "channel": "either",
+        "location": "ICUMS",
+        "source_ref": "gra-import-procedures"
+      },
+      {
+        "order": 3,
+        "action": "The declaration goes through classification, then valuation, then approval",
+        "channel": "online",
+        "location": "ICUMS",
+        "source_ref": "gra-import-procedures"
+      },
+      {
+        "order": 4,
+        "action": "Once approved, a tax bill is generated - your agent pays the duties and taxes at a participating bank",
+        "channel": "either",
+        "location": "A participating bank",
+        "source_ref": "gra-import-procedures"
+      },
+      {
+        "order": 5,
+        "action": "The consignment is assigned an examination channel: red means mandatory physical examination, yellow means a digital scan, green means released at the gate with an automatic scan",
+        "channel": "in_person",
+        "location": "The port",
+        "source_ref": "gra-import-procedures"
+      },
+      {
+        "order": 6,
+        "action": "Settle the port and terminal handling charges with GPHA or the terminal operator, and take delivery",
+        "channel": "in_person",
+        "location": "Port of Tema or Port of Takoradi",
+        "source_ref": "gpha-home",
+        "status": "secondary"
+      }
+    ],
+    "fees": [
+      {
+        "label": "Duties and taxes on the consignment",
+        "amount_ghs": null,
+        "amount_text": "Depends on the cost of the goods, the type of goods and the rates specified",
+        "status": "confirmed",
+        "note": "GRA states it in exactly those terms. There is no flat figure: the classification of your goods determines the rate, which is why the declaration is classified before it is valued.",
+        "source_ref": "gra-import-procedures"
+      },
+      {
+        "label": "Port and terminal handling charges",
+        "amount_ghs": null,
+        "status": "not_published",
+        "note": "Charged by GPHA or the terminal operator, separately from anything GRA collects. Rates are not published on the GPHA home page - ask the terminal.",
+        "source_ref": "gpha-home"
+      },
+      {
+        "label": "Customs house agent's fee",
+        "amount_ghs": null,
+        "status": "not_published",
+        "note": "A private commercial charge between you and your agent. No public rate exists.",
+        "source_ref": "gra-import-procedures"
+      }
+    ],
+    "timeline": {
+      "standard": null,
+      "expedited": null,
+      "status": "not_published",
+      "note": "GRA publishes the clearance procedure but no turnaround time. How long it takes depends heavily on the examination channel your consignment draws - a red channel means a physical examination and takes longer than a green one.",
+      "source_ref": "gra-import-procedures"
+    },
+    "rejection_causes": [
+      {
+        "text": "Taking a clearance question to GPHA. GPHA runs the port; GRA Customs clears the goods.",
+        "evidence_level": "official",
+        "source_ref": "gpha-home"
+      },
+      {
+        "text": "Missing the Import Declaration Form from the Ministry of Trade.",
+        "evidence_level": "official",
+        "source_ref": "gra-import-procedures"
+      },
+      {
+        "text": "No permit for goods that are regulated, so the consignment is held even though the duty is paid.",
+        "evidence_level": "inferred"
+      },
+      {
+        "text": "An invoice that is not attested, or a packing list that does not match the container.",
+        "evidence_level": "inferred"
+      },
+      {
+        "text": "Budgeting for duty only, and being surprised by port handling charges and the agent's fee on top.",
+        "evidence_level": "inferred"
+      }
+    ],
+    "caveats": [
+      {
+        "kind": "scope",
+        "text": "This sets out the process GRA publishes. What duty rate applies to your particular goods is a classification question, and getting it wrong is expensive - that is a question for your licensed agent, not for us."
+      },
+      {
+        "kind": "coverage",
+        "text": "GRA publishes the procedure and the risk channels but no timelines, and neither GRA nor GPHA publishes the port charges in a form we could cite. Anyone budgeting a clearance should get figures from their agent and the terminal directly."
+      }
+    ],
+    "related_service_ids": [
+      "vehicle-registration",
+      "tin-registration",
+      "vat-returns",
+      "company-income-tax",
+      "business-name-registration",
+      "fda-product-registration",
+      "gsa-product-certification"
+    ],
+    "source_ids": [
+      "gra-import-procedures",
+      "gra-icums",
+      "gpha-home",
+      "gra-tax-registration"
+    ]
+  }
+]

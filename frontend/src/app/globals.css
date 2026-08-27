@@ -1,0 +1,183 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+  .dark {
+    color-scheme: dark;
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-paper text-ink antialiased;
+    font-feature-settings: 'kern', 'liga', 'cv11';
+  }
+  .dark body {
+    @apply bg-night text-night-text;
+  }
+
+  /* Visible focus everywhere. WCAG 2.1 AA is a requirement in the PRD, not
+     an afterthought, and our primary users include people navigating with a
+     keyboard on a shared machine. */
+  :focus-visible {
+    @apply outline-none ring-2 ring-brand-500 ring-offset-2 ring-offset-paper rounded-md;
+  }
+  .dark :focus-visible {
+    @apply ring-offset-night;
+  }
+
+  ::selection {
+    @apply bg-brand-100 text-brand-900;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer components {
+  .surface {
+    @apply bg-paper-raised border border-ink-line rounded-2xl shadow-card;
+  }
+  .dark .surface {
+    @apply bg-night-raised border-night-line shadow-none;
+  }
+
+  .surface-sunk {
+    @apply bg-paper-sunk border border-ink-line rounded-2xl;
+  }
+  .dark .surface-sunk {
+    @apply bg-night-sunk border-night-line;
+  }
+
+  /* An item sitting INSIDE a primary panel. White on the panel's tint, so the
+     actionable rows pop rather than blending into the surrounding advisory
+     material. */
+  .tile {
+    @apply rounded-xl border border-brand-100 bg-paper-raised;
+  }
+  .dark .tile {
+    @apply border-night-line bg-night-raised;
+  }
+
+  .muted {
+    @apply text-ink-faint;
+  }
+  .dark .muted {
+    @apply text-night-faint;
+  }
+
+  .soft {
+    @apply text-ink-soft;
+  }
+  .dark .soft {
+    @apply text-night-soft;
+  }
+
+  .hairline {
+    @apply border-ink-line;
+  }
+  .dark .hairline {
+    @apply border-night-line;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl px-4 py-2.5
+           text-sm font-semibold transition-all duration-150 disabled:opacity-45
+           disabled:cursor-not-allowed select-none;
+  }
+  .btn-primary {
+    @apply btn bg-brand-500 text-white hover:bg-brand-600 active:scale-[.985]
+           shadow-[0_1px_0_rgba(255,255,255,.18)_inset,0_6px_16px_-8px_rgba(11,127,107,.9)];
+  }
+  .btn-ghost {
+    @apply btn border border-ink-line bg-paper-raised text-ink hover:bg-paper-sunk;
+  }
+  .dark .btn-ghost {
+    @apply border-night-line bg-night-raised text-night-text hover:bg-night-sunk;
+  }
+  .btn-quiet {
+    @apply btn text-ink-soft hover:text-ink hover:bg-paper-sunk;
+  }
+  .dark .btn-quiet {
+    @apply text-night-soft hover:text-night-text hover:bg-night-sunk;
+  }
+
+  .chip {
+    @apply inline-flex items-center gap-1.5 rounded-full border border-ink-line
+           bg-paper-raised px-3 py-1.5 text-sm text-ink-soft transition-colors
+           hover:border-brand-300 hover:text-brand-700 hover:bg-brand-50;
+  }
+  .dark .chip {
+    @apply border-night-line bg-night-raised text-night-soft
+           hover:border-brand-500 hover:text-brand-200 hover:bg-brand-900/40;
+  }
+
+  .label {
+    @apply text-2xs font-semibold uppercase tracking-[0.09em] text-ink-faint;
+  }
+  .dark .label {
+    @apply text-night-faint;
+  }
+
+  .skeleton {
+    @apply rounded-lg bg-[linear-gradient(90deg,theme(colors.paper.sunk)_25%,#E9E7E1_37%,theme(colors.paper.sunk)_63%)]
+           bg-[length:400%_100%] animate-sweep;
+  }
+  .dark .skeleton {
+    @apply bg-[linear-gradient(90deg,#131A21_25%,#1B242C_37%,#131A21_63%)];
+  }
+
+  /* Long content must scroll inside its own box, never the page body. */
+  .scroll-x {
+    @apply overflow-x-auto [scrollbar-width:thin];
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .text-pretty {
+    text-wrap: pretty;
+  }
+}
+
+/* A checklist that cannot be printed is not much use to someone who is about
+   to travel to an office. This is the whole print stylesheet. */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  body {
+    background: #fff !important;
+    color: #000 !important;
+    font-size: 11pt;
+  }
+  .surface,
+  .surface-sunk {
+    border: 1px solid #ccc !important;
+    box-shadow: none !important;
+    break-inside: avoid;
+  }
+  a[href^='http']::after {
+    content: ' (' attr(href) ')';
+    font-size: 8pt;
+    color: #555;
+    word-break: break-all;
+  }
+}

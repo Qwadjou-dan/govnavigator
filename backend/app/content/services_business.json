@@ -1,0 +1,1741 @@
+[
+  {
+    "id": "business-name-registration",
+    "name": "Business Name Registration (Sole Proprietorship)",
+    "short_name": "Register a business name",
+    "category": "business",
+    "coverage_tier": 1,
+    "summary": "Registering a one-person business under a trading name with the Office of the Registrar of Companies, under the Business Names Act, 1962 (Act 151).",
+    "institution_id": "orc",
+    "dependent_institution_ids": [
+      "nia",
+      "gra",
+      "ghana-post",
+      "ama"
+    ],
+    "aliases": [
+      "I want to register my business name",
+      "I want to make my business proper",
+      "how I go register my shop",
+      "I wan make my business legal",
+      "I want to get certificate for my business",
+      "register one man business",
+      "register sole proprietorship",
+      "I dey do business but I no get papers",
+      "make my hustle official",
+      "register my salon",
+      "register my catering business",
+      "register my provision store",
+      "I want ORC certificate for my trade",
+      "formalise my business"
+    ],
+    "keywords": [
+      "business name",
+      "sole proprietorship",
+      "form a",
+      "registrar of companies",
+      "orc",
+      "rgd",
+      "business certificate",
+      "trading name"
+    ],
+    "clarifiers": [
+      {
+        "id": "structure",
+        "question": "How do you want to register the business?",
+        "options": [
+          {
+            "value": "sole",
+            "label": "Just me (business name)",
+            "hint": "One owner, simplest and cheapest"
+          },
+          {
+            "value": "company",
+            "label": "A limited company",
+            "hint": "Needs two directors and a secretary"
+          }
+        ]
+      }
+    ],
+    "eligibility": [
+      {
+        "text": "An individual registering a trading name for a business they own. Governed by the Business Names Act, 1962 (Act 151).",
+        "source_ref": "orc-sole-proprietor-guide"
+      },
+      {
+        "text": "To create an account on the ORC portal you need a TIN, or a scanned government-issued photo ID such as the Ghana Card, passport, voter's ID or driver's licence.",
+        "source_ref": "orc-sole-proprietor-guide"
+      },
+      {
+        "text": "Since April 2021 the PIN on your Ghana Card serves as your TIN, so for most individuals the Ghana Card is what you need.",
+        "source_ref": "gra-ghanacard-pin"
+      }
+    ],
+    "documents": [
+      {
+        "name": "Form A - Business Name registration form, completed, signed and scanned",
+        "mandatory": true,
+        "where_to_obtain": "Download from the ORC website or portal",
+        "source_ref": "orc-sole-proprietor-guide"
+      },
+      {
+        "name": "Ghana Card (its PIN is your TIN)",
+        "mandatory": true,
+        "where_to_obtain": "National Identification Authority",
+        "one_of_group": "identity",
+        "note": "A passport, voter's ID or driver's licence is accepted instead for creating the portal account.",
+        "source_ref": "orc-sole-proprietor-guide"
+      },
+      {
+        "name": "Business address and GhanaPostGPS digital address of the premises",
+        "mandatory": true,
+        "where_to_obtain": "Free from the GhanaPostGPS app",
+        "source_ref": "orc-sole-proprietor-guide"
+      },
+      {
+        "name": "Description of your business activities",
+        "mandatory": true,
+        "where_to_obtain": "You provide this",
+        "source_ref": "orc-sole-proprietor-guide"
+      },
+      {
+        "name": "Proprietor's personal and contact details",
+        "mandatory": true,
+        "where_to_obtain": "You provide this",
+        "note": "ORC's own instruction: do not leave any field blank, even if the information already appears in a mandatory field.",
+        "source_ref": "orc-sole-proprietor-guide"
+      }
+    ],
+    "steps": [
+      {
+        "order": 1,
+        "action": "Search whether your chosen business name is available, and reserve it if you wish",
+        "channel": "online",
+        "location": "ORC portal",
+        "note": "A name search costs GH¢30.00. A reserved name is held while you complete the registration.",
+        "source_ref": "orc-fees-2026"
+      },
+      {
+        "order": 2,
+        "action": "Create a user account on the ORC online portal - this is free",
+        "channel": "online",
+        "location": "rgdonline.gegov.gov.gh/orc-app",
+        "source_ref": "orc-sole-proprietor-guide"
+      },
+      {
+        "order": 3,
+        "action": "Download, print, complete, sign and scan Form A",
+        "channel": "either",
+        "location": "",
+        "source_ref": "orc-sole-proprietor-guide"
+      },
+      {
+        "order": 4,
+        "action": "Open Entity Registration on the portal and choose to create a new entity, or to use a name you already reserved",
+        "channel": "online",
+        "location": "ORC portal",
+        "source_ref": "orc-sole-proprietor-guide"
+      },
+      {
+        "order": 5,
+        "action": "Complete every field on the application and upload your signed, scanned Form A",
+        "channel": "online",
+        "location": "ORC portal",
+        "source_ref": "orc-sole-proprietor-guide"
+      },
+      {
+        "order": 6,
+        "action": "Pay online through the Ghana Electronic Payment Platform - VISA, Mastercard, eTransact, mobile money or bank transfer",
+        "channel": "online",
+        "location": "GEPP",
+        "source_ref": "orc-sole-proprietor-guide"
+      },
+      {
+        "order": 7,
+        "action": "Wait for the SMS telling you the status of your application",
+        "channel": "phone",
+        "location": "",
+        "source_ref": "orc-sole-proprietor-guide"
+      },
+      {
+        "order": 8,
+        "action": "Download your electronic certificate and related documents within 14 days",
+        "channel": "online",
+        "location": "ORC portal",
+        "note": "After 14 days each document costs GH¢10.00 to re-issue. Certified hard copies are collected at the ORC office for the region you selected.",
+        "source_ref": "orc-sole-proprietor-guide"
+      }
+    ],
+    "fees": [
+      {
+        "label": "Registration of a business name",
+        "amount_ghs": 130.0,
+        "effective_date": "2026-02-02",
+        "status": "confirmed",
+        "source_ref": "orc-fees-2026"
+      },
+      {
+        "label": "Name search in the business names register",
+        "amount_ghs": 30.0,
+        "effective_date": "2026-02-02",
+        "status": "confirmed",
+        "source_ref": "orc-fees-2026"
+      },
+      {
+        "label": "Certified copy of a business name certificate",
+        "amount_ghs": 30.0,
+        "effective_date": "2026-02-02",
+        "status": "confirmed",
+        "source_ref": "orc-fees-2026"
+      },
+      {
+        "label": "Annual renewal of a business name",
+        "amount_ghs": 70.0,
+        "effective_date": "2026-02-02",
+        "status": "confirmed",
+        "note": "Renewal is due every year. ORC also offers renewal by dialling *222#.",
+        "source_ref": "orc-fees-2026"
+      },
+      {
+        "label": "Prestige (expedited) service - additional fee",
+        "amount_ghs": 520.0,
+        "effective_date": "2026-02-02",
+        "status": "confirmed",
+        "note": "Paid on top of the standard registration fee.",
+        "source_ref": "orc-fees-2026"
+      },
+      {
+        "label": "Re-issue of a document after the 14-day download window",
+        "amount_ghs": 10.0,
+        "effective_date": "2026-02-02",
+        "status": "confirmed",
+        "source_ref": "orc-fees-2026"
+      }
+    ],
+    "timeline": {
+      "standard": null,
+      "expedited": "24 hours through the ORC Prestige Centre",
+      "status": "not_published",
+      "note": "ORC does not publish a standard processing time. It tells you the status by SMS. Only the expedited Prestige service has a published turnaround.",
+      "source_ref": "orc-prestige"
+    },
+    "rejection_causes": [
+      {
+        "text": "Leaving fields blank on the application - ORC's own guide warns against this explicitly.",
+        "evidence_level": "official",
+        "source_ref": "orc-sole-proprietor-guide"
+      },
+      {
+        "text": "Choosing a name that is already taken. Running the paid name search first avoids this.",
+        "evidence_level": "inferred"
+      }
+    ],
+    "caveats": [
+      {
+        "kind": "freshness",
+        "text": "ORC fees changed on 2 February 2026. Guides and blog posts published before that date quote superseded amounts."
+      },
+      {
+        "kind": "coverage",
+        "text": "The document and step details come from an official Government of Ghana pamphlet that carries no date, so it may not reflect practice after the February 2026 changes. ORC's own service pages could not be read automatically."
+      }
+    ],
+    "related_service_ids": [
+      "ghana-card-registration",
+      "tin-registration",
+      "ghanapost-digital-address",
+      "business-operating-permit",
+      "ssnit-employer-registration",
+      "company-limited-by-shares",
+      "income-tax-self-employed",
+      "fda-product-registration"
+    ],
+    "source_ids": [
+      "orc-fees-2026",
+      "orc-fee-notice",
+      "orc-sole-proprietor-guide",
+      "orc-prestige",
+      "orc-home",
+      "gra-ghanacard-pin"
+    ]
+  },
+  {
+    "id": "company-limited-by-shares",
+    "name": "Incorporation of a Company Limited by Shares",
+    "short_name": "Register a limited company",
+    "category": "business",
+    "coverage_tier": 1,
+    "summary": "Incorporating a limited liability company with the Office of the Registrar of Companies. The company name must end with the word LIMITED.",
+    "institution_id": "orc",
+    "dependent_institution_ids": [
+      "nia",
+      "gra",
+      "ama",
+      "gipc"
+    ],
+    "aliases": [
+      "I want to open a limited company",
+      "how to register LTD company",
+      "I want to add limited to my business name",
+      "I want incorporate my company",
+      "register company with directors and shareholders",
+      "I wan turn my business into company",
+      "how much to open limited liability company",
+      "I need certificate of incorporation",
+      "company registration",
+      "start a company in Ghana"
+    ],
+    "keywords": [
+      "company",
+      "limited by shares",
+      "incorporation",
+      "form 3",
+      "form 4",
+      "constitution",
+      "beneficial ownership",
+      "directors",
+      "shareholders",
+      "auditor"
+    ],
+    "eligibility": [
+      {
+        "text": "You need at least two directors and a company secretary before you can register.",
+        "source_ref": "orc-company-guide"
+      },
+      {
+        "text": "At least one director must be resident in Ghana at all times.",
+        "source_ref": "orc-company-guide"
+      },
+      {
+        "text": "You need at least one shareholder.",
+        "source_ref": "orc-company-guide"
+      },
+      {
+        "text": "Every officer - director, secretary and shareholder - needs an individual TIN, which for individuals is the Ghana Card PIN.",
+        "source_ref": "orc-company-guide"
+      },
+      {
+        "text": "You need a signed letter of consent from an auditor before you apply.",
+        "source_ref": "orc-company-guide"
+      },
+      {
+        "text": "The company name must end with the word LIMITED.",
+        "source_ref": "orc-company-guide"
+      }
+    ],
+    "documents": [
+      {
+        "name": "Company Regulations or Constitution (standard, or non-standard regulations)",
+        "mandatory": true,
+        "where_to_obtain": "Download from ORC, or drafted for you",
+        "source_ref": "orc-company-guide"
+      },
+      {
+        "name": "Form 3 - company particulars",
+        "mandatory": true,
+        "where_to_obtain": "Download from ORC",
+        "source_ref": "orc-company-guide"
+      },
+      {
+        "name": "Form 4",
+        "mandatory": true,
+        "where_to_obtain": "Download from ORC",
+        "source_ref": "orc-company-guide"
+      },
+      {
+        "name": "Beneficial ownership profile",
+        "mandatory": true,
+        "where_to_obtain": "You complete this",
+        "note": "Failure to file beneficial ownership carries a GH¢500.00 penalty.",
+        "source_ref": "orc-company-guide"
+      },
+      {
+        "name": "Signed auditor's introductory letter of consent",
+        "mandatory": true,
+        "where_to_obtain": "A licensed auditor",
+        "source_ref": "orc-company-guide"
+      },
+      {
+        "name": "Individual TIN or Ghana Card PIN for every director, secretary and shareholder",
+        "mandatory": true,
+        "where_to_obtain": "National Identification Authority / Ghana Revenue Authority",
+        "source_ref": "orc-company-guide"
+      },
+      {
+        "name": "Company address and GhanaPostGPS digital address",
+        "mandatory": true,
+        "where_to_obtain": "Free from the GhanaPostGPS app",
+        "source_ref": "orc-company-guide"
+      }
+    ],
+    "steps": [
+      {
+        "order": 1,
+        "action": "Create a portal account on the ORC online system",
+        "channel": "online",
+        "location": "ORC portal",
+        "source_ref": "orc-company-guide"
+      },
+      {
+        "order": 2,
+        "action": "Download, print, complete, sign and scan the Regulations, Form 3 and Form 4, and attach the signed auditor's letter of consent",
+        "channel": "either",
+        "location": "",
+        "source_ref": "orc-company-guide"
+      },
+      {
+        "order": 3,
+        "action": "Open Entity Registration and enter the company name, ending with LIMITED",
+        "channel": "online",
+        "location": "ORC portal",
+        "source_ref": "orc-company-guide"
+      },
+      {
+        "order": 4,
+        "action": "Complete all fields, including the individual TIN of every officer, and upload the signed documents",
+        "channel": "online",
+        "location": "ORC portal",
+        "source_ref": "orc-company-guide"
+      },
+      {
+        "order": 5,
+        "action": "Tick 'commence business straight away' if your company does not need a licence. If it is a regulated business such as a bank, securities firm or university, use the Incorporate button only",
+        "channel": "online",
+        "location": "ORC portal",
+        "source_ref": "orc-company-guide"
+      },
+      {
+        "order": 6,
+        "action": "Pay online through the Ghana Electronic Payment Platform",
+        "channel": "online",
+        "location": "GEPP",
+        "source_ref": "orc-company-guide"
+      },
+      {
+        "order": 7,
+        "action": "Track the status by SMS, then download your electronic certificate within 14 days",
+        "channel": "online",
+        "location": "ORC portal",
+        "note": "Hard copies cost GH¢10.00 per document after the 14-day window.",
+        "source_ref": "orc-company-guide"
+      }
+    ],
+    "fees": [
+      {
+        "label": "Registration of company, constitution, Form 3 and beneficial ownership profile",
+        "amount_ghs": 585.0,
+        "effective_date": "2026-02-02",
+        "status": "confirmed",
+        "source_ref": "orc-fees-2026"
+      },
+      {
+        "label": "Capital duty on stated capital",
+        "amount_text": "1% of the stated capital you declare",
+        "effective_date": "2026-02-02",
+        "status": "confirmed",
+        "source_ref": "orc-fees-2026"
+      },
+      {
+        "label": "Name search in the companies register",
+        "amount_ghs": 30.0,
+        "effective_date": "2026-02-02",
+        "status": "confirmed",
+        "source_ref": "orc-fees-2026"
+      },
+      {
+        "label": "Filing of annual returns",
+        "amount_ghs": 175.0,
+        "effective_date": "2026-02-02",
+        "status": "confirmed",
+        "note": "A recurring yearly obligation. Not filing carries penalties of GH¢1,000 (1-4 years late) or GH¢2,000 (5 years or more).",
+        "source_ref": "orc-fees-2026"
+      },
+      {
+        "label": "Prestige (expedited) registration - additional fee",
+        "amount_ghs": 1300.0,
+        "effective_date": "2026-02-02",
+        "status": "confirmed",
+        "source_ref": "orc-fees-2026"
+      },
+      {
+        "label": "Penalty for not filing beneficial ownership",
+        "amount_ghs": 500.0,
+        "effective_date": "2026-02-02",
+        "status": "confirmed",
+        "source_ref": "orc-fees-2026"
+      }
+    ],
+    "timeline": {
+      "standard": null,
+      "expedited": "24 hours through the ORC Prestige Centre",
+      "status": "not_published",
+      "note": "ORC publishes no standard processing time for company incorporation.",
+      "source_ref": "orc-prestige"
+    },
+    "rejection_causes": [
+      {
+        "text": "The company name does not end with LIMITED.",
+        "evidence_level": "official",
+        "source_ref": "orc-company-guide"
+      },
+      {
+        "text": "An officer's individual TIN or Ghana Card PIN is missing.",
+        "evidence_level": "official",
+        "source_ref": "orc-company-guide"
+      },
+      {
+        "text": "The auditor's consent letter is unsigned or not attached.",
+        "evidence_level": "official",
+        "source_ref": "orc-company-guide"
+      }
+    ],
+    "caveats": [
+      {
+        "kind": "freshness",
+        "text": "ORC fees changed on 2 February 2026. Older guides quote superseded amounts."
+      },
+      {
+        "kind": "eligibility",
+        "text": "If your company will have foreign shareholders, you must also register with the Ghana Investment Promotion Centre and meet minimum capital requirements. Those thresholds are set separately and were under review at the time of writing - check with GIPC directly."
+      }
+    ],
+    "related_service_ids": [
+      "business-name-registration",
+      "tin-registration",
+      "vat-registration",
+      "business-operating-permit",
+      "ssnit-employer-registration",
+      "company-income-tax"
+    ],
+    "source_ids": [
+      "orc-fees-2026",
+      "orc-fee-notice",
+      "orc-company-guide",
+      "orc-prestige",
+      "orc-home"
+    ]
+  },
+  {
+    "id": "tin-registration",
+    "name": "Taxpayer Identification - TIN and Ghana Card PIN",
+    "short_name": "Get a TIN",
+    "category": "tax",
+    "coverage_tier": 1,
+    "summary": "Getting the number that identifies you for tax. For individuals the Ghana Card PIN has been the TIN since 1 April 2021; organisations are still issued a TIN by the Ghana Revenue Authority.",
+    "institution_id": "gra",
+    "dependent_institution_ids": [
+      "nia",
+      "orc"
+    ],
+    "aliases": [
+      "I want to get my TIN number",
+      "how I go get tax number",
+      "I need TIN for my business",
+      "is my Ghana Card PIN my TIN",
+      "where to register for tax",
+      "tax identification number for my company",
+      "dem say make I bring TIN before dem open account",
+      "how to link my Ghana Card to my TIN",
+      "company TIN registration",
+      "I no get TIN wetin I go do"
+    ],
+    "keywords": [
+      "tin",
+      "taxpayer identification number",
+      "ghana card pin",
+      "gra",
+      "tax registration",
+      "organisational tin"
+    ],
+    "clarifiers": [
+      {
+        "id": "who",
+        "question": "Is this for you personally, or for a registered business?",
+        "options": [
+          {
+            "value": "individual",
+            "label": "For me personally",
+            "hint": "Your Ghana Card PIN is your TIN"
+          },
+          {
+            "value": "organisation",
+            "label": "For a company or organisation",
+            "hint": "GRA issues a separate TIN"
+          }
+        ]
+      }
+    ],
+    "eligibility": [
+      {
+        "text": "Individuals with taxable income, including employees, self-employed people and professionals, must be registered for tax.",
+        "source_ref": "gra-tax-registration"
+      },
+      {
+        "text": "All businesses must be registered - sole proprietorships, partnerships and companies.",
+        "source_ref": "gra-tax-registration"
+      },
+      {
+        "text": "Since 1 April 2021 the Ghana Card PIN replaced the TIN for individuals. GRA states plainly that the PIN on your Ghana Card is now your TIN.",
+        "only_if": {
+          "who": "individual"
+        },
+        "source_ref": "gra-ghanacard-pin"
+      },
+      {
+        "text": "GRA continues to generate and issue a TIN to organisations, companies and other legal persons.",
+        "only_if": {
+          "who": "organisation"
+        },
+        "source_ref": "gra-ghanacard-pin"
+      }
+    ],
+    "documents": [
+      {
+        "name": "Ghana Card",
+        "mandatory": true,
+        "where_to_obtain": "National Identification Authority",
+        "note": "For individuals this is all you need - the PIN on the card is the TIN.",
+        "only_if": {
+          "who": "individual"
+        },
+        "source_ref": "gra-ghanacard-pin"
+      },
+      {
+        "name": "Completed organisational TIN form",
+        "mandatory": true,
+        "where_to_obtain": "Download from the GRA website",
+        "only_if": {
+          "who": "organisation"
+        },
+        "source_ref": "gra-tax-registration"
+      },
+      {
+        "name": "Certificate of incorporation or business registration certificate",
+        "mandatory": true,
+        "where_to_obtain": "Office of the Registrar of Companies",
+        "only_if": {
+          "who": "organisation"
+        },
+        "source_ref": "gra-tax-registration"
+      },
+      {
+        "name": "Ghana Card of the owner or directors",
+        "mandatory": true,
+        "where_to_obtain": "National Identification Authority",
+        "only_if": {
+          "who": "organisation"
+        },
+        "source_ref": "gra-tax-registration"
+      },
+      {
+        "name": "Business location details including the digital address",
+        "mandatory": true,
+        "where_to_obtain": "You provide this",
+        "only_if": {
+          "who": "organisation"
+        },
+        "source_ref": "gra-tax-registration"
+      },
+      {
+        "name": "Financial statements",
+        "mandatory": false,
+        "where_to_obtain": "You provide this",
+        "note": "GRA notes that the documents required may vary depending on the type of registration.",
+        "only_if": {
+          "who": "organisation"
+        },
+        "source_ref": "gra-tax-registration"
+      }
+    ],
+    "steps": [
+      {
+        "order": 1,
+        "action": "Register with the National Identification Authority and get a Ghana Card",
+        "channel": "in_person",
+        "location": "NIA district office or a registration desk at a GRA office",
+        "only_if": {
+          "who": "individual"
+        },
+        "source_ref": "gra-ghanacard-pin"
+      },
+      {
+        "order": 2,
+        "action": "Use the PIN printed on your Ghana Card as your TIN - there is nothing further to apply for",
+        "channel": "either",
+        "location": "",
+        "only_if": {
+          "who": "individual"
+        },
+        "source_ref": "gra-ghanacard-pin"
+      },
+      {
+        "order": 3,
+        "action": "If you held an old TIN, link it to your Ghana Card PIN through the GRA self-service portal or at a GRA office",
+        "channel": "either",
+        "location": "GRA office or taxpayersportal.com",
+        "only_if": {
+          "who": "individual"
+        },
+        "source_ref": "gra-ghanacard-pin"
+      },
+      {
+        "order": 1,
+        "action": "Register the organisation with the Office of the Registrar of Companies first",
+        "channel": "online",
+        "location": "ORC portal",
+        "only_if": {
+          "who": "organisation"
+        },
+        "source_ref": "gra-tax-registration"
+      },
+      {
+        "order": 2,
+        "action": "Download and complete the organisational TIN form",
+        "channel": "online",
+        "location": "gra.gov.gh",
+        "only_if": {
+          "who": "organisation"
+        },
+        "source_ref": "gra-tax-registration"
+      },
+      {
+        "order": 3,
+        "action": "Submit the form and supporting documents at a GRA Taxpayer Service Centre or TIN Centre",
+        "channel": "in_person",
+        "location": "GRA Taxpayer Service Centre; TIN Centres in Accra and Tema",
+        "only_if": {
+          "who": "organisation"
+        },
+        "source_ref": "gra-tax-registration"
+      },
+      {
+        "order": 4,
+        "action": "Register on the taxpayers' portal to file returns and pay tax",
+        "channel": "online",
+        "location": "taxpayersportal.com",
+        "source_ref": "gra-portal"
+      }
+    ],
+    "fees": [
+      {
+        "label": "TIN registration",
+        "amount_ghs": 0.0,
+        "status": "confirmed",
+        "note": "GRA registration is free. The Ghana Card itself is charged separately by the NIA.",
+        "source_ref": "gra-tin"
+      }
+    ],
+    "timeline": {
+      "standard": null,
+      "expedited": null,
+      "status": "not_published",
+      "note": "GRA publishes no processing time. Matching a Ghana Card PIN to an existing TIN can be done immediately at a GRA office or online.",
+      "source_ref": "gra-ghanacard-pin"
+    },
+    "rejection_causes": [],
+    "caveats": [
+      {
+        "kind": "scope",
+        "text": "If you do not yet have a Ghana Card, that is the real first step - the TIN follows automatically from it for individuals."
+      }
+    ],
+    "related_service_ids": [
+      "ghana-card-registration",
+      "business-name-registration",
+      "vat-registration",
+      "ssnit-employer-registration",
+      "income-tax-self-employed",
+      "vat-returns",
+      "paye-employer"
+    ],
+    "source_ids": [
+      "gra-tin",
+      "gra-ghanacard-pin",
+      "gra-tax-registration",
+      "gra-portal"
+    ]
+  },
+  {
+    "id": "vat-registration",
+    "name": "VAT Registration",
+    "short_name": "Register for VAT",
+    "category": "tax",
+    "coverage_tier": 1,
+    "summary": "Registering to charge Value Added Tax under the Value Added Tax Act, 2025 (Act 1151), which took effect on 1 January 2026.",
+    "institution_id": "gra",
+    "dependent_institution_ids": [
+      "nia",
+      "orc"
+    ],
+    "aliases": [
+      "how do I register for VAT",
+      "GRA VAT registration",
+      "what is the VAT threshold",
+      "do I need to charge VAT",
+      "I wan collect VAT for my business",
+      "VAT certificate",
+      "my turnover pass the limit should I register for VAT",
+      "VAT number for my company",
+      "flat rate VAT don finish wetin now"
+    ],
+    "keywords": [
+      "vat",
+      "value added tax",
+      "act 1151",
+      "threshold",
+      "flat rate",
+      "nhil",
+      "getfund"
+    ],
+    "eligibility": [
+      {
+        "text": "If you supply taxable SERVICES there is no threshold at all - you must register. GRA has clarified publicly that the GH¢750,000 threshold applies only to goods.",
+        "status": "secondary",
+        "source_ref": "gra-vat-clarification"
+      },
+      {
+        "text": "If you supply GOODS you must register once taxable supplies exceed GH¢750,000 in any twelve-month period, or where there is reasonable ground to expect they will exceed it in the next twelve months.",
+        "status": "secondary",
+        "source_ref": "act-1151"
+      },
+      {
+        "text": "You must also register where supplies exceed GH¢187,500 in a three-month period and total supplies for that quarter plus the following nine months are expected to exceed GH¢750,000.",
+        "status": "secondary",
+        "source_ref": "act-1151"
+      },
+      {
+        "text": "You must apply within 30 days of engaging in the taxable activity, or within 30 days of meeting the goods threshold.",
+        "status": "secondary",
+        "source_ref": "act-1151"
+      },
+      {
+        "text": "The VAT Flat Rate Scheme has been abolished. If you were registered under it you must charge the standard rate until GRA formally deregisters or migrates you, and return unused flat rate booklets.",
+        "status": "secondary",
+        "source_ref": "gra-vat-clarification"
+      }
+    ],
+    "documents": [
+      {
+        "name": "Ghana Card - its PIN is your TIN",
+        "mandatory": true,
+        "where_to_obtain": "National Identification Authority",
+        "source_ref": "gra-tax-registration"
+      },
+      {
+        "name": "Certificate of incorporation or business registration certificate",
+        "mandatory": true,
+        "where_to_obtain": "Office of the Registrar of Companies",
+        "source_ref": "gra-tax-registration"
+      },
+      {
+        "name": "Ghana Card of the owner or directors",
+        "mandatory": true,
+        "where_to_obtain": "National Identification Authority",
+        "source_ref": "gra-tax-registration"
+      },
+      {
+        "name": "Business location information including the digital address",
+        "mandatory": true,
+        "where_to_obtain": "You provide this",
+        "source_ref": "gra-tax-registration"
+      },
+      {
+        "name": "Financial statements",
+        "mandatory": false,
+        "where_to_obtain": "You provide this",
+        "source_ref": "gra-tax-registration"
+      }
+    ],
+    "steps": [
+      {
+        "order": 1,
+        "action": "Make sure you have a Ghana Card and, for a business, an ORC registration certificate",
+        "channel": "either",
+        "location": "",
+        "source_ref": "gra-tax-registration"
+      },
+      {
+        "order": 2,
+        "action": "Register as a taxpayer - online with your Ghana Card PIN, or in person at a Taxpayer Service Centre",
+        "channel": "either",
+        "location": "taxpayersportal.com or a GRA Taxpayer Service Centre",
+        "source_ref": "gra-tax-registration"
+      },
+      {
+        "order": 3,
+        "action": "Apply specifically for the VAT tax type at a Taxpayer Service Centre",
+        "channel": "in_person",
+        "location": "GRA Taxpayer Service Centre",
+        "note": "GRA directs VAT tax-type registration to a service centre; the online portal is for filing and payment.",
+        "source_ref": "gra-tax-registration"
+      },
+      {
+        "order": 4,
+        "action": "Receive your VAT registration and certificate from GRA",
+        "channel": "in_person",
+        "location": "GRA",
+        "source_ref": "gra-tax-registration"
+      },
+      {
+        "order": 5,
+        "action": "Sign up on the taxpayers' portal - free, one account per TIN",
+        "channel": "online",
+        "location": "taxpayersportal.com",
+        "source_ref": "gra-portal"
+      },
+      {
+        "order": 6,
+        "action": "Begin charging VAT and file monthly returns by the last working day of the following month",
+        "channel": "online",
+        "location": "taxpayersportal.com",
+        "source_ref": "gra-vat-notice"
+      }
+    ],
+    "fees": [
+      {
+        "label": "VAT registration",
+        "status": "not_published",
+        "note": "GRA publishes no registration fee. Signing up on the taxpayers' portal is expressly free. Confirm at a Taxpayer Service Centre.",
+        "source_ref": "gra-portal"
+      },
+      {
+        "label": "VAT rate charged after registration",
+        "amount_text": "15% VAT plus 2.5% NHIL and 2.5% GETFund Levy - 20% in total",
+        "effective_date": "2026-01-01",
+        "status": "confirmed",
+        "note": "The COVID-19 Health Recovery Levy is abolished. NHIL and GETFund are now claimable as input tax credits.",
+        "source_ref": "gra-vat-notice"
+      },
+      {
+        "label": "Penalty for failing to register",
+        "amount_text": "Not less than three times the tax on the taxable supplies, from the date registration was required",
+        "status": "secondary",
+        "source_ref": "act-1151"
+      }
+    ],
+    "timeline": {
+      "standard": null,
+      "expedited": null,
+      "status": "not_published",
+      "note": "GRA publishes no processing time for VAT registration. What is fixed is your deadline to apply: 30 days.",
+      "source_ref": "gra-tax-registration"
+    },
+    "rejection_causes": [
+      {
+        "text": "Assuming the GH¢750,000 threshold protects a service business. It does not - services have no threshold.",
+        "evidence_level": "secondary",
+        "source_ref": "gra-vat-clarification"
+      },
+      {
+        "text": "Continuing to charge the old flat rate after Act 1151 took effect, instead of the standard rate.",
+        "evidence_level": "secondary",
+        "source_ref": "gra-vat-clarification"
+      }
+    ],
+    "caveats": [
+      {
+        "kind": "dispute",
+        "text": "GRA's own VAT web page describes the threshold change without clearly separating goods from services. The goods-only reading comes from GRA officials' public clarification in January 2026. If you supply services, do not assume a threshold protects you."
+      },
+      {
+        "kind": "coverage",
+        "text": "The statutory detail here comes from a reproduction of Act 1151, not from a GRA-hosted readable copy. GRA's own VAT Guidelines PDF is the document to check before you act."
+      }
+    ],
+    "related_service_ids": [
+      "tin-registration",
+      "company-limited-by-shares",
+      "business-name-registration",
+      "vat-returns"
+    ],
+    "source_ids": [
+      "gra-vat",
+      "gra-vat-notice",
+      "gra-tax-registration",
+      "gra-portal",
+      "act-1151",
+      "gra-vat-clarification"
+    ]
+  },
+  {
+    "id": "ssnit-employer-registration",
+    "name": "SSNIT Employer Registration",
+    "short_name": "Register as an employer with SSNIT",
+    "category": "business",
+    "coverage_tier": 1,
+    "summary": "Registering your business as an employer for social security, and enrolling your workers, under the National Pensions Act, 2008 (Act 766).",
+    "institution_id": "ssnit",
+    "dependent_institution_ids": [
+      "orc",
+      "gra",
+      "nia",
+      "ama",
+      "npra"
+    ],
+    "aliases": [
+      "I want to register my company with SSNIT",
+      "how to register as employer SSNIT",
+      "I get workers I need SSNIT number",
+      "I wan pay social security for my workers",
+      "employer SSNIT number registration",
+      "how I go put my staff for pension",
+      "register staff for social security",
+      "social security registration for small business"
+    ],
+    "keywords": [
+      "ssnit",
+      "employer registration",
+      "er number",
+      "social security",
+      "pension",
+      "tier 1",
+      "tier 2",
+      "contribution report",
+      "act 766"
+    ],
+    "eligibility": [
+      {
+        "text": "Any business, company, organisation or entity in Ghana that employs one or more workers must register with SSNIT.",
+        "source_ref": "ssnit-become-employer"
+      },
+      {
+        "text": "As an employer you must ensure all employees are registered under the scheme and make regular contributions on their behalf.",
+        "source_ref": "ssnit-become-employer"
+      }
+    ],
+    "documents": [
+      {
+        "name": "Registrar-General's registration or certificate of incorporation",
+        "mandatory": true,
+        "where_to_obtain": "Office of the Registrar of Companies",
+        "source_ref": "ssnit-become-employer"
+      },
+      {
+        "name": "Ghana Card or passport of the employer",
+        "mandatory": true,
+        "where_to_obtain": "NIA or Passport Office",
+        "source_ref": "ssnit-become-employer"
+      },
+      {
+        "name": "Local authority certificate - your Assembly's business operating permit",
+        "mandatory": true,
+        "where_to_obtain": "Your Metropolitan, Municipal or District Assembly",
+        "source_ref": "ssnit-become-employer"
+      },
+      {
+        "name": "Certificate to commence business",
+        "mandatory": true,
+        "where_to_obtain": "Office of the Registrar of Companies",
+        "source_ref": "ssnit-become-employer"
+      },
+      {
+        "name": "Tax Identification Number",
+        "mandatory": true,
+        "where_to_obtain": "Ghana Revenue Authority, or your Ghana Card PIN",
+        "source_ref": "ssnit-become-employer"
+      },
+      {
+        "name": "Sector certificate where your sector requires one - for example Ghana Education Service, Ghana Tourism Authority or Department of Social Welfare",
+        "mandatory": false,
+        "where_to_obtain": "The relevant sector regulator",
+        "source_ref": "ssnit-become-employer"
+      }
+    ],
+    "steps": [
+      {
+        "order": 1,
+        "action": "Assemble the documents listed above",
+        "channel": "either",
+        "location": "",
+        "source_ref": "ssnit-become-employer"
+      },
+      {
+        "order": 2,
+        "action": "Visit the nearest SSNIT branch with the documents",
+        "channel": "in_person",
+        "location": "SSNIT branch",
+        "note": "An employer enrolment page exists at portal.ssnit.org.gh/employer/enroll, but SSNIT does not confirm whether registration can be completed entirely online.",
+        "source_ref": "ssnit-become-employer"
+      },
+      {
+        "order": 3,
+        "action": "SSNIT approves your registration and issues a unique Employer Registration (ER) number",
+        "channel": "in_person",
+        "location": "SSNIT branch",
+        "source_ref": "ssnit-become-employer"
+      },
+      {
+        "order": 4,
+        "action": "Enrol each employee as a member using Form iSS1A so every worker has a social security number",
+        "channel": "either",
+        "location": "SSNIT branch or portal",
+        "source_ref": "ssnit-become-employer"
+      },
+      {
+        "order": 5,
+        "action": "Deduct 5.5% from each worker's salary, add 13% of basic salary, and remit 13.5% to SSNIT within 14 days of the following month",
+        "channel": "either",
+        "location": "",
+        "source_ref": "ssnit-faqs"
+      },
+      {
+        "order": 6,
+        "action": "Submit a contribution report by the end of every month, even if you have not yet remitted the funds",
+        "channel": "either",
+        "location": "SSNIT",
+        "source_ref": "ssnit-become-employer"
+      },
+      {
+        "order": 7,
+        "action": "Arrange the Tier 2 scheme with a licensed corporate trustee - the remaining 5% does not go to SSNIT",
+        "channel": "either",
+        "location": "A licensed corporate trustee regulated by NPRA",
+        "source_ref": "ssnit-faqs"
+      }
+    ],
+    "fees": [
+      {
+        "label": "Employer registration fee",
+        "status": "not_published",
+        "note": "SSNIT publishes no registration fee on its website. That does not mean it is free - it means it is unpublished. Ask at the branch.",
+        "source_ref": "ssnit-become-employer"
+      },
+      {
+        "label": "Employee deduction",
+        "amount_text": "5.5% of the worker's salary each month",
+        "status": "confirmed",
+        "source_ref": "ssnit-faqs"
+      },
+      {
+        "label": "Employer contribution",
+        "amount_text": "13% of the worker's basic salary",
+        "status": "confirmed",
+        "note": "Employee and employer together make 18.5%. Of that, 13.5% goes to SSNIT (Tier 1) and 5% to the Tier 2 scheme.",
+        "source_ref": "ssnit-faqs"
+      },
+      {
+        "label": "Penalty for unpaid contributions",
+        "amount_text": "3% per month on the unpaid amount, with a further 3% per month if you fail to pay after a written demand",
+        "status": "confirmed",
+        "source_ref": "ssnit-faqs"
+      }
+    ],
+    "timeline": {
+      "standard": null,
+      "expedited": null,
+      "status": "not_published",
+      "note": "SSNIT says the ER number is issued on approval but publishes no turnaround time. What is fixed is your deadline: remit within 14 days of the following month.",
+      "source_ref": "ssnit-become-employer"
+    },
+    "rejection_causes": [
+      {
+        "text": "An incomplete document set - most often the Assembly's local authority certificate, the certificate to commence business, or a missing sector certificate.",
+        "evidence_level": "inferred"
+      }
+    ],
+    "caveats": [
+      {
+        "kind": "scope",
+        "text": "The 5% Tier 2 contribution does not go to SSNIT. You arrange that separately with a licensed corporate trustee regulated by the National Pensions Regulatory Authority."
+      }
+    ],
+    "related_service_ids": [
+      "business-name-registration",
+      "company-limited-by-shares",
+      "business-operating-permit",
+      "tin-registration",
+      "paye-employer"
+    ],
+    "source_ids": [
+      "ssnit-become-employer",
+      "ssnit-faqs"
+    ]
+  },
+  {
+    "id": "business-operating-permit",
+    "name": "Business Operating Permit from your Assembly",
+    "short_name": "Get a business operating permit",
+    "category": "business",
+    "coverage_tier": 1,
+    "summary": "The licence from your Metropolitan, Municipal or District Assembly that allows you to trade at a particular premises. Accra Metropolitan Assembly is used here as the worked example.",
+    "institution_id": "ama",
+    "dependent_institution_ids": [
+      "orc",
+      "ghana-post",
+      "gra"
+    ],
+    "aliases": [
+      "how do I get a business operating permit",
+      "AMA business permit",
+      "assembly licence for my shop",
+      "I want permit make I fit open my shop",
+      "town council licence for business",
+      "business licence from the assembly",
+      "shop permit Accra",
+      "I dey do business AMA say make I bring permit",
+      "renew my business operating permit",
+      "permit for my chop bar",
+      "permit for my salon",
+      "trade licence from the district assembly"
+    ],
+    "keywords": [
+      "business operating permit",
+      "bop",
+      "assembly",
+      "mmda",
+      "ama",
+      "trade licence",
+      "fee fixing resolution"
+    ],
+    "eligibility": [
+      {
+        "text": "Every person or entity operating a profession, occupation, trade or business within an Assembly's area must hold a permit. This is required by law regardless of your size or turnover.",
+        "source_ref": "fnda-bop"
+      },
+      {
+        "text": "It covers artisans and the self-employed too - mechanics, electricians, plumbers, tailors, hairdressers - not only registered companies.",
+        "source_ref": "ama-bye-laws-2017"
+      },
+      {
+        "text": "The permit expires on 31 December of the year it is issued, whatever month you got it. Businesses starting after January pay a pro-rata rate.",
+        "source_ref": "ama-bye-laws-2017"
+      }
+    ],
+    "documents": [
+      {
+        "name": "Registrar-General's business certificate or certificate of incorporation",
+        "mandatory": true,
+        "where_to_obtain": "Office of the Registrar of Companies",
+        "source_ref": "ama-bop"
+      },
+      {
+        "name": "Registered business name",
+        "mandatory": true,
+        "where_to_obtain": "As registered with ORC",
+        "source_ref": "ama-bop"
+      },
+      {
+        "name": "Owner's name",
+        "mandatory": true,
+        "where_to_obtain": "You provide this",
+        "source_ref": "ama-bop"
+      },
+      {
+        "name": "Business location with GPS coordinates or GhanaPostGPS digital address",
+        "mandatory": true,
+        "where_to_obtain": "Free from the GhanaPostGPS app",
+        "source_ref": "ama-bop"
+      },
+      {
+        "name": "Contact details",
+        "mandatory": true,
+        "where_to_obtain": "You provide this",
+        "source_ref": "ama-bop"
+      },
+      {
+        "name": "Application letter addressed to the District Chief Executive",
+        "mandatory": false,
+        "where_to_obtain": "You write this",
+        "note": "Required by some Assemblies. Not listed on AMA's own page - check with your own Assembly.",
+        "source_ref": "fnda-bop"
+      }
+    ],
+    "steps": [
+      {
+        "order": 1,
+        "action": "Register the business with the Office of the Registrar of Companies first",
+        "channel": "online",
+        "location": "ORC portal",
+        "source_ref": "ama-bop"
+      },
+      {
+        "order": 2,
+        "action": "Generate a GhanaPostGPS digital address for the premises",
+        "channel": "online",
+        "location": "GhanaPostGPS app",
+        "source_ref": "ama-bop"
+      },
+      {
+        "order": 3,
+        "action": "Submit the documents to the Assembly",
+        "channel": "in_person",
+        "location": "AMA head office, or your sub-metro or revenue office",
+        "note": "AMA does not publish an online application for this permit.",
+        "source_ref": "ama-bop"
+      },
+      {
+        "order": 4,
+        "action": "Receive a temporary permit, valid for 90 days, on submission of the required documents",
+        "channel": "in_person",
+        "location": "Assembly office",
+        "source_ref": "ama-bop"
+      },
+      {
+        "order": 5,
+        "action": "The Assembly carries out background checks and due diligence during those 90 days",
+        "channel": "in_person",
+        "location": "Assembly",
+        "source_ref": "ama-bop"
+      },
+      {
+        "order": 6,
+        "action": "The Assembly assesses your fee based on business type and location and issues an invoice; pay it",
+        "channel": "either",
+        "location": "Assembly office, bank, or USSD *222*33# at AMA",
+        "source_ref": "ama-bop"
+      },
+      {
+        "order": 7,
+        "action": "Collect the permanent permit and display it in a conspicuous part of your premises",
+        "channel": "in_person",
+        "location": "Assembly office",
+        "source_ref": "ama-bye-laws-2017"
+      },
+      {
+        "order": 8,
+        "action": "Renew every year - the permit expires on 31 December",
+        "channel": "either",
+        "location": "Assembly office",
+        "source_ref": "ama-bye-laws-2017"
+      }
+    ],
+    "fees": [
+      {
+        "label": "Business operating permit fee",
+        "status": "varies_by_locality",
+        "note": "There is no national figure. Ghana has 261 Assemblies and each sets its own rates every year in a fee-fixing resolution, varying by business category, size and location. Ask your own Assembly's revenue office for an assessment.",
+        "source_ref": "ama-bop"
+      },
+      {
+        "label": "Penalty for operating without a permit",
+        "amount_text": "A fine of 100 to 250 penalty units, or 30 days to 6 months imprisonment, or both, with additional daily fines for a continuing offence",
+        "status": "confirmed",
+        "source_ref": "ama-bye-laws-2017"
+      }
+    ],
+    "timeline": {
+      "standard": "A temporary permit is issued on submission; the permanent permit follows after a 90-day due diligence period",
+      "expedited": null,
+      "status": "confirmed",
+      "note": "AMA does not publish a maximum time to the permanent permit.",
+      "source_ref": "ama-bop"
+    },
+    "rejection_causes": [
+      {
+        "text": "Incorrect business classification, which leads to a wrong fee assessment. AMA has publicly urged owners to give the Assembly the information needed to classify their business correctly.",
+        "evidence_level": "secondary"
+      },
+      {
+        "text": "Arrears on previous permits or property rates.",
+        "evidence_level": "secondary"
+      }
+    ],
+    "caveats": [
+      {
+        "kind": "locality",
+        "text": "This card is written from Accra Metropolitan Assembly's published process. Every Assembly differs in documents, fees and process. Treat it as the shape of the process, then confirm with your own Assembly."
+      },
+      {
+        "kind": "coverage",
+        "text": "Some sources list tax clearance, fire and environmental health certificates as required. AMA's own page does not list them, though regulated activities such as food service or fuel do need sector clearances in practice."
+      }
+    ],
+    "related_service_ids": [
+      "business-name-registration",
+      "company-limited-by-shares",
+      "ghanapost-digital-address",
+      "ssnit-employer-registration",
+      "building-permit",
+      "income-tax-self-employed",
+      "fda-product-registration"
+    ],
+    "source_ids": [
+      "ama-bop",
+      "ama-bye-laws-2017",
+      "fnda-bop",
+      "ama-permitting-guidelines"
+    ]
+  },
+  {
+    "id": "building-permit",
+    "name": "Building or Development Permit from your Assembly",
+    "short_name": "Get a building permit",
+    "category": "property",
+    "coverage_tier": 1,
+    "summary": "Permission to build, alter or develop land, issued by your Assembly acting as the District Planning Authority under the Land Use and Spatial Planning Act, 2016 (Act 925).",
+    "institution_id": "ama",
+    "dependent_institution_ids": [
+      "lands-commission",
+      "epa",
+      "gnfs",
+      "luspa"
+    ],
+    "aliases": [
+      "how do I get a building permit",
+      "AMA building permit",
+      "permit to build my house",
+      "development permit",
+      "I wan build I need permit",
+      "assembly say make I bring permit before I start building",
+      "town and country planning permit",
+      "planning permission for my land",
+      "permit for my house plan",
+      "regularise my building",
+      "renovation permit",
+      "extension permit"
+    ],
+    "keywords": [
+      "building permit",
+      "development permit",
+      "planning permission",
+      "statutory planning committee",
+      "act 925",
+      "li 2384",
+      "architectural drawings"
+    ],
+    "eligibility": [
+      {
+        "text": "You need a permit to erect any building or structure, to make structural alterations or renovations, to install fittings connected to structures, or to carry out engineering or mining operations on land.",
+        "source_ref": "ama-building-permit"
+      },
+      {
+        "text": "You must hold and be able to show an interest in the land, and your proposal must match the zoning of the area.",
+        "source_ref": "ama-building-permit"
+      },
+      {
+        "text": "A permit lasts five years from issue. Temporary structure permits are renewable every six months up to a maximum of five years.",
+        "source_ref": "ama-building-permit"
+      }
+    ],
+    "documents": [
+      {
+        "name": "Building permit application form (1 copy)",
+        "mandatory": true,
+        "where_to_obtain": "Assembly Physical Planning Department",
+        "source_ref": "ama-building-permit"
+      },
+      {
+        "name": "Title search (1 copy)",
+        "mandatory": true,
+        "where_to_obtain": "Lands Commission",
+        "source_ref": "ama-building-permit"
+      },
+      {
+        "name": "Land indenture or deed of assignment (1 copy)",
+        "mandatory": true,
+        "where_to_obtain": "Your grantor / Lands Commission",
+        "source_ref": "ama-building-permit"
+      },
+      {
+        "name": "Architectural drawings signed by a certified architect (4 copies)",
+        "mandatory": true,
+        "where_to_obtain": "A licensed architect",
+        "source_ref": "ama-building-permit"
+      },
+      {
+        "name": "Structural drawings signed by an engineer (4 copies)",
+        "mandatory": true,
+        "where_to_obtain": "A licensed structural engineer",
+        "source_ref": "ama-building-permit"
+      },
+      {
+        "name": "Structural calculation report (4 copies)",
+        "mandatory": true,
+        "where_to_obtain": "Your structural engineer",
+        "source_ref": "ama-building-permit"
+      },
+      {
+        "name": "Fire report or fire safety certification (3 copies)",
+        "mandatory": true,
+        "where_to_obtain": "Ghana National Fire Service",
+        "source_ref": "ama-building-permit"
+      },
+      {
+        "name": "Mechanical and services drawings (4 copies)",
+        "mandatory": true,
+        "where_to_obtain": "Services engineer",
+        "source_ref": "ama-building-permit"
+      },
+      {
+        "name": "Geotechnical or structural integrity report - soil test (3 copies)",
+        "mandatory": true,
+        "where_to_obtain": "A geotechnical consultant",
+        "source_ref": "ama-building-permit"
+      },
+      {
+        "name": "Environmental permit (1 copy)",
+        "mandatory": true,
+        "where_to_obtain": "Environmental Protection Authority",
+        "source_ref": "ama-building-permit"
+      },
+      {
+        "name": "Traffic impact assessment (3 bound copies)",
+        "mandatory": false,
+        "where_to_obtain": "Traffic consultant",
+        "note": "Required for qualifying developments.",
+        "source_ref": "ama-building-permit"
+      },
+      {
+        "name": "Evidence that property rates are up to date",
+        "mandatory": true,
+        "where_to_obtain": "Your Assembly",
+        "source_ref": "ama-building-permit"
+      },
+      {
+        "name": "Business registration certificate and business operating permit",
+        "mandatory": false,
+        "where_to_obtain": "ORC and your Assembly",
+        "note": "Required where the applicant is a company rather than an individual.",
+        "source_ref": "ama-building-permit"
+      }
+    ],
+    "steps": [
+      {
+        "order": 1,
+        "action": "Submit the application at the Assembly secretariat and pay the submission and processing fees",
+        "channel": "in_person",
+        "location": "Assembly secretariat",
+        "source_ref": "ama-permitting-guidelines"
+      },
+      {
+        "order": 2,
+        "action": "The Physical Planning Department vets it for zoning and planning compliance, alongside the Works Department and other agencies",
+        "channel": "in_person",
+        "location": "Assembly",
+        "source_ref": "ama-permitting-guidelines"
+      },
+      {
+        "order": 3,
+        "action": "Technical findings are collated",
+        "channel": "in_person",
+        "location": "Assembly",
+        "source_ref": "ama-permitting-guidelines"
+      },
+      {
+        "order": 4,
+        "action": "A Physical Planning Officer and a Works Engineer inspect the site",
+        "channel": "in_person",
+        "location": "Your site",
+        "source_ref": "ama-permitting-guidelines"
+      },
+      {
+        "order": 5,
+        "action": "The Technical Sub-Committee assesses and makes recommendations",
+        "channel": "in_person",
+        "location": "Assembly",
+        "source_ref": "ama-permitting-guidelines"
+      },
+      {
+        "order": 6,
+        "action": "The Statutory Planning Committee decides - approval, refusal, or queries and deferment",
+        "channel": "in_person",
+        "location": "Assembly",
+        "source_ref": "ama-permitting-guidelines"
+      },
+      {
+        "order": 7,
+        "action": "You are notified, the permit is prepared and permit fees are assessed",
+        "channel": "in_person",
+        "location": "Assembly",
+        "source_ref": "ama-permitting-guidelines"
+      },
+      {
+        "order": 8,
+        "action": "Pay the permit fee and receive your development or building permit",
+        "channel": "in_person",
+        "location": "Assembly",
+        "source_ref": "ama-permitting-guidelines"
+      }
+    ],
+    "fees": [
+      {
+        "label": "Processing and permit fees",
+        "status": "varies_by_locality",
+        "note": "Fees are assessed on floor area, use class and development value, set by each Assembly's annual fee-fixing resolution. There is no national figure. Processing fees are due at submission and permit fees on approval.",
+        "source_ref": "ama-building-permit"
+      }
+    ],
+    "timeline": {
+      "standard": "The Statutory Planning Committee must decide within 30 working days of submission; you are notified within 3 working days of the meeting and the written permit is issued within 14 days of the decision",
+      "expedited": null,
+      "status": "confirmed",
+      "note": "The 30-working-day period comes from Regulation 44(10) of L.I. 2384. No published consequence exists if the authority misses it.",
+      "source_ref": "peda-building-permit"
+    },
+    "rejection_causes": [
+      {
+        "text": "The proposal does not conform to the zoning status of the area.",
+        "evidence_level": "official",
+        "source_ref": "ama-building-permit"
+      },
+      {
+        "text": "Required documentation is missing or incomplete.",
+        "evidence_level": "official",
+        "source_ref": "ama-permitting-guidelines"
+      },
+      {
+        "text": "Adverse findings at the site inspection.",
+        "evidence_level": "inferred"
+      }
+    ],
+    "caveats": [
+      {
+        "kind": "locality",
+        "text": "Written from Accra Metropolitan Assembly's published checklist. Requirements and fees differ by Assembly."
+      },
+      {
+        "kind": "scope",
+        "text": "A deferment for queries is not the same as a refusal, and it is common. If you are refused, you have up to six months to appeal - AMA describes the appeal as going to the Regional Coordinating Council while LUSPA's guidelines say the Regional Minister. Confirm the route with your Assembly."
+      }
+    ],
+    "related_service_ids": [
+      "business-operating-permit",
+      "ghanapost-digital-address"
+    ],
+    "source_ids": [
+      "ama-building-permit",
+      "ama-permitting-guidelines",
+      "peda-building-permit",
+      "luspa-guidelines"
+    ]
+  },
+  {
+    "id": "ghanapost-digital-address",
+    "name": "GhanaPostGPS Digital Address",
+    "short_name": "Get your digital address",
+    "category": "civil",
+    "coverage_tier": 1,
+    "summary": "Ghana's official national digital addressing system. Every 5m by 5m square in the country already has a permanent address - you read yours off the app rather than applying for it.",
+    "institution_id": "ghana-post",
+    "dependent_institution_ids": [],
+    "aliases": [
+      "how do I get my digital address",
+      "GhanaPostGPS address",
+      "GPS address for my house",
+      "what is my ghana post GPS code",
+      "dem dey ask me for digital address how I go get am",
+      "find my house address",
+      "digital address for Ghana Card",
+      "digital address for bank account",
+      "ghana post gps app download",
+      "how to know my GPS address",
+      "I no get address wetin I go write"
+    ],
+    "keywords": [
+      "digital address",
+      "ghanapostgps",
+      "ghana post",
+      "gps code",
+      "postcode",
+      "GA-",
+      "AK-"
+    ],
+    "eligibility": [
+      {
+        "text": "Open to anyone. There is no application and no approval - the system already covers every inch of the country in 5m by 5m squares, each with a permanent unique address.",
+        "source_ref": "ghanapostgps-home"
+      },
+      {
+        "text": "You need a smartphone with location enabled, or access to the web map.",
+        "source_ref": "ghanapostgps-help"
+      }
+    ],
+    "documents": [
+      {
+        "name": "No documents are needed",
+        "mandatory": false,
+        "where_to_obtain": "",
+        "note": "The app asks you to register and verify with your details, but nothing has to be produced or proved.",
+        "source_ref": "ghanapostgps-help"
+      }
+    ],
+    "steps": [
+      {
+        "order": 1,
+        "action": "Download the GhanaPostGPS app free from Google Play or the App Store",
+        "channel": "online",
+        "location": "App store",
+        "source_ref": "ghanapostgps-help"
+      },
+      {
+        "order": 2,
+        "action": "Install it and complete registration and verification",
+        "channel": "online",
+        "location": "App",
+        "source_ref": "ghanapostgps-help"
+      },
+      {
+        "order": 3,
+        "action": "Turn on your phone's location",
+        "channel": "online",
+        "location": "",
+        "source_ref": "ghanapostgps-help"
+      },
+      {
+        "order": 4,
+        "action": "Stand in front of or inside the property you want the address for - accuracy depends on where you physically stand",
+        "channel": "in_person",
+        "location": "The property",
+        "source_ref": "ghanapostgps-help"
+      },
+      {
+        "order": 5,
+        "action": "Open the app and tap the location button; your digital address appears",
+        "channel": "online",
+        "location": "App",
+        "source_ref": "ghanapostgps-help"
+      },
+      {
+        "order": 6,
+        "action": "Check the accuracy colour: green means 3-9m and is best, yellow 10-20m is acceptable, red is above 20m and you should move or wait for a better signal",
+        "channel": "online",
+        "location": "App",
+        "source_ref": "ghanapostgps-help"
+      },
+      {
+        "order": 7,
+        "action": "Save or share the code. The format is a region and district prefix, an area code and a unique identifier - for example AK-039-5028 is Kumasi Main Post Office",
+        "channel": "online",
+        "location": "App",
+        "source_ref": "ghanapostgps-help"
+      }
+    ],
+    "fees": [
+      {
+        "label": "Digital address",
+        "amount_ghs": 0.0,
+        "status": "confirmed",
+        "note": "No payment is required to download or use the app. Standard mobile data charges apply for the web map.",
+        "source_ref": "ghanapostgps-help"
+      }
+    ],
+    "timeline": {
+      "standard": "Instant - the address is generated in real time as soon as your location is acquired",
+      "expedited": null,
+      "status": "confirmed",
+      "source_ref": "ghanapostgps-help"
+    },
+    "rejection_causes": [
+      {
+        "text": "There is no application to reject. The common failures are practical: location services switched off, poor GPS accuracy showing red, or not standing at the property itself - which gives you the address of the wrong square.",
+        "evidence_level": "official",
+        "source_ref": "ghanapostgps-help"
+      }
+    ],
+    "caveats": [
+      {
+        "kind": "coverage",
+        "text": "We did not find a route for people without a smartphone - no USSD code or Ghana Post counter service is published. If you have no smartphone, someone else can generate the address while standing at your property."
+      }
+    ],
+    "related_service_ids": [
+      "business-name-registration",
+      "business-operating-permit",
+      "ghana-card-registration"
+    ],
+    "source_ids": [
+      "ghanapostgps-help",
+      "ghanapostgps-home"
+    ]
+  }
+]
