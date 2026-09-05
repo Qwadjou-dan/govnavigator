@@ -310,6 +310,19 @@ class FeedbackRequest(BaseModel):
     comment: str = Field(default="", max_length=2000)
 
 
+class EscalationRequest(BaseModel):
+    """A person asking to be put in touch with a human about a specific card.
+
+    Deliberately tiny: the query text is what the backlog ranks on, and the
+    institution is who should see it. Everything else is noise for a curator.
+    """
+
+    query_text: str = Field(default="", max_length=1000)
+    service_id: str | None = None
+    institution_id: str | None = None
+    outcome: str = "answered"
+
+
 class RequestCodeRequest(BaseModel):
     contact: str = Field(min_length=3, max_length=255)
 

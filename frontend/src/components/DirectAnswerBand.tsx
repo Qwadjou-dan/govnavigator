@@ -79,7 +79,7 @@ export function DirectAnswerBand({
 
   const badge = notAddressed
     ? 'bg-ochre-500 text-white'
-    : 'bg-brand-500 text-white shadow-[0_3px_8px_-3px_rgba(11,127,107,.9)]';
+    : 'bg-brand-600 text-white shadow-[0_4px_10px_-4px_rgba(79,70,229,.6)]';
 
   return (
     <section className={`rounded-2xl border p-4 sm:p-5 ${tone}`}>

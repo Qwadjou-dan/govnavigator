@@ -1,0 +1,18 @@
+{
+  "name": "govnavigator",
+  "version": "0.3.1",
+  "private": true,
+  "description": "GovNavigator Ghana - run the FastAPI backend and Next.js frontend from one terminal.",
+  "scripts": {
+    "dev": "concurrently --kill-others-on-fail -n backend,frontend -c blue,green \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "dev:backend": "cd backend && .venv\\Scripts\\python.exe -m uvicorn app.main:app --reload --port 8000",
+    "dev:frontend": "cd frontend && npm run dev",
+    "setup": "npm run setup:backend && npm run setup:frontend",
+    "setup:backend": "cd backend && python -m venv .venv && .venv\\Scripts\\python.exe -m pip install -r requirements.txt && if not exist .env copy .env.example .env && .venv\\Scripts\\python.exe -m app.scripts.seed --reset",
+    "setup:frontend": "cd frontend && npm install && if not exist .env.local copy .env.local.example .env.local",
+    "seed": "cd backend && .venv\\Scripts\\python.exe -m app.scripts.seed"
+  },
+  "devDependencies": {
+    "concurrently": "^10.0.5"
+  }
+}

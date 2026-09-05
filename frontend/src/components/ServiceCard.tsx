@@ -100,6 +100,7 @@ export function ServiceCard({
   const [ticked, setTicked] = useState<Record<string, boolean>>({});
   const [saveState, setSaveState] = useState<'idle' | 'saving' | 'saved' | 'error'>('idle');
   const [saveError, setSaveError] = useState<string | null>(null);
+  const [copied, setCopied] = useState(false);
   const { groups, singles } = useMemo(() => groupDocuments(contract.documents), [contract.documents]);
 
   const sourceById = useMemo(
@@ -175,10 +176,54 @@ export function ServiceCard({
     window.open(url, '_blank', 'noopener');
   }
 
+  /** One payload, three exits: WhatsApp, clipboard, email. Kept in one place
+   *  so the three buttons cannot drift apart. */
+  function shareText(): string {
+    return [
+      `${contract.service_name} — ${contract.institution?.name ?? ''}`,
+      '',
+      'What to bring:',
+      ...singles.map((d) => `• ${d.name}`),
+      ...[...groups.values()].map((g) => `• Any one of: ${g.map((d) => d.name).join(' / ')}`),
+      '',
+      headlineFee ? `Cost: ${money(headlineFee)} (${headlineFee.label})` : '',
+      contract.timeline?.standard ? `Time: ${contract.timeline.standard}` : '',
+      '',
+      contract.institution?.official_url ?? '',
+      'Shared from GovNavigator Ghana — an independent guide, not a government service.',
+    ]
+      .filter(Boolean)
+      .join('\n');
+  }
+
+  async function copyChecklist() {
+    try {
+      await navigator.clipboard.writeText(shareText());
+    } catch {
+      // Clipboard is a permission-gated API; a tiny fallback keeps the button
+      // honest on browsers that refuse it.
+      const ta = document.createElement('textarea');
+      ta.value = shareText();
+      ta.className = 'sr-only';
+      document.body.appendChild(ta);
+      ta.select();
+      document.execCommand('copy');
+      document.body.removeChild(ta);
+    }
+    setCopied(true);
+    window.setTimeout(() => setCopied(false), 2000);
+  }
+
+  function emailChecklist() {
+    const subject = encodeURIComponent(`${contract.service_name} — what to bring`);
+    const body = encodeURIComponent(shareText());
+    window.open(`mailto:?subject=${subject}&body=${body}`, '_blank', 'noopener');
+  }
+
   return (
     <article className="surface animate-rise overflow-hidden">
       {/* ------------------------------------------------------- header */}
-      <header className="border-b hairline bg-gradient-to-b from-brand-50/70 to-transparent px-5 py-5 dark:from-brand-900/20 sm:px-6">
+      <header className="border-b hairline bg-paper-raised px-5 py-5 dark:bg-night-raised sm:px-6">
         <div className="flex flex-wrap items-center gap-2">
           <span className="inline-flex items-center gap-1.5 rounded-full bg-brand-500/10 px-2.5 py-1 text-2xs font-bold uppercase tracking-wider text-brand-700 dark:text-brand-300">
             <Icon.building className="h-3 w-3" />
@@ -204,10 +249,16 @@ export function ServiceCard({
             {saveState === 'saved' ? 'Saved to your list' : 'Save this checklist'}
           </button>
           <button onClick={() => window.print()} className="btn-ghost">
-            <Icon.print /> Print
+            <Icon.print /> Print / PDF
+          </button>
+          <button onClick={copyChecklist} className="btn-ghost">
+            {copied ? <Icon.check /> : <Icon.doc />} {copied ? 'Copied' : 'Copy'}
+          </button>
+          <button onClick={emailChecklist} className="btn-ghost">
+            <Icon.share /> Email
           </button>
           <button onClick={shareToWhatsApp} className="btn-ghost">
-            <Icon.share /> WhatsApp
+            <Icon.chat /> WhatsApp
           </button>
         </div>
         {saveState === 'error' && saveError && (
@@ -327,7 +378,7 @@ export function ServiceCard({
                           type="checkbox"
                           checked={!!ticked[key]}
                           onChange={(e) => setTicked((t) => ({ ...t, [key]: e.target.checked }))}
-                          className="mt-0.5 h-4 w-4 shrink-0 accent-[#0B7F6B]"
+                          className="mt-0.5 h-4 w-4 shrink-0 accent-[#4F46E5]"
                         />
                         <span className="min-w-0 flex-1">
                           <span className="flex flex-wrap items-center gap-x-2 gap-y-1">
@@ -362,7 +413,7 @@ export function ServiceCard({
                           type="checkbox"
                           checked={!!ticked[key]}
                           onChange={(e) => setTicked((t) => ({ ...t, [key]: e.target.checked }))}
-                          className="mt-0.5 h-4 w-4 shrink-0 accent-[#0B7F6B]"
+                          className="mt-0.5 h-4 w-4 shrink-0 accent-[#4F46E5]"
                         />
                         <span className="min-w-0 flex-1">
                           <span className={`text-sm font-semibold ${ticked[key] ? 'line-through opacity-55' : ''}`}>

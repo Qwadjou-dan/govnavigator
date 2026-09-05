@@ -34,4 +34,9 @@ def seeded():
     with SessionLocal() as db:
         retriever.refresh(db)
     yield
-    os.unlink(_TMP.name)
+    # Best-effort only: on Windows the SQLite handle can still be open when the
+    # session ends, and a failed unlink must not mask a passing suite.
+    try:
+        os.unlink(_TMP.name)
+    except OSError:
+        pass

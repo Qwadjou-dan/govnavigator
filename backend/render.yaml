@@ -1,0 +1,36 @@
+# Render Blueprint: deploy the backend from the repo with one click.
+#
+#   https://dashboard.render.com → New → Blueprint → this repo
+#
+# Creates the exact web service you would configure by hand, but versioned and
+# reviewable. The database stays external (Supabase) on purpose: the knowledge
+# base needs pgvector, which Render Postgres does not ship.
+#
+# Secrets use `sync: false` — Render does not derive them from the blueprint,
+# you set them in the dashboard before first deploy (docs/DEPLOYMENT.md §2 has
+# the exact values).
+services:
+  - type: web
+    name: govnavigator-api
+    runtime: docker
+    rootDir: backend
+    healthCheckPath: /health
+    plan: free
+    envVars:
+      # Non-secrets are safe to version in the blueprint.
+      - key: APP_ENV
+        value: production
+      - key: ADMIN_EMAIL
+        value: curator@govnavigator.local
+      # --- set these in the Render dashboard (never in the repo) ---
+      - key: DATABASE_URL
+        sync: false
+      - key: JWT_SECRET
+        sync: false
+      - key: ADMIN_PASSWORD
+        sync: false
+      - key: CORS_ORIGINS
+        sync: false
+      # Optional — adds model-assisted intent; the app runs fine without it.
+      - key: GEMINI_API_KEY
+        sync: false

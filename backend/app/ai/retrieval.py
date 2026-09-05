@@ -249,6 +249,47 @@ class Retriever:
     def _rrf(ranked: list[str], k: int = 60) -> dict[str, float]:
         return {doc: 1.0 / (k + rank + 1) for rank, doc in enumerate(ranked)}
 
+    def service_matches(self, db: Session, service_id: str) -> list[ServiceMatch]:
+        """Rebuild the evidence for one service, for a follow-up that names no
+        service of its own.
+
+        A sentence like "how much?" scores nothing against the corpus, but in a
+        continued conversation it still has a topic. Giving the direct-answer
+        model the *continued* service's own chunks keeps that sentence answered
+        with evidence instead of with a confusion that then has to be cleaned
+        up. The returned match keeps a nominal score so the pipeline's "
+        answered from verified content" invariants still hold.
+        """
+        self.ensure_loaded(db)
+        meta = self._service_meta.get(service_id)
+        if not meta:
+            return []
+        chunks = sorted(
+            (c for c in self._chunks.values() if c.service_id == service_id),
+            key=lambda c: (c.section or "", c.id),
+        )
+        if not chunks:
+            return []
+        return [
+            ServiceMatch(
+                service_id=service_id,
+                name=meta["name"],
+                institution_id=meta["institution_id"],
+                score=1.0,
+                chunks=[
+                    ScoredChunk(
+                        chunk_id=c.id,
+                        service_id=c.service_id,
+                        source_id=c.source_id,
+                        section=c.section,
+                        text=c.text,
+                        score=1.0,
+                    )
+                    for c in chunks[:settings.retrieval_top_k]
+                ],
+            )
+        ]
+
     def search(self, db: Session, query: str, top_k: int | None = None) -> list[ServiceMatch]:
         self.ensure_loaded(db)
         top_k = top_k or settings.retrieval_top_k

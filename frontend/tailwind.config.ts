@@ -8,9 +8,11 @@ import type { Config } from 'tailwindcss';
  * it has not earned, and misleads people about who they can hold responsible
  * (see the wireframe principle "do not look like the State").
  *
- * Instead: a warm paper base, deep ink text, one confident teal for actions,
- * and an earth-toned amber reserved exclusively for "check this before you
- * act". Colour carries meaning here — it is never decoration.
+ * "Modern & clean" re-theme (v0.4): a cool near-white base, deep slate ink,
+ * one confident indigo for actions, and an amber reserved exclusively for
+ * "check this before you act". Colour carries meaning here — it is never
+ * decoration. Indigo sits deliberately far from state green/gold so the
+ * product reads as a modern neutral service, not an official channel.
  */
 const config: Config = {
   darkMode: 'class',
@@ -18,36 +20,36 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        paper: { DEFAULT: '#FAF9F6', raised: '#FFFFFF', sunk: '#F1F0EC' },
+        paper: { DEFAULT: '#F6F8FB', raised: '#FFFFFF', sunk: '#EDF1F7' },
         ink: {
-          DEFAULT: '#111A22',
-          soft: '#3D4A55',
-          faint: '#6B7A87',
-          line: '#E2E0DA',
+          DEFAULT: '#0F172A',
+          soft: '#475569',
+          faint: '#8A94A6',
+          line: '#E4E9F0',
         },
         night: {
-          DEFAULT: '#0B1015',
-          raised: '#131A21',
-          sunk: '#080C10',
-          line: '#232D36',
-          text: '#E6EAEE',
-          soft: '#A3B0BB',
-          faint: '#6D7C88',
+          DEFAULT: '#0B1220',
+          raised: '#111A2C',
+          sunk: '#070C17',
+          line: '#1E2A3D',
+          text: '#E3E8F0',
+          soft: '#93A1B5',
+          faint: '#66748A',
         },
         brand: {
-          50: '#E9F5F2',
-          100: '#C7E7DF',
-          200: '#93CFC1',
-          300: '#5CB4A1',
-          400: '#2F9A84',
-          500: '#0B7F6B',
-          600: '#076657',
-          700: '#054E43',
-          800: '#04382F',
-          900: '#02241E',
+          50: '#EEF2FF',
+          100: '#E0E7FF',
+          200: '#C7D2FE',
+          300: '#A5B4FC',
+          400: '#818CF8',
+          500: '#6366F1',
+          600: '#4F46E5',
+          700: '#4338CA',
+          800: '#3730A3',
+          900: '#312E81',
         },
-        ochre: { 100: '#FBEEE0', 300: '#E7B77E', 500: '#C2703A', 700: '#8C4B20' },
-        flag: { good: '#1E7F4F', warn: '#B4741B', bad: '#B3402F', mute: '#5C6B78' },
+        ochre: { 100: '#FFF4D6', 300: '#FACC15', 500: '#D97706', 700: '#B45309' },
+        flag: { good: '#15803D', warn: '#B45309', bad: '#DC2626', mute: '#64748B' },
       },
       fontFamily: {
         // System stack only. next/font would pull webfonts at build time and
@@ -64,8 +66,8 @@ const config: Config = {
       },
       borderRadius: { xl2: '1.25rem' },
       boxShadow: {
-        card: '0 1px 2px rgba(17,26,34,0.04), 0 8px 24px -12px rgba(17,26,34,0.18)',
-        lift: '0 2px 6px rgba(17,26,34,0.06), 0 20px 48px -20px rgba(17,26,34,0.28)',
+        card: '0 1px 2px rgba(15,23,42,0.04), 0 6px 16px -8px rgba(15,23,42,0.10)',
+        lift: '0 2px 4px rgba(15,23,42,0.05), 0 16px 32px -12px rgba(15,23,42,0.16)',
         inset: 'inset 0 1px 0 rgba(255,255,255,0.6)',
       },
       keyframes: {

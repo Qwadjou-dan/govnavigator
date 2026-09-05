@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import type { CandidateService, ClarifyQuestion, Institution, TraceStage } from '@/lib/types';
 import { Icon } from './ui';
+import { TalkToHuman } from './TalkToHuman';
 
 /* ------------------------------------------------------------- trace */
 
@@ -143,11 +144,14 @@ export function RefusalCard({
   institution,
   candidates,
   onPick,
+  queryText,
 }: {
   message: string;
   institution: Institution | null;
   candidates: CandidateService[];
   onPick: (id: string) => void;
+  /** The question that led here — the escalation log ranks on it. */
+  queryText?: string;
 }) {
   return (
     <div className="surface animate-rise px-5 py-5 sm:px-6">
@@ -209,6 +213,14 @@ export function RefusalCard({
             Your question has been logged. The services people ask for most are the ones we verify next —
             refusing today is how we decide what to cover tomorrow.
           </p>
+
+          <div className="mt-3 border-t hairline pt-3">
+            <TalkToHuman
+              queryText={queryText ?? message}
+              institution={institution}
+              outcome="refused"
+            />
+          </div>
         </div>
       </div>
     </div>
@@ -217,16 +229,20 @@ export function RefusalCard({
 
 /* ----------------------------------------------------------- blocked */
 
-export function BlockedCard({ message }: { message: string }) {
+export function BlockedCard({ message, queryText }: { message: string; queryText?: string }) {
   return (
     <div className="surface animate-rise px-5 py-5 sm:px-6">
       <div className="flex items-start gap-3">
         <span className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-paper-sunk dark:bg-night-sunk">
           <Icon.shield className="h-4 w-4 muted" />
         </span>
-        <div>
+        <div className="min-w-0 flex-1">
           <h2 className="text-base font-bold">That is outside what we do</h2>
           <p className="mt-1.5 max-w-2xl text-sm leading-relaxed soft text-pretty">{message}</p>
+
+          <div className="mt-3 border-t hairline pt-3">
+            <TalkToHuman queryText={queryText ?? message} institution={null} outcome="blocked" />
+          </div>
         </div>
       </div>
     </div>

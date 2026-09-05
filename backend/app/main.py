@@ -14,7 +14,7 @@ from .ai.providers import PROMPT_VERSION, get_provider
 from .ai.retrieval import retriever
 from .config import settings
 from .db import SessionLocal, init_db
-from .routers import admin, auth, catalog, feedback, query
+from .routers import admin, auth, catalog, coverage, feedback, query
 
 logging.basicConfig(
     level=logging.INFO,
@@ -129,5 +129,13 @@ def system() -> dict:
     }
 
 
-for r in (query.router, catalog.router, auth.router, auth.checklists, feedback.router, admin.router):
+for r in (
+    query.router,
+    catalog.router,
+    auth.router,
+    auth.checklists,
+    feedback.router,
+    coverage.router,
+    admin.router,
+):
     app.include_router(r, prefix=settings.api_prefix)

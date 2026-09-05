@@ -38,6 +38,7 @@ from ..schemas import (
 )
 from . import guardrails
 from .assembler import _by_id, _institution_out, build_contract
+from .conversation import Conversation, store as conversation_store
 from .embeddings import normalise
 from .prompts import (
     CONDITIONS_SCHEMA_HINT,
@@ -72,6 +73,13 @@ SUGGESTION_FLOOR = 0.30
 DECISIVE_SCORE = 0.62
 DECISIVE_MARGIN = 0.15
 
+# Words that fill a sentence without carrying its topic. "ok so how much then"
+# is a follow-up with one topic word, and counting "ok" and "then" against it
+# would turn a fragment into a sentence. Kept local to the continuation probe
+# on purpose: this is about *reading* hand-off phrases, not about scoring the
+# corpus, so the global stopword list stays untouched.
+FRAGMENT_FILLER = {"ok", "okay", "then", "so", "now", "please", "still", "just", "also", "like", "well", "right", "wait"}
+
 
 @dataclass
 class Trace:
@@ -99,6 +107,7 @@ def run_query(
     answers = answers or {}
     trace = Trace()
     provider = get_provider()
+    conv = conversation_store.get(session_id)
 
     # -- 1. intake ------------------------------------------------------
     cleaned, redacted = guardrails.strip_identifiers(text)
@@ -119,6 +128,9 @@ def run_query(
         query_id = _log(
             db, session_id, cleaned, normalised, "blocked", None, None, None, None,
             [], provider, {}, started,
+        )
+        conversation_store.record(
+            session_id, question=cleaned, query_id=query_id, outcome="blocked"
         )
         return QueryResponse(
             query_id=query_id,
@@ -152,12 +164,43 @@ def run_query(
     # from the list on a refusal card, their own words scored below the floor by
     # definition, so re-applying it here sends them straight back to the same
     # refusal. That made every suggestion on that card a dead end.
-    if forced_service_id is None and (chosen_id is None or top_score < settings.relevance_floor):
-        return _refuse(db, session_id, cleaned, normalised, matches, provider, trace, started)
+    #
+    # The floor is also not a wall against follow-ups. "How much?" is below any
+    # relevance floor — it contains no service at all — but in a session that
+    # just answered "register my business", refusing it would be absurd. When no
+    # candidate is confident and the previous turn settled on a service, we stay
+    # on it rather than claim we lost the thread.
+    propagated_id: str | None = None
+    if (
+        forced_service_id is None
+        and (chosen_id is None or top_score < settings.relevance_floor)
+    ):
+        # Nothing was confident, so this may be a follow-up with no service of
+        # its own. Memory is consulted only here, *below* the floor: it is a
+        # last resort, never something that overrides a real match.
+        propagated_id = _continue_from(cleaned, conv)
+        if propagated_id is not None:
+            chosen_id = propagated_id
+            trace.add(
+                "continue",
+                "You followed up on your previous question, so we stayed on the "
+                "service we were already showing.",
+                propagated=conv.last_service_name,
+            )
+        else:
+            return _refuse(db, session_id, cleaned, normalised, matches, provider, trace, started)
 
     service = db.get(Service, chosen_id) if chosen_id else None
     if service is None:
         return _refuse(db, session_id, cleaned, normalised, matches, provider, trace, started)
+
+    # A continued follow-up names no service of its own, so the retrieval
+    # evidence has no substance to answer from. Anchor the evidence on the
+    # service we just continued, so "how much?" is answered with that service's
+    # own fee sources and the audit trail ties to them, not to whatever weak
+    # matches its two words happened to produce.
+    if propagated_id is not None:
+        matches = retriever.service_matches(db, propagated_id) or matches
 
     # Say so plainly rather than quietly pretending we found this ourselves.
     # The card is still built only from verified, cited content — what changed
@@ -171,7 +214,15 @@ def run_query(
         )
 
     # -- 5. disambiguation ----------------------------------------------
-    if not skip_clarification and forced_service_id is None and len(matches) > 1:
+    # A propagated follow-up already has its service; asking "which do you
+    # mean?" of a sentence like "how much?" would be the machine forgetting
+    # the last thing it just told us.
+    if (
+        not skip_clarification
+        and forced_service_id is None
+        and propagated_id is None
+        and len(matches) > 1
+    ):
         runner_up = matches[1]
         # The margin scales with how uncertain we actually are, rather than
         # being a fixed gap between two numbers.
@@ -192,6 +243,9 @@ def run_query(
             query_id = _log(
                 db, session_id, cleaned, normalised, "clarify", None, None, None,
                 top_score, [], provider, {}, started,
+            )
+            conversation_store.record(
+                session_id, question=cleaned, query_id=query_id, outcome="clarify"
             )
             return QueryResponse(
                 query_id=query_id,
@@ -214,6 +268,19 @@ def run_query(
             )
 
     # -- 6. eligibility branching ---------------------------------------
+    # Continue the branch the previous turn settled on. "How much?" after "I
+    # want to renew my licence" is about the renewal fee, not the registration
+    # fee — the answer depends on what was chosen before, so we carry it and
+    # let anything in *this* sentence or request override it.
+    if propagated_id is not None and conv is not None:
+        answers = {**conv.answers, **answers}
+        trace.add(
+            "conditions",
+            f"Carried over the branch choices from your previous question on "
+            f"{service.name}.",
+            carried={c: v for c, v in answers.items() if c in (conv.answers or {})},
+        )
+
     # Before asking, check whether the question already answered us. Someone who
     # wrote "for a friend who is abroad" has said where they are; stopping to
     # ask is the machine failing to listen to words it was given.
@@ -248,6 +315,15 @@ def run_query(
         query_id = _log(
             db, session_id, cleaned, normalised, "clarify", service.id,
             service.coverage_tier, None, top_score, [], provider, {}, started,
+        )
+        conversation_store.record(
+            session_id,
+            question=cleaned,
+            query_id=query_id,
+            outcome="clarify",
+            resolved_service_id=service.id,
+            resolved_service_name=service.name,
+            answers=answers,
         )
         return QueryResponse(
             query_id=query_id,
@@ -333,6 +409,16 @@ def run_query(
     db.add(answer)
     db.commit()
 
+    conversation_store.record(
+        session_id,
+        question=cleaned,
+        query_id=query_id,
+        outcome="answered",
+        resolved_service_id=service.id,
+        resolved_service_name=service.name,
+        answers=answers,
+    )
+
     return QueryResponse(
         query_id=query_id,
         answer_id=answer.id,
@@ -354,6 +440,40 @@ def run_query(
 
 def _elapsed(started: float) -> int:
     return int((time.perf_counter() - started) * 1000)
+
+
+def _continue_from(cleaned: str, conv: Conversation | None) -> str | None:
+    """Return the prior turn's service when this sentence clearly refers back.
+
+    The relevance floor exists to stop *us* guessing, but a follow-up like
+    "how much?" cannot be refused on relevance without becoming a dead end —
+    it has no substance to score. A fragment with a settled conversation behind
+    it continues that conversation rather than being asked what it means.
+
+    Two guards keep memory from reaching across topics, and both are cheap:
+
+      * the session must have settled on a service before (a refusal never
+        does), so a dead end never becomes a preference;
+      * the sentence must be a fragment — short, with almost nothing in it.
+        A full sentence carrying its own content is a new subject.
+
+    There is deliberately no "did it name another service" guard here. This
+    runs only *below* the relevance floor, and a query that truly names a
+    service fuses above it — so every match that reaches this probe is spurious
+    anyway ("documents" happens to share a token with a passport alias). Letting
+    a real topic word through costs a wrong continuation the trace makes
+    visible; refusing a genuine follow-up because of the same spurious token is
+    a dead end. GovNavigator errs toward continuing the conversation.
+    """
+    if conv is None or not conv.has_answered_context:
+        return None
+    words = cleaned.split()
+    content = [
+        t for t in content_tokens(cleaned) if t not in FRAGMENT_FILLER
+    ]
+    if len(words) > 4 and len(content) >= 3:
+        return None
+    return conv.last_service_id
 
 
 def _resolve_intent(text: str, matches: list[ServiceMatch], provider) -> tuple[str | None, str]:
@@ -725,6 +845,9 @@ def _refuse(
         matches[0].score if matches else 0.0, [], provider, {}, started,
     )
     db.commit()
+    conversation_store.record(
+        session_id, question=cleaned, query_id=query_id, outcome="refused"
+    )
     return QueryResponse(
         query_id=query_id,
         session_id=session_id,

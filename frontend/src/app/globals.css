@@ -102,7 +102,7 @@
   }
   .btn-primary {
     @apply btn bg-brand-500 text-white hover:bg-brand-600 active:scale-[.985]
-           shadow-[0_1px_0_rgba(255,255,255,.18)_inset,0_6px_16px_-8px_rgba(11,127,107,.9)];
+           shadow-[0_1px_0_rgba(255,255,255,.25)_inset,0_8px_20px_-10px_rgba(79,70,229,.75)];
   }
   .btn-ghost {
     @apply btn border border-ink-line bg-paper-raised text-ink hover:bg-paper-sunk;
@@ -135,11 +135,11 @@
   }
 
   .skeleton {
-    @apply rounded-lg bg-[linear-gradient(90deg,theme(colors.paper.sunk)_25%,#E9E7E1_37%,theme(colors.paper.sunk)_63%)]
+    @apply rounded-lg bg-[linear-gradient(90deg,theme(colors.paper.sunk)_25%,#E2E8F0_37%,theme(colors.paper.sunk)_63%)]
            bg-[length:400%_100%] animate-sweep;
   }
   .dark .skeleton {
-    @apply bg-[linear-gradient(90deg,#131A21_25%,#1B242C_37%,#131A21_63%)];
+    @apply bg-[linear-gradient(90deg,#0B1220_25%,#16202F_37%,#0B1220_63%)];
   }
 
   /* Long content must scroll inside its own box, never the page body. */

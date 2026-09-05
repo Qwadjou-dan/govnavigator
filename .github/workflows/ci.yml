@@ -1,0 +1,66 @@
+# CI on every push/PR: the three things Demo Day would break if they regressed.
+#
+#  1. Backend unit/integration tests  (pytest, SQLite — no services needed)
+#  2. Golden-set evaluation           (must stay 100%)
+#  3. Frontend production build       (catches TS/Tailwind regressions)
+#
+# Frontend build needs no secrets: NEXT_PUBLIC_API_URL is read at build time
+# client-side only, and a placeholder is enough for `next build` to succeed.
+
+name: ci
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+
+jobs:
+  backend:
+    name: Backend (pytest + eval)
+    runs-on: ubuntu-latest
+    env:
+      # No .env in CI (it's gitignored), and the code default for DATABASE_URL
+      # is Postgres — so point the harness at a throwaway SQLite explicitly.
+      DATABASE_URL: sqlite:///./govnav.db
+    defaults:
+      run:
+        working-directory: backend
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run test suite
+        run: python -m pytest tests/ -q
+
+      - name: Seed throwaway database
+        run: python -m app.scripts.seed --reset
+
+      - name: Run golden-set evaluation
+        run: python -m app.scripts.evaluate
+
+  frontend:
+    name: Frontend (production build)
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: frontend
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Production build
+        run: npm run build

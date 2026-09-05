@@ -46,6 +46,18 @@ export function sessionId(): string {
   }
 }
 
+/** "Start over": drop the session id so the next ask begins a fresh
+ *  conversation. The old records stay in the server's audit trail; they just
+ *  stop steering anything. */
+export function resetSession(): void {
+  if (typeof window === 'undefined') return;
+  try {
+    window.localStorage.removeItem(SESSION_KEY);
+  } catch {
+    /* private browsing — nothing was stored anyway */
+  }
+}
+
 export class ApiError extends Error {
   status: number;
   constructor(message: string, status: number) {
@@ -142,6 +154,18 @@ export const sendFeedback = (payload: {
   comment?: string;
 }) =>
   request<{ recorded: boolean; message: string }>('/feedback', {
+    method: 'POST',
+    body: JSON.stringify(payload),
+  });
+
+/** Log the "I need a real person" click into the curator backlog. */
+export const requestEscalation = (payload: {
+  query_text: string;
+  service_id?: string | null;
+  institution_id?: string | null;
+  outcome: string;
+}) =>
+  request<{ recorded: boolean; message: string }>('/coverage/escalate', {
     method: 'POST',
     body: JSON.stringify(payload),
   });

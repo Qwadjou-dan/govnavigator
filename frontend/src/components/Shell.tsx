@@ -19,7 +19,7 @@ function Mark({ size = 'md' }: { size?: 'md' | 'sm' }) {
   return (
     <span className="flex items-center gap-2.5">
       <span
-        className={`relative flex shrink-0 items-center justify-center rounded-xl bg-brand-500 text-white shadow-[0_5px_14px_-4px_rgba(11,127,107,.85)] ${
+        className={`relative flex shrink-0 items-center justify-center rounded-xl bg-brand-600 text-white shadow-[0_4px_12px_-6px_rgba(79,70,229,.6)] ${
           big ? 'h-11 w-11' : 'h-9 w-9'
         }`}
       >
@@ -43,7 +43,7 @@ function Mark({ size = 'md' }: { size?: 'md' | 'sm' }) {
           GovNavigator
         </span>
         <span
-          className={`mt-0.5 block font-bold uppercase tracking-[0.16em] text-brand-600 dark:text-brand-300 ${
+          className={`mt-0.5 block font-semibold uppercase tracking-[0.16em] text-brand-600 dark:text-brand-300 ${
             big ? 'text-[11px]' : 'text-2xs'
           }`}
         >
@@ -111,10 +111,10 @@ export function Header() {
               <Link
                 key={item.href}
                 href={item.href}
-                className={`shrink-0 rounded-lg px-2.5 py-1.5 text-[13px] font-medium transition-colors ${
+                className={`shrink-0 rounded-full px-3 py-1.5 text-[13px] font-semibold transition-colors ${
                   active
-                    ? 'bg-paper-sunk text-ink dark:bg-night-sunk dark:text-night-text'
-                    : 'text-ink-soft hover:text-ink dark:text-night-soft dark:hover:text-night-text'
+                    ? 'bg-brand-50 text-brand-700 ring-1 ring-inset ring-brand-200 dark:bg-night-raised dark:text-brand-200 dark:ring-night-line'
+                    : 'text-ink-soft hover:bg-paper-sunk hover:text-ink dark:text-night-soft dark:hover:bg-night-sunk dark:hover:text-night-text'
                 }`}
               >
                 {item.label}
@@ -135,9 +135,9 @@ export function Header() {
  */
 export function IndependenceBar() {
   return (
-    <div className="border-b hairline bg-paper-sunk dark:bg-night-sunk">
+    <div className="border-b hairline bg-paper-raised/80 dark:bg-night-raised/60">
       <p className="mx-auto flex max-w-5xl items-center gap-2 px-4 py-1.5 text-2xs font-medium muted">
-        <Icon.info className="h-3 w-3 shrink-0" />
+        <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-brand-500" aria-hidden="true" />
         <span className="text-pretty">
           Independent public-information service. <strong className="font-semibold">Not a government agency</strong> — always
           confirm at the official source before you travel or pay.
@@ -155,32 +155,32 @@ export function Footer() {
 
   return (
     <footer className="no-print mt-16 border-t hairline">
-      <div className="mx-auto max-w-5xl space-y-6 px-4 py-8">
-        <div className="grid gap-6 sm:grid-cols-3">
-          <div>
+      <div className="mx-auto max-w-5xl space-y-7 px-4 py-8">
+        <div className="flex flex-col gap-6 sm:flex-row sm:items-start sm:justify-between">
+          <div className="max-w-xs">
             <Mark size="sm" />
-            <p className="mt-2.5 max-w-xs text-xs soft text-pretty">
+            <p className="mt-2.5 text-xs soft text-pretty">
               Turns what you want to do into the institution, requirements, cost and steps the State
               actually requires — with a citation on every claim.
             </p>
           </div>
-          <div>
-            <p className="label mb-2">What this is not</p>
-            <ul className="space-y-1 text-xs soft">
-              <li>Not a government website</li>
-              <li>Not legal, tax or immigration advice</li>
-              <li>It does not apply or pay on your behalf</li>
-              <li>It never stores your Ghana Card or TIN</li>
-            </ul>
-          </div>
-          <div>
-            <p className="label mb-2">How it answers</p>
-            <ul className="space-y-1 text-xs soft">
-              <li>Only from official sources it can cite</li>
-              <li>It declines when it cannot cite one</li>
-              <li>Fees carry the date they were set</li>
-              <li>Every answer is auditable afterwards</li>
-            </ul>
+          <div className="grid grid-cols-2 gap-6 sm:grid-cols-2 sm:gap-10">
+            <div>
+              <p className="label mb-2">What this is not</p>
+              <ul className="space-y-1.5 text-xs soft">
+                <li>Not a government website</li>
+                <li>Not legal, tax or immigration advice</li>
+                <li>It never stores your Ghana Card or TIN</li>
+              </ul>
+            </div>
+            <div>
+              <p className="label mb-2">How it answers</p>
+              <ul className="space-y-1.5 text-xs soft">
+                <li>Only from official sources it can cite</li>
+                <li>It declines when it cannot cite one</li>
+                <li>Every answer is auditable afterwards</li>
+              </ul>
+            </div>
           </div>
         </div>
 

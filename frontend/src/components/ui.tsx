@@ -120,6 +120,16 @@ export const Icon = {
       <path d="M4 21V6l8-3 8 3v15" /><path d="M9 21v-5h6v5M9 10h.01M15 10h.01M9 13.5h.01M15 13.5h.01" />
     </svg>
   ),
+  chat: (p: IconProps) => (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round" className={p.className ?? base}>
+      <path d="M21 12a8 8 0 0 1-8 8H4l2-3a8 8 0 1 1 15-5Z" /><path d="M8 12h.01M12 12h.01M16 12h.01" />
+    </svg>
+  ),
+  refresh: (p: IconProps) => (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round" className={p.className ?? base}>
+      <path d="M20 5v5h-5" /><path d="M4 19v-5h5" /><path d="M20 10a8 8 0 0 0-14-3.5L4 10M4 14a8 8 0 0 0 14 3.5L20 14" />
+    </svg>
+  ),
 };
 
 /* --------------------------------------------------------------- badges */
@@ -310,7 +320,7 @@ export function Primary({
       <div className="mb-3.5 flex flex-wrap items-center justify-between gap-x-3 gap-y-2">
         <h3 className="flex items-center gap-2.5 text-[15px] font-bold tracking-tight sm:text-base">
           {icon && (
-            <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-brand-500 text-white shadow-[0_3px_8px_-3px_rgba(11,127,107,.9)]">
+            <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-brand-600 text-white shadow-[0_4px_10px_-4px_rgba(79,70,229,.6)]">
               {icon}
             </span>
           )}
