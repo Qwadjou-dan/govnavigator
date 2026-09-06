@@ -150,3 +150,15 @@ Deploy target: **Supabase (PostgreSQL + pgvector) + Render (FastAPI) + Vercel (N
 - [ ] **Admin Console**:
   - Sign in at `https://<vercel-url>/admin` with your `ADMIN_EMAIL` and `ADMIN_PASSWORD`.
   - View query logs, feedback, and system verification stats.
+
+---
+
+## Supabase pooler gotcha (fixed in code, kept on record)
+
+Supabase's connection pooler (`*.pooler.supabase.com`, port `6543`) runs PgBouncer in **transaction pooling mode**, which moves a connection between backend sessions mid-transaction. psycopg3's default server-side prepared statements then collide, surfacing as:
+
+```
+psycopg.errors.DuplicatePreparedStatement: prepared statement "_pg3_1" already exists
+```
+
+The fix, already in `backend/app/db.py`: for Postgres the engine passes `connect_args={"prepare_threshold": None}`, which disables server-side prepares entirely. If you ever see this error again, that is the knob.

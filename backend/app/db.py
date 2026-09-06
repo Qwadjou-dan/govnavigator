@@ -11,6 +11,16 @@ from .config import settings
 
 connect_args = {"check_same_thread": False} if settings.database_url.startswith("sqlite") else {}
 
+if settings.is_postgres:
+    # PgBouncer (Supabase pooler, port 6543) runs in transaction pooling mode,
+    # where a connection can move between backend sessions mid-transaction.
+    # psycopg3's default server-side prepared statements (`PREPARE _pg3_1 ...`)
+    # therefore collide and Surface as `DuplicatePreparedStatement` on the first
+    # INSERT under load. `prepare_threshold=None` disables server-side prepares
+    # entirely — every statement is sent as full text, which costs nothing at
+    # our query volume and makes the pooler a non-issue.
+    connect_args["prepare_threshold"] = None
+
 engine = create_engine(
     settings.database_url,
     # Hosted Postgres providers close idle connections without telling us. Both
