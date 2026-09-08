@@ -35,11 +35,22 @@ export const viewport: Viewport = {
  */
 const THEME_SCRIPT = `(function(){try{var s=localStorage.getItem('gn.theme');var d=s?s==='dark':matchMedia('(prefers-color-scheme: dark)').matches;if(d)document.documentElement.classList.add('dark')}catch(e){}})();`;
 
+/**
+ * Offline reading (Phase 4). Registered only in production builds: `next dev`
+ * mutates the module graph constantly and a worker caching those chunks would
+ * serve stale code. After a page load, the worker pre-caches the shell and
+ * caches visited service data so they survive a dropped signal.
+ */
+const SW_SCRIPT = `(function(){try{if('serviceWorker' in navigator){window.addEventListener('load',function(){navigator.serviceWorker.register('/sw.js').catch(function(e){console.warn('sw:',e)})})}}catch(e){}})();`;
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en-GH" suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: THEME_SCRIPT }} />
+        {process.env.NODE_ENV === 'production' && (
+          <script dangerouslySetInnerHTML={{ __html: SW_SCRIPT }} />
+        )}
       </head>
       <body className="min-h-dvh">
         <a
