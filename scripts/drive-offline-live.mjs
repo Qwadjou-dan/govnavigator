@@ -134,10 +134,21 @@ async function main() {
   })()`);
   console.log('   offline render:', JSON.stringify(offline));
 
+  console.log('4) still OFFLINE, hard-reload the /services list…');
+  await send('Page.navigate', { url: `${BASE}/services` });
+  await sleep(3500);
+  const list = await evalJS(`(() => ({
+    cardLinks: document.querySelectorAll('a[href^="/service/"]').length,
+    empty: document.body.innerText.includes('Nothing matches that filter'),
+    skeletons: document.querySelectorAll('.skeleton').length,
+  }))()`);
+  console.log('   offline /services:', JSON.stringify(list));
+
   await send('Network.emulateNetworkConditions', { offline: false, latency: 0, downloadThroughput: -1, uploadThroughput: -1 });
-  console.log('\nRESULT:', offline.rendered && offline.bodyText > 200
-    ? 'PASS — card renders offline from SW cache'
-    : 'FAIL — ' + (offline.error || 'card did not render'));
+  const ok = offline.rendered && offline.bodyText > 200 && list.cardLinks > 0 && !list.empty;
+  console.log('\nRESULT:', ok
+    ? 'PASS — card AND services list render offline from SW cache'
+    : 'FAIL — ' + (offline.error || `offline post: ${JSON.stringify(offline)} / list: ${JSON.stringify(list)}`));
   console.log('console errors:', consoleLogs.filter((l) => /error|sw:|fail/i.test(l)).slice(0, 10));
   console.log('page errors:', await evalJS(`window.__gnErrors || []`));
   chrome.kill();

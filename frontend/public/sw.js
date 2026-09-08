@@ -5,7 +5,7 @@
  * and still wants the checklist. Bump VERSION whenever this file changes so
  * the caches are rebuilt.
  */
-const VERSION = 'v6';
+const VERSION = 'v7';
 const SHELL = `gn-shell-${VERSION}`; // own-origin app shell + static assets
 // Visited service data (cross-origin GET). Deliberately unversioned: the page
 // writes here too (`api.ts`), and data is network-first with the cache used
@@ -133,10 +133,12 @@ async function staleWhileRevalidate(request) {
     return cached;
   }
   // No cache yet: wait for the network, but bound it — an unreachable backend
-  // must fail cleanly, not leave the skeleton up forever.
+  // must fail cleanly, not leave the skeleton up forever. Generous because the
+  // free Render instance cold-starts (~15s) on idle; a tight bound would paint
+  // the list empty for a person whose backend was just waking up.
   return Promise.race([
     network,
-    new Promise((_, reject) => setTimeout(() => reject(new Error('offline and not cached')), 12000)),
+    new Promise((_, reject) => setTimeout(() => reject(new Error('offline and not cached')), 25000)),
   ]);
 }
 
