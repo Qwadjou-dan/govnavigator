@@ -95,6 +95,16 @@ async function request<T>(path: string, init: RequestInit = {}): Promise<T> {
     );
   }
 
+  // Belt-and-suspenders offline support: write successful GET responses into
+  // the same Cache Storage the service worker reads from (`gn-api-v1`).  On a
+  // slow connection the SW may not have claimed the page yet when the first
+  // API call fires, so the SW's own cache.put never runs.  Writing here
+  // ensures the data is waiting in the cache when the person goes offline.
+  if (res.ok && (!init.method || init.method === 'GET') && typeof caches !== 'undefined') {
+    const cacheReq = new Request(`${BASE}${path}`);
+    caches.open('gn-api-v1').then((c) => c.put(cacheReq, res.clone())).catch(() => {});
+  }
+
   if (!res.ok) {
     let detail = `Request failed (${res.status}).`;
     try {

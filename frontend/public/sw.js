@@ -5,7 +5,7 @@
  * and still wants the checklist. Bump VERSION whenever this file changes so
  * the caches are rebuilt.
  */
-const VERSION = 'v1';
+const VERSION = 'v2';
 const SHELL = `gn-shell-${VERSION}`; // own-origin app shell + static assets
 const API = `gn-api-${VERSION}`;     // visited service data (cross-origin GET)
 
