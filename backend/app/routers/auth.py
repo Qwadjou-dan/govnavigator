@@ -8,6 +8,7 @@ that behaviour is disabled outside development.
 """
 from __future__ import annotations
 
+import logging
 from datetime import datetime, timedelta, timezone
 
 from fastapi import APIRouter, Depends, HTTPException
@@ -16,6 +17,7 @@ from sqlalchemy.orm import Session
 from ..config import settings
 from ..db import get_db
 from ..models import OneTimeCode, SavedChecklist, User
+from ..notify import NotifyError, send_login_code
 from ..schemas import (
     ChecklistOut,
     RequestCodeRequest,
@@ -36,6 +38,7 @@ router = APIRouter(prefix="/auth", tags=["auth"])
 checklists = APIRouter(prefix="/checklists", tags=["checklists"])
 
 CODE_TTL_MINUTES = 10
+log = logging.getLogger("govnavigator.auth")
 
 
 @router.post("/request-code")
@@ -56,10 +59,28 @@ def request_code(payload: RequestCodeRequest, db: Session = Depends(get_db)) -> 
         "expires_in_minutes": CODE_TTL_MINUTES,
         "message": "We sent you a 6-digit code. It is valid for 10 minutes.",
     }
+
+    # Development convenience only: echo the code so the flow can be shown
+    # without an email provider. Disabled outside development (see main.py).
     if settings.app_env == "development":
-        # Development convenience only. See docs/DEPLOYMENT.md before going live.
         response["dev_code"] = code
         response["message"] += " (development mode: the code is shown below)"
+        return response
+
+    # Real delivery. Fail loudly rather than let the person think a code is on
+    # its way when the provider could not be reached.
+    if settings.resend_api_key:
+        try:
+            send_login_code(payload.contact, code)
+        except NotifyError as exc:
+            log.warning("OTP email failed for %s: %s", payload.contact, exc)
+            raise HTTPException(502, "We could not send the code right now. Please try again.")
+    else:
+        log.warning(
+            "request-code in %s but no RESEND_API_KEY set — code not delivered to %s",
+            settings.app_env,
+            payload.contact,
+        )
     return response
 
 

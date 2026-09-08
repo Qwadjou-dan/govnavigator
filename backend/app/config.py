@@ -34,6 +34,16 @@ class Settings(BaseSettings):
     admin_password: str = "changeme-in-production"
     cors_origins: str = "http://localhost:3000,http://127.0.0.1:3000"
 
+    # --- notifications ------------------------------------------------
+    # Where the one-time login code goes out. Resend is the default (free tier,
+    # no card). With no key set, request-code keeps its development behaviour
+    # (code echoed in the response) — the app refuses to fake delivery in
+    # production, so set this before going live.
+    resend_api_key: str = ""
+    # Resend's free tier only delivers from the account's verified sender. The
+    # default "onboarding@resend.dev" reaches the account owner's own inbox.
+    email_from: str = "GovNavigator <onboarding@resend.dev>"
+
     # --- rate limiting ------------------------------------------------
     rate_limit_per_minute: int = 20
     rate_limit_burst: int = 8

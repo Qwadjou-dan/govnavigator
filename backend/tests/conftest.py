@@ -22,6 +22,11 @@ os.environ["APP_ENV"] = "development"
 # The limiter is per-process and these tests are much faster than a person.
 os.environ["RATE_LIMIT_PER_MINUTE"] = "1000"
 os.environ["RATE_LIMIT_BURST"] = "1000"
+# Pin the suite to the deterministic grounded baseline regardless of what a
+# developer's .env says. A live model (auto + a key) makes intent resolution
+# non-deterministic and slow, which turns passing tests flaky — CI has no .env
+# and runs baseline, so local runs must match that or they diverge.
+os.environ["LLM_PROVIDER"] = "none"
 
 
 @pytest.fixture(scope="session", autouse=True)
