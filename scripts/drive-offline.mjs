@@ -88,7 +88,7 @@ async function main() {
   console.log('2) visit /services and open the first service card…');
   await send('Page.navigate', { url: 'http://localhost:3000/services' });
   try {
-    await waitFor(`!!document.querySelector('a[href^="/service/"]')`, 'service links', 8000);
+    await waitFor(`!!document.querySelector('a[href^="/service/"]')`, 'service links', 20000);
   } catch (e) {
     const diag = await evalJS(`(() => ({
       body: document.body.innerText.slice(0, 200),

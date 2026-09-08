@@ -41,7 +41,7 @@ const THEME_SCRIPT = `(function(){try{var s=localStorage.getItem('gn.theme');var
  * serve stale code. After a page load, the worker pre-caches the shell and
  * caches visited service data so they survive a dropped signal.
  */
-const SW_SCRIPT = `(function(){try{if('serviceWorker' in navigator){window.addEventListener('load',function(){navigator.serviceWorker.register('/sw.js').catch(function(e){console.warn('sw:',e)})})}}catch(e){}})();`;
+const SW_SCRIPT = `(function(){try{if('serviceWorker' in navigator){var base=${JSON.stringify(process.env.NEXT_PUBLIC_API_URL ?? '')};var prime=function(){var c=navigator.serviceWorker.controller;if(c&&base){c.postMessage({type:'GN_PRIME_LISTS',base:base})}};window.addEventListener('load',function(){navigator.serviceWorker.register('/sw.js').then(function(){prime();navigator.serviceWorker.addEventListener('controllerchange',prime)})['catch'](function(e){console.warn('sw:',e)})})}}catch(e){}})();`;
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
