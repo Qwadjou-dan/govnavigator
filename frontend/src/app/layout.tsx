@@ -32,8 +32,14 @@ export const viewport: Viewport = {
 /**
  * Applied before paint so a person who chose dark mode never sees a flash of
  * white. On a slow connection that flash is the first thing they would see.
+ * Also handles low-bandwidth/plain-text mode persistence.
  */
-const THEME_SCRIPT = `(function(){try{var s=localStorage.getItem('gn.theme');var d=s?s==='dark':matchMedia('(prefers-color-scheme: dark)').matches;if(d)document.documentElement.classList.add('dark')}catch(e){}})();`;
+const THEME_SCRIPT = `(function(){try{
+  var s=localStorage.getItem('gn.theme');
+  var d=s?s==='dark':matchMedia('(prefers-color-scheme: dark)').matches;
+  if(d)document.documentElement.classList.add('dark');
+  if(localStorage.getItem('gn.low_bandwidth')==='true')document.documentElement.classList.add('low-bandwidth');
+}catch(e){}})();`;
 
 /**
  * Offline reading (Phase 4). Registered only in production builds: `next dev`

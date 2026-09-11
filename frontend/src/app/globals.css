@@ -47,6 +47,44 @@
       scroll-behavior: auto !important;
     }
   }
+
+  /* Low-bandwidth / plain-text mode: stripping decorative overhead for 2G/3G. */
+  .low-bandwidth {
+    --tw-shadow: 0 0 #0000 !important;
+    --tw-shadow-colored: 0 0 #0000 !important;
+    box-shadow: none !important;
+  }
+  .low-bandwidth * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    box-shadow: none !important;
+  }
+  .low-bandwidth .skeleton {
+    animation: none !important;
+    background: theme(colors.paper.sunk) !important;
+  }
+  .dark.low-bandwidth .skeleton {
+    background: theme(colors.night.sunk) !important;
+  }
+  .low-bandwidth header {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    background-color: theme(colors.paper.DEFAULT) !important;
+  }
+  .dark.low-bandwidth header {
+    background-color: theme(colors.night.DEFAULT) !important;
+  }
+  .low-bandwidth .surface,
+  .low-bandwidth .surface-sunk,
+  .low-bandwidth .tile {
+    box-shadow: none !important;
+  }
+  .low-bandwidth .btn-primary {
+    box-shadow: none !important;
+  }
 }
 
 @layer components {

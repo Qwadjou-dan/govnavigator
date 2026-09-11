@@ -54,6 +54,58 @@ function Mark({ size = 'md' }: { size?: 'md' | 'sm' }) {
   );
 }
 
+const BANDWIDTH_KEY = 'gn.low_bandwidth';
+
+/**
+ * Low-bandwidth / plain-text mode (§4.4). One tap strips the decorative
+ * overhead — shadows, blurs, animations, tinted panels — leaving high-contrast
+ * text that paints fast on 2G/3G and low-end handsets. Persisted in
+ * localStorage so it survives reloads, and applied by the pre-paint script in
+ * layout.tsx so there is never a flash of the full design.
+ */
+function BandwidthToggle() {
+  const [plain, setPlain] = useState(false);
+
+  useEffect(() => {
+    let stored: string | null = null;
+    try {
+      stored = window.localStorage.getItem(BANDWIDTH_KEY);
+    } catch {
+      /* private browsing */
+    }
+    const on = stored === 'true';
+    setPlain(on);
+    document.documentElement.classList.toggle('low-bandwidth', on);
+  }, []);
+
+  function toggle() {
+    const next = !plain;
+    setPlain(next);
+    document.documentElement.classList.toggle('low-bandwidth', next);
+    try {
+      if (next) window.localStorage.setItem(BANDWIDTH_KEY, 'true');
+      else window.localStorage.removeItem(BANDWIDTH_KEY);
+    } catch {
+      /* nothing to do */
+    }
+  }
+
+  return (
+    <button
+      onClick={toggle}
+      className="btn-quiet !px-2.5"
+      aria-pressed={plain}
+      title={plain ? 'Plain-text mode on — tap to show the full design' : 'Low-bandwidth plain-text mode — strips graphics for slow connections'}
+    >
+      {plain ? (
+        <Icon.doc />
+      ) : (
+        <Icon.doc className="opacity-60" />
+      )}
+    </button>
+  );
+}
+
 function ThemeToggle() {
   const [dark, setDark] = useState(false);
 
@@ -123,6 +175,7 @@ export function Header() {
           })}
         </nav>
         <ThemeToggle />
+        <BandwidthToggle />
       </div>
     </header>
   );
@@ -197,9 +250,11 @@ export function Footer() {
             </span>
             <span>·</span>
             <span>prompts {system.prompt_version}</span>
-            <Link href="/admin" className="ml-auto hover:text-brand-500">
-              Curator console
-            </Link>
+            <span className="ml-auto flex items-center gap-3">
+              <Link href="/admin" className="hover:text-brand-500">
+                Curator console
+              </Link>
+            </span>
           </div>
         )}
       </div>
