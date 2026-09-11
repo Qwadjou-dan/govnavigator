@@ -366,3 +366,41 @@ export function Spinner({ className = 'h-4 w-4' }: { className?: string }) {
     </svg>
   );
 }
+
+/**
+ * A pure-div bar chart that carries zero JavaScript overhead.  Every bar is
+ * an inline style so it works with no chart library and is visible even when
+ * `.low-bandwidth` strips the remaining cosmetic CSS.  NFR-2 keeps the page
+ * under 200KB for people on metered bundles — a chart library would blow the
+ * budget on its own.
+ */
+export function MiniBars({
+  data,
+  max,
+  heightPx = 100,
+}: {
+  data: { label: string; value: number }[];
+  max?: number;
+  heightPx?: number;
+}) {
+  const ceiling = max ?? Math.max(...data.map((d) => d.value), 1);
+  return (
+    <div className="flex items-end gap-0.5" style={{ height: heightPx }}>
+      {data.map((d, i) => {
+        const pct = Math.round((d.value / ceiling) * 100);
+        return (
+          <div key={i} className="flex min-w-0 flex-1 flex-col items-center gap-0.5" title={`${d.label}: ${d.value}`}>
+            <span className="text-2xs tabular-nums muted">{d.value}</span>
+            <div
+              className="w-full rounded-t-sm bg-brand-400 dark:bg-brand-500"
+              style={{ height: `${Math.max(pct, d.value ? 2 : 0)}%` }}
+            />
+            {d.label && (
+              <span className="text-2xs muted truncate w-full text-center">{d.label}</span>
+            )}
+          </div>
+        );
+      })}
+    </div>
+  );
+}

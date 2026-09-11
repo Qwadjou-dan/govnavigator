@@ -260,3 +260,27 @@ class CoverageRequest(Base):
     count: Mapped[int] = mapped_column(Integer, default=1)
     status: Mapped[str] = mapped_column(String(16), default="open")
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=utcnow)
+
+
+class CrawlSnapshot(Base):
+    """An append-only record of one fetch of a source (FR-10, change detection).
+
+    Every run of `python -m app.scripts.ingest` appends one row per source it
+    fetched. Comparing a new snapshot against the previous one for the same
+    source is what tells the team "this official page changed" without crawling
+    ever writing to the served knowledge base — a crawled page is untrusted
+    input (see guardrails.py), so change always lands in the curation review,
+    never silently in the answer the public sees.
+    """
+
+    __tablename__ = "crawl_snapshots"
+
+    id: Mapped[str] = mapped_column(String(32), primary_key=True, default=_uuid)
+    source_id: Mapped[str] = mapped_column(ForeignKey("sources.id"), index=True)
+    fetched_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=utcnow)
+    # sha256 hex of the raw response bytes, so a PDF or any other binary
+    # content is hashed without being parsed.
+    content_hash: Mapped[str] = mapped_column(String(64), default="")
+    http_status: Mapped[int] = mapped_column(Integer, default=0)
+    bytes_len: Mapped[int] = mapped_column(Integer, default=0)
+    error: Mapped[str] = mapped_column(Text, default="")

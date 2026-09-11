@@ -1,7 +1,10 @@
 'use client';
 
 import { useCallback, useEffect, useState } from 'react';
+import Link from 'next/link';
 import {
+  adminAnalytics,
+  adminAudit,
   adminCorrections,
   adminGaps,
   adminOverview,
@@ -10,11 +13,9 @@ import {
   adminVerify,
   curatorLogin,
   getToken,
-  listServices,
   setToken,
 } from '@/lib/api';
-import type { ServiceSummary } from '@/lib/types';
-import { Empty, Icon, Section, Spinner } from '@/components/ui';
+import { Empty, FreshnessBadge, Icon, MiniBars, Section, Spinner } from '@/components/ui';
 
 /**
  * The curator console. Three jobs: see how the system is actually behaving,
@@ -33,25 +34,28 @@ export default function AdminPage() {
   const [error, setError] = useState<string | null>(null);
 
   const [overview, setOverview] = useState<any>(null);
+  const [analytics, setAnalytics] = useState<any>(null);
+  const [audit, setAudit] = useState<any>(null);
   const [gaps, setGaps] = useState<any[]>([]);
   const [corrections, setCorrections] = useState<any[]>([]);
   const [recent, setRecent] = useState<any[]>([]);
-  const [services, setServices] = useState<ServiceSummary[]>([]);
 
   const load = useCallback(async () => {
     try {
-      const [o, g, c, r, s] = await Promise.all([
+      const [o, g, c, r, a, au] = await Promise.all([
         adminOverview(),
         adminGaps(),
         adminCorrections(),
         adminRecent(),
-        listServices(),
+        adminAnalytics(),
+        adminAudit(),
       ]);
       setOverview(o);
       setGaps(g);
       setCorrections(c);
       setRecent(r);
-      setServices(s);
+      setAnalytics(a);
+      setAudit(au);
       setAuthed(true);
     } catch {
       setAuthed(false);
@@ -125,6 +129,9 @@ export default function AdminPage() {
     </div>
   );
 
+  /* last 14 days of the analytics window for the bar chart */
+  const chartWindow = analytics?.daily?.slice(-14) ?? [];
+
   return (
     <div className="space-y-8">
       <header className="flex items-start justify-between gap-3">
@@ -169,6 +176,53 @@ export default function AdminPage() {
             )}
           </section>
         </>
+      )}
+
+      {analytics && (
+        <section className="space-y-5">
+          <Section title="Analytics" icon={<Icon.spark className="h-4 w-4 text-brand-500" />}>
+            <div className="space-y-5">
+              <div className="surface-sunk px-4 py-4">
+                <p className="label mb-2">Questions per day — last 14 days</p>
+                {chartWindow.length ? (
+                  <MiniBars
+                    data={chartWindow.map((d: any) => ({ label: d.date.slice(5), value: d.queries }))}
+                  />
+                ) : (
+                  <p className="text-sm muted">No data yet.</p>
+                )}
+              </div>
+
+              <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+                {Object.entries(analytics.outcome_split).filter(([k]) => k !== 'total').map(([k, v]) => (
+                  <div key={k} className="surface px-4 py-3.5">
+                    <p className="label">{k}</p>
+                    <p className="mt-1 text-xl font-extrabold tabular-nums">{v as number}</p>
+                  </div>
+                ))}
+                {analytics.languages?.slice(0, 3).map((l: any) => (
+                  <div key={l.language} className="surface px-4 py-3.5">
+                    <p className="label">Language: {l.language}</p>
+                    <p className="mt-1 text-xl font-extrabold tabular-nums">{l.count}</p>
+                  </div>
+                ))}
+              </div>
+
+              {analytics.top_services?.length > 0 && (
+                <div>
+                  <p className="label mb-2">Top requested services</p>
+                  <div className="flex flex-wrap gap-2">
+                    {analytics.top_services.map((s: any) => (
+                      <Link key={s.service_id} href={`/service/${s.service_id}`} className="chip">
+                        {s.name} <span className="text-2xs muted">×{s.queried}</span>
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+          </Section>
+        </section>
       )}
 
       <Section
@@ -233,34 +287,73 @@ export default function AdminPage() {
         )}
       </Section>
 
-      <Section
-        title="Verify a service against its institution"
-        icon={<Icon.shield className="h-4 w-4 text-brand-500" />}
-      >
-        <p className="-mt-1 text-sm soft text-pretty">
-          Until a person confirms a card with the agency, every answer for it carries a caveat saying
-          so. Verifying records who did it and when, and bumps the content version.
-        </p>
-        <div className="grid gap-2 sm:grid-cols-2">
-          {services.map((s) => (
-            <div key={s.id} className="surface-sunk flex items-center justify-between gap-3 px-3.5 py-2.5">
-              <span className="min-w-0">
-                <span className="block truncate text-sm font-medium">{s.name}</span>
-                <span className="text-2xs muted">{s.institution.abbreviation}</span>
-              </span>
-              {s.reviewed ? (
-                <span className="inline-flex shrink-0 items-center gap-1 text-2xs font-semibold text-brand-600 dark:text-brand-300">
-                  <Icon.check className="h-3 w-3" /> verified
-                </span>
-              ) : (
-                <button onClick={() => adminVerify(s.id).then(load)} className="btn-ghost shrink-0 !py-1.5 !text-xs">
-                  Verify
-                </button>
-              )}
-            </div>
-          ))}
-        </div>
-      </Section>
+      {audit && (
+        <Section
+          title="Verification audit — what needs a human check"
+          icon={<Icon.shield className="h-4 w-4 text-brand-500" />}
+          count={audit.summary?.needs_action}
+        >
+          <p className="-mt-1 text-sm soft text-pretty">
+            {audit.summary?.verified} of {audit.summary?.total} cards are confirmed with their institution.{' '}
+            {audit.summary?.needs_action} need a review. A card needs action if it is unverified,
+            carries an old or missing official source, or its freshness is outdated.
+          </p>
+          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4 mb-5">
+            {stat('Total', audit.summary.total)}
+            {stat('Verified', audit.summary.verified)}
+            {stat('Unverified', audit.summary.unverified)}
+            {stat('Needs action', audit.summary.needs_action)}
+          </div>
+          <div className="scroll-x">
+            <table className="w-full min-w-[42rem] border-collapse text-sm">
+              <thead>
+                <tr className="border-b hairline text-left">
+                  <th className="label pb-2">Service</th>
+                  <th className="label pb-2">Institution</th>
+                  <th className="label pb-2">Sources</th>
+                  <th className="label pb-2">Freshness</th>
+                  <th className="label pb-2">Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                {audit.rows.map((r: any) => (
+                  <tr
+                    key={r.id}
+                    className={`border-b hairline last:border-0 ${r.needs_action ? 'bg-ochre-100/30 dark:bg-ochre-700/10' : ''}`}
+                  >
+                    <td className="py-2.5 pr-3">
+                      <Link href={`/service/${r.id}`} className="font-medium hover:text-brand-600">
+                        {r.name}
+                      </Link>
+                      <span className="text-2xs muted">{r.category}</span>
+                    </td>
+                    <td className="py-2.5 pr-3 text-xs muted">{r.institution_abbr}</td>
+                    <td className="py-2.5 pr-3 text-xs">
+                      {r.official_source_count}/{r.source_count} official
+                    </td>
+                    <td className="py-2.5 pr-3">
+                      {r.freshness !== 'none' && (
+                        <FreshnessBadge freshness={r.freshness} reviewed={null} />
+                      )}
+                    </td>
+                    <td className="py-2.5">
+                      {r.reviewed ? (
+                        <span className="inline-flex items-center gap-1 text-2xs font-semibold text-brand-600 dark:text-brand-300">
+                          <Icon.check className="h-3 w-3" /> verified {r.reviewed_at && <span className="muted font-normal">· {r.reviewed_at.slice(0,10)}</span>}
+                        </span>
+                      ) : (
+                        <button onClick={() => adminVerify(r.id).then(load)} className="btn-ghost !py-1.5 !text-xs">
+                          Verify
+                        </button>
+                      )}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </Section>
+      )}
 
       <Section title="Recent questions" icon={<Icon.clock className="h-4 w-4 text-brand-500" />}>
         <div className="scroll-x">

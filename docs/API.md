@@ -58,9 +58,13 @@ The question asked in the UI is *"did this match what you found at the office?"*
 | Endpoint | Purpose |
 |---|---|
 | `GET /admin/overview` | Answer rate, refusal rate, unsourced claims blocked, latency, feedback, coverage |
-| `GET /admin/coverage-gaps` | Tier 3 backlog ranked by how often it was asked |
-| `GET /admin/corrections` | Reports from people who went to the office |
-| `POST /admin/services/{id}/verify` | Mark a card confirmed with the institution |
+| `GET /admin/analytics` | Windowed daily series, outcome split, top requested services, languages, feedback breakdown (`?days=30`) |
+| `GET /admin/verification-audit` | All 27 service cards ranked by need-for-action (unverified, stale, missing official source) with summary |
+| `GET /admin/coverage-gaps` | Tier 3 backlog ranked by how often it was asked (`?limit=25`) |
+| `GET /admin/corrections` | Reports from people who went to the office (`?status=open`) |
+| `POST /admin/corrections/{id}/resolve` | Mark a correction resolved with a curator note |
+| `POST /admin/services/{id}/verify` | Mark a card confirmed with the institution (removes caveat) |
+| `GET /admin/recent-queries` | Chronological log of recent queries with outcomes and latency (`?limit=50`) |
 | `GET /admin/answers/{id}` | Reconstruct exactly what a user was shown |
 
 ## Errors

@@ -228,6 +228,9 @@ export const adminOverview = () => request<any>('/admin/overview');
 export const adminGaps = () => request<any[]>('/admin/coverage-gaps');
 export const adminCorrections = () => request<any[]>('/admin/corrections');
 export const adminRecent = () => request<any[]>('/admin/recent-queries');
+export const adminAnalytics = (days = 30) =>
+  request<any>(`/admin/analytics?days=${days}`);
+export const adminAudit = () => request<any>('/admin/verification-audit');
 export const adminVerify = (serviceId: string) =>
   request<any>(`/admin/services/${serviceId}/verify`, { method: 'POST' });
 export const adminResolve = (id: string, resolution: string) =>
