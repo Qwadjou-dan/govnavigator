@@ -8,6 +8,18 @@ import type { SystemInfo } from '@/lib/types';
 import { Icon } from './ui';
 
 /**
+ * The persistent chrome rendered by layout.tsx around every route:
+ *   Header          — brand Mark, the four nav links (Ask / All services /
+ *                     Institutions / Saved), plus the ThemeToggle and
+ *                     BandwidthToggle (persisted, pre-paint applied).
+ *   IndependenceBar — the standing "we are not a government agency" notice.
+ *   Footer          — brand, "what this is not", and a live /system line
+ *                     showing what the running deployment actually serves
+ *                     (services indexed, database, embedder, model, prompts).
+ *                     The curator console link lives at the end of that line.
+ */
+
+/**
  * Wordmark. Deliberately not a coat of arms and not the national colours.
  *
  * Sized to outrank the navigation: on a page full of official-looking

@@ -6,6 +6,19 @@ import type { CandidateService, ClarifyQuestion, Institution, TraceStage } from 
 import { Icon } from './ui';
 import { TalkToHuman } from './TalkToHuman';
 
+/**
+ * The answer-shapes a /query response can take, one component per outcome, and
+ * the loading states between them. Home.jsx picks the right one off
+ * `result.outcome`:
+ *   answered → ServiceCard (this file's neighbour, not here)
+ *   clarify  → ClarifyCard   (one question — never a silent guess);
+ *   refused  → RefusalCard   (nothing citable; shows the likely institution and
+ *                             any real near-miss candidates, always a human route);
+ *   blocked  → BlockedCard   (out of scope).
+ * TraceStrip renders the pipeline trace above an answer; ThinkingStrip names
+ * the stages while loading; AnswerSkeleton is the inert placeholder.
+ */
+
 /* ------------------------------------------------------------- trace */
 
 const STAGE_LABEL: Record<string, string> = {

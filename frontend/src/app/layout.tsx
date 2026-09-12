@@ -2,6 +2,20 @@ import type { Metadata, Viewport } from 'next';
 import './globals.css';
 import { Footer, Header, IndependenceBar } from '@/components/Shell';
 
+/**
+ * Root layout — three jobs that together define the whole shell:
+ *
+ * 1. SEO/PWA metadata + viewport: title template, manifest (installed PWA),
+ *    and the theme-color that matches each colour scheme.
+ * 2. Two pre-paint <script>s injected into <head> (see their comments):
+ *    THEME_SCRIPT applies dark mode and low-bandwidth mode from localStorage
+ *    before first paint so there is never a flash; SW_SCRIPT registers the
+ *    service worker in production builds only, for offline caching.
+ * 3. The persistent frame every route renders inside: skip-link, the
+ *    IndependenceBar, Header (nav + theme/bandwidth toggles), <main> content,
+ *    and Footer. Individual pages never touch this shell — they only render
+ *    their own <div className="space-y-…"> content into <main>.
+ */
 export const metadata: Metadata = {
   title: {
     default: 'GovNavigator Ghana — one question, one cited answer',

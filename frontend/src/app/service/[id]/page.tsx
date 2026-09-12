@@ -9,6 +9,16 @@ import { ServiceCard } from '@/components/ServiceCard';
 import { AnswerSkeleton } from '@/components/AnswerStates';
 import { Icon } from '@/components/ui';
 
+/**
+ * Deep link for one service card: fetches /services/{id}, which returns the
+ * same fully validated Answer Contract the /query pipeline would, and renders
+ * it through the shared ServiceCard (no onRevise here — there is no
+ * conversation, so assumed conditions are stated but not undoable).
+ *
+ * Related-services chips (onAsk) can't re-enter this page's own conversation
+ * (there isn't one), so they navigate to "/?q=<service name>" for Home to pick
+ * up and ask on the main loop instead.
+ */
 export default function ServiceDetail({ params }: { params: Promise<{ id: string }> }) {
   const { id } = use(params);
   const router = useRouter();

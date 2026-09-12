@@ -15,6 +15,16 @@ import {
 import type { SavedChecklist } from '@/lib/types';
 import { Empty, Icon, Spinner } from '@/components/ui';
 
+/**
+ * The only account-requiring page, and the account exists for one reason: so a
+ * checklist survives closing the browser. No password — a 6-digit code sent to
+ * the contact (echoed back in development); the backend stores a hash of the
+ * contact, never the contact. ServiceCard's "Save this checklist" sends
+ * people here with ?next=/service/... so that after sign-in they land straight
+ * back in front of the card they were keeping; ?expired=1 changes the heading
+ * so "session ended" does not read as "nothing saved". Wrapped in <Suspense>
+ * because it calls useSearchParams, which is browser-only.
+ */
 /** Only ever return to a path inside this app. `//evil.com` is a valid URL to a
  *  browser and would turn our own sign-in into someone else's redirect. */
 function safeNext(value: string | null): string | null {

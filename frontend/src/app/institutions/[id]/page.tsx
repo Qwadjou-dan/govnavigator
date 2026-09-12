@@ -6,6 +6,14 @@ import { getInstitution } from '@/lib/api';
 import type { Institution, ServiceSummary } from '@/lib/types';
 import { Empty, Icon, Section } from '@/components/ui';
 
+/**
+ * One institution's page, from /institutions/{id}: the contact details the
+ * directory holds (office, phone, email, hours, official/portal links), any
+ * `notes` the team keeps about it (rendered as an amber call-out — the only
+ * surfaced place a caution that isn't a user-facing claim), its office list,
+ * and links into each of its verified services. Unknown id → the Empty state;
+ * in-flight → skeleton.
+ */
 export default function InstitutionDetail({ params }: { params: Promise<{ id: string }> }) {
   const { id } = use(params);
   const [data, setData] = useState<{

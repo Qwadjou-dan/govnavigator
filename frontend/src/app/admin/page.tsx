@@ -25,9 +25,24 @@ import { Empty, FreshnessBadge, Icon, MiniBars, Section, Spinner } from '@/compo
  * The coverage backlog is the interesting screen: it is ranked by what real
  * people asked for and did not get, so what we verify next is decided by
  * demand rather than by our assumptions.
+ *
+ * Everything is curator-gated: signing in calls /auth/curator-login and the
+ * token gates six parallel fetches (/admin/overview, coverage-gaps,
+ * corrections, recent-queries, analytics, verification-audit). Sections, in
+ * order: headline stats, Analytics (14-day bar chart + outcome/language/top
+ * service breakdown from /admin/analytics), Coverage backlog, Corrections,
+ * Verification audit (every card scored for needs_action, freshness badge,
+ * Verify button that flips reviewed_at), then Recent questions. All six load
+ * in one Promise.all — a 403 leaves the page at the sign-in form.
  */
 export default function AdminPage() {
   const [authed, setAuthed] = useState(false);
+  // True while the first load — all six parallel admin feeds — is in flight.
+  // authed starts false, so without this the page would show the sign-in form
+  // during a slow boot, and a curator watching for five seconds would read
+  // "log in" as "login rejected" when nothing had been rejected. The spinner
+  // is the honest version of that pause.
+  const [boot, setBoot] = useState(true);
   const [contact, setContact] = useState('curator@govnavigator.local');
   const [password, setPassword] = useState('');
   const [busy, setBusy] = useState(false);
@@ -41,6 +56,7 @@ export default function AdminPage() {
   const [recent, setRecent] = useState<any[]>([]);
 
   const load = useCallback(async () => {
+    setBoot(true);
     try {
       const [o, g, c, r, a, au] = await Promise.all([
         adminOverview(),
@@ -57,13 +73,20 @@ export default function AdminPage() {
       setAnalytics(a);
       setAudit(au);
       setAuthed(true);
-    } catch {
+    } catch (err) {
+      // The failure is either a dead token (401 — request() already dropped
+      // it) or a 5xx / network error. Say which, so a stale session does not
+      // look identical to "the console is down".
+      setError(err instanceof Error ? err.message : 'Could not load the console.');
       setAuthed(false);
+    } finally {
+      setBoot(false);
     }
   }, []);
 
   useEffect(() => {
     if (getToken()) void load();
+    else setBoot(false);
   }, [load]);
 
   async function signIn() {
@@ -78,6 +101,21 @@ export default function AdminPage() {
     } finally {
       setBusy(false);
     }
+  }
+
+  if (boot) {
+    return (
+      <div className="mx-auto max-w-md space-y-5 py-16 text-center">
+        <div className="flex justify-center">
+          <Spinner />
+        </div>
+        <h1 className="text-xl font-extrabold tracking-tight">Loading the curator console</h1>
+        <p className="text-sm muted text-pretty">
+          Pulling six data feeds — headline stats, analytics, backlog, corrections and the audit.
+          This takes a few seconds.
+        </p>
+      </div>
+    );
   }
 
   if (!authed) {

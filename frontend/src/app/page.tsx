@@ -17,6 +17,26 @@ import { TalkToHuman } from '@/components/TalkToHuman';
 import { Icon, Spinner } from '@/components/ui';
 
 /**
+ * The home page is the whole app: a persistent ask box that runs the /query
+ * conversation, and — only while no answer is showing — the browse-by-category
+ * and "how this works" sections.
+ *
+ * Conversation model: every question the person types is appended to a visible
+ * `thread` and sent to /query with a stable `session_id` (from api.ts), so a
+ * follow-up continues the same server-side conversation. The pipeline returns
+ * one of four outcomes, each rendered by the matching component:
+ *   answered → ServiceCard (the big evidence-backed card)
+ *   clarify  → ClarifyCard (one question before it can answer)
+ *   refused  → RefusalCard (nothing citable; offers the closest real matches)
+ *   blocked  → BlockedCard (out of scope)
+ * `trace` stages are shown above the card so the mechanism is legible.
+ *
+ * Deep links: service/[id] pushes "/?q=<service name>" when a related-services
+ * chip is clicked; the mount effect at the bottom of this component reads that
+ * `?q` once and asks it, so the click is not silently dropped.
+ */
+
+/**
  * Every example is a real phrasing from the alias sets in the knowledge base,
  * not invented marketing copy. The empty state should teach people that they
  * can type the way they actually speak.
@@ -45,6 +65,8 @@ export default function Home() {
   const [showOtherOptions, setShowOtherOptions] = useState(false);
   const inputRef = useRef<HTMLTextAreaElement>(null);
   const resultRef = useRef<HTMLDivElement>(null);
+  // Guards the deep-link auto-ask against React StrictMode's double effect run.
+  const askedUrlRef = useRef(false);
 
   useEffect(() => {
     listServices().then(setServices).catch(() => undefined);
@@ -103,6 +125,19 @@ export default function Home() {
     },
     [run],
   );
+
+  // A related-service chip on a deep-linked card navigates home with
+  // ?q=<service name> (service/[id] pushes that URL). Home does not read URL
+  // state anywhere else, so pull the question once on mount and ask it exactly
+  // as if it had been typed — otherwise the click silently goes nowhere.
+  useEffect(() => {
+    if (askedUrlRef.current) return;
+    const q = new URLSearchParams(window.location.search).get('q');
+    if (q && q.trim()) {
+      askedUrlRef.current = true;
+      submitQuestion(q.trim());
+    }
+  }, [submitQuestion]);
 
   function submit(e?: React.FormEvent) {
     e?.preventDefault();

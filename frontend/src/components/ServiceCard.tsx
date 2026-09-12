@@ -1,6 +1,6 @@
 'use client';
 
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { ApiError, getToken, isSignedOut, saveChecklist } from '@/lib/api';
@@ -83,6 +83,25 @@ function groupDocuments(docs: DocumentItem[]) {
   return { groups, singles };
 }
 
+/**
+ * The service card — the core artifact shown for both a /query answer and a
+ * /services/{id} deep link. Anatomy (top to bottom):
+ *   header       — institution chip, confidence meter, service name, summary,
+ *                  freshness/review badge, and the save / print / copy / email
+ *                  / WhatsApp actions;
+ *   at-a-glance  — cost, how long, items-to-bring row;
+ *   answer band  — the direct answer to the typed question + the assumptions
+ *                  it took as given (rendered by DirectAnswerBand);
+ *   five tabs    — checklist (tickable, grouped "any one of" documents),
+ *                  steps (numbered, channel + where), cost & time, the office,
+ *                  and sources (every claim's citation) + validator report;
+ *   below the tabs — caveats, related services (onAsk → can re-ask), feedback.
+ *
+ * Props: contract (the validated Answer Contract), answerId (optional — from
+ * the /query path, enables feedback linkage), onAsk (navigates to the related
+ * service), onRevise (re-ask with an assumed condition re-opened; present only
+ * inside a live conversation, so the deep-link page omits it).
+ */
 export function ServiceCard({
   contract,
   answerId,
@@ -108,6 +127,26 @@ export function ServiceCard({
     [contract.sources],
   );
 
+  // Back from /saved?next=… after a sign-in: the person pressed "Save this
+  // checklist" before they were asked to sign in, so complete that save now —
+  // one tap, sign in, return, and it is saved. The flag is cleared on first
+  // consumption so a later remount of the same card does not re-save.
+  useEffect(() => {
+    if (!getToken()) return;
+    let pending: string | null = null;
+    try {
+      pending = window.localStorage.getItem('gn.pending_save');
+    } catch {
+      /* private browsing */
+    }
+    if (pending === contract.service_id) {
+      window.localStorage.removeItem('gn.pending_save');
+      void save();
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- save() closes over
+    // live state; this effect is deliberately one-shot per service card.
+  }, [contract.service_id]);
+
   const headlineFee = contract.fees.find((f) => f.amount_ghs !== null || f.amount_text) ?? null;
   const totalTickable = singles.length + groups.size;
   const doneCount = Object.values(ticked).filter(Boolean).length;
@@ -116,7 +155,18 @@ export function ServiceCard({
    *  `expired` distinguishes "you never signed in" from "you did, and it has
    *  since lapsed" — the second needs explaining or it reads as a bug. */
   function signInThenReturn(expired = false) {
-    const next = encodeURIComponent(`/service/${contract.service_id}`);
+    const sid = contract.service_id;
+    if (!sid) return;
+    // Remember which card the person was keeping. Once they have signed in on
+    // /saved and been returned here, the card completes the save it promised —
+    // otherwise the round-trip ends with the button back at "Save this
+    // checklist" and the sign-in trip did nothing.
+    try {
+      window.localStorage.setItem('gn.pending_save', sid);
+    } catch {
+      /* private browsing */
+    }
+    const next = encodeURIComponent(`/service/${sid}`);
     router.push(`/saved?next=${next}${expired ? '&expired=1' : ''}`);
   }
 

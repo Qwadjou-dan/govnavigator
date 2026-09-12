@@ -6,6 +6,14 @@ import { listCategories, listServices } from '@/lib/api';
 import type { Category, ServiceSummary } from '@/lib/types';
 import { Empty, Icon } from '@/components/ui';
 
+/**
+ * Read-only catalogue of the verified service cards. Loads /services +
+ * /categories once, then filters entirely client-side — by the active category
+ * chip, a free-text term across name/summary/institution, or both. Each card is
+ * a link to its own deep link (/service/{id}), which shows the full Answer
+ * Contract. The "team-verified" marker mirrors Service.reviewed_at from the
+ * backend.
+ */
 export default function ServicesPage() {
   const [services, setServices] = useState<ServiceSummary[]>([]);
   const [categories, setCategories] = useState<Category[]>([]);

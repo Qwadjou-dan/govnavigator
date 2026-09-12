@@ -7,9 +7,15 @@ import type { Institution } from '@/lib/types';
 import { Icon } from '@/components/ui';
 
 /**
- * This page is the Tier 2 directory made visible. Even where we cannot answer
- * "what exactly do I do", knowing which institution is responsible is worth
- * more than nothing — it is usually the thing the person did not know.
+ * The institution directory. Everything comes from one /institutions fetch and
+ * is split into two sections by coverage_tier:
+ *   tier 1 ("Verified in detail") — we hold field-by-field cards for their
+ *          services, so each card links into those deep links;
+ *   tier 2+ ("Directory only") — we know who they are and how to reach them,
+ *          but have not verified their services yet, so the page says so
+ *          rather than appearing to have answers it does not.
+ * This is the Tier 2 fallback on the home page made visible: knowing which
+ * office is responsible is usually the thing the person did not know.
  */
 export default function InstitutionsPage() {
   const [items, setItems] = useState<Institution[]>([]);
