@@ -85,6 +85,13 @@
   .low-bandwidth .btn-primary {
     box-shadow: none !important;
   }
+  /* Plain-text mode (§4.4) strips decorative payload. Institution logos are
+     ~20KB each and identify a card that already names its institution in text,
+     so on a metered 2G connection they are exactly the cost this mode exists
+     to remove. The monogram fallback is CSS-only and stays. */
+  .low-bandwidth .inst-logo {
+    display: none !important;
+  }
 }
 
 @layer components {

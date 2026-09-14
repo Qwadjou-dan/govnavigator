@@ -5,7 +5,7 @@
  * and still wants the checklist. Bump VERSION whenever this file changes so
  * the caches are rebuilt.
  */
-const VERSION = 'v7';
+const VERSION = 'v8'; // v8: new brand mark — icons and favicon changed
 const SHELL = `gn-shell-${VERSION}`; // own-origin app shell + static assets
 // Visited service data (cross-origin GET). Deliberately unversioned: the page
 // writes here too (`api.ts`), and data is network-first with the cache used

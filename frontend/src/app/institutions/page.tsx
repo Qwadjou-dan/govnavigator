@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { listInstitutions } from '@/lib/api';
 import type { Institution } from '@/lib/types';
-import { Icon } from '@/components/ui';
+import { InstitutionLogo } from '@/components/InstitutionLogo';
 
 /**
  * The institution directory. Everything comes from one /institutions fetch and
@@ -37,10 +37,13 @@ export default function InstitutionsPage() {
         href={`/institutions/${inst.id}`}
         className="surface group flex flex-col p-4 transition-all hover:border-brand-300 hover:shadow-lift"
       >
-        <div className="flex items-center gap-2">
-          <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-brand-500/12 text-brand-600 dark:text-brand-300">
-            <Icon.building className="h-4 w-4" />
-          </span>
+        <div className="flex items-center gap-2.5">
+          <InstitutionLogo
+            id={inst.id}
+            abbreviation={inst.abbreviation}
+            name={inst.name}
+            size="md"
+          />
           <span className="min-w-0">
             <span className="block truncate text-sm font-bold group-hover:text-brand-600 dark:group-hover:text-brand-300">
               {inst.abbreviation || inst.name}

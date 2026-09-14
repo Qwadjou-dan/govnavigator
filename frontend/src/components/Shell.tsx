@@ -20,7 +20,18 @@ import { Icon } from './ui';
  */
 
 /**
- * Wordmark. Deliberately not a coat of arms and not the national colours.
+ * Wordmark — the "Bearing" lockup: a compass mark plus the GovNavigator
+ * wordmark. Deliberately not a coat of arms and not the national colours.
+ *
+ * The mark is the supplied brand ring-and-needle, recoloured from the kit's
+ * navy (#1B3A6B) to the product's brand indigo so the shell keeps one accent
+ * colour rather than carrying two blues. The half-opacity needle half is what
+ * makes it read as a bearing rather than a diamond, so it survives the recolour.
+ *
+ * The wordmark follows the kit ("Gov" regular, "Navigator" bold, tracking
+ * -0.02em) in a serif, but via a system serif stack — Source Serif 4 is used
+ * when the reader already has it and is never downloaded. NFR-2 caps the
+ * initial page at 200KB and our users are on metered data.
  *
  * Sized to outrank the navigation: on a page full of official-looking
  * information, the one thing that must never be ambiguous is whose service
@@ -36,26 +47,25 @@ function Mark({ size = 'md' }: { size?: 'md' | 'sm' }) {
         }`}
       >
         <svg
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2.1"
-          strokeLinecap="round"
-          strokeLinejoin="round"
+          viewBox="0 0 100 100"
+          aria-hidden="true"
           style={{ height: big ? 25 : 20, width: big ? 25 : 20 }}
         >
-          <path d="M12 21s7-5.2 7-10.5A7 7 0 0 0 5 10.5C5 15.8 12 21 12 21Z" />
-          <path d="m9.2 10.6 1.9 1.9 3.7-3.9" />
+          <circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" strokeWidth="7" />
+          <polygon points="50,13 63,50 50,87" fill="currentColor" />
+          <polygon points="50,13 37,50 50,87" fill="currentColor" opacity=".5" />
+          <circle cx="50" cy="50" r="5.5" className="fill-brand-600" />
         </svg>
       </span>
       <span className="leading-none">
         <span
-          className={`block font-extrabold tracking-tight ${big ? 'text-lg sm:text-xl' : 'text-[15px]'}`}
+          className={`block font-serif tracking-[-0.02em] ${big ? 'text-lg sm:text-xl' : 'text-[15px]'}`}
         >
-          GovNavigator
+          <span className="font-normal">Gov</span>
+          <span className="font-bold">Navigator</span>
         </span>
         <span
-          className={`mt-0.5 block font-semibold uppercase tracking-[0.16em] text-brand-600 dark:text-brand-300 ${
+          className={`mt-1 block font-semibold uppercase tracking-[0.16em] text-brand-600 dark:text-brand-300 ${
             big ? 'text-[11px]' : 'text-2xs'
           }`}
         >

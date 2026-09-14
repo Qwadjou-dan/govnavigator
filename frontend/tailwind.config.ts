@@ -60,6 +60,13 @@ const config: Config = {
           'Helvetica Neue', 'Arial', 'Noto Sans', 'sans-serif',
         ],
         mono: ['ui-monospace', 'SFMono-Regular', 'Menlo', 'Consolas', 'monospace'],
+        // Wordmark only. The brand kit specifies Source Serif 4; it is used
+        // when the reader already has it locally and is never fetched, so the
+        // lockup costs nothing on a metered connection.
+        serif: [
+          'Source Serif 4', 'Source Serif Pro', 'ui-serif', 'Georgia',
+          'Cambria', 'Times New Roman', 'serif',
+        ],
       },
       fontSize: {
         '2xs': ['0.6875rem', { lineHeight: '1rem', letterSpacing: '0.04em' }],

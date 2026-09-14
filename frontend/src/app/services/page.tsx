@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { listCategories, listServices } from '@/lib/api';
 import type { Category, ServiceSummary } from '@/lib/types';
 import { Empty, Icon } from '@/components/ui';
+import { InstitutionLogo } from '@/components/InstitutionLogo';
 
 /**
  * Read-only catalogue of the verified service cards. Loads /services +
@@ -113,8 +114,16 @@ export default function ServicesPage() {
             className="surface group flex flex-col gap-2 p-4 transition-all hover:border-brand-300 hover:shadow-lift"
           >
             <div className="flex items-start justify-between gap-2">
-              <span className="inline-flex items-center gap-1.5 rounded-full bg-brand-500/10 px-2 py-0.5 text-2xs font-bold uppercase tracking-wider text-brand-700 dark:text-brand-300">
-                {s.institution.abbreviation || s.institution.name}
+              <span className="inline-flex min-w-0 items-center gap-2">
+                <InstitutionLogo
+                  id={s.institution.id}
+                  abbreviation={s.institution.abbreviation}
+                  name={s.institution.name}
+                  size="sm"
+                />
+                <span className="truncate text-2xs font-bold uppercase tracking-wider text-brand-700 dark:text-brand-300">
+                  {s.institution.abbreviation || s.institution.name}
+                </span>
               </span>
               {s.reviewed ? (
                 <span className="inline-flex items-center gap-1 text-2xs font-semibold text-brand-600 dark:text-brand-300">

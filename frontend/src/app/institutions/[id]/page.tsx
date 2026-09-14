@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { getInstitution } from '@/lib/api';
 import type { Institution, ServiceSummary } from '@/lib/types';
 import { Empty, Icon, Section } from '@/components/ui';
+import { InstitutionLogo } from '@/components/InstitutionLogo';
 
 /**
  * One institution's page, from /institutions/{id}: the contact details the
@@ -58,9 +59,12 @@ export default function InstitutionDetail({ params }: { params: Promise<{ id: st
 
       <header className="surface px-5 py-5 sm:px-6">
         <div className="flex items-start gap-3">
-          <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-brand-500/12 text-brand-600 dark:text-brand-300">
-            <Icon.building className="h-5 w-5" />
-          </span>
+          <InstitutionLogo
+            id={inst.id}
+            abbreviation={inst.abbreviation}
+            name={inst.name}
+            size="lg"
+          />
           <div className="min-w-0">
             <h1 className="text-xl font-extrabold leading-tight tracking-tight text-balance sm:text-2xl">
               {inst.name}

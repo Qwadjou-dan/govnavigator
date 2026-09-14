@@ -1,5 +1,15 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <rect width="64" height="64" rx="14" fill="#0B7F6B"/>
-  <path d="M32 52s18-13.4 18-27A18 18 0 0 0 14 25c0 13.6 18 27 18 27Z" fill="none" stroke="#fff" stroke-width="4" stroke-linejoin="round"/>
-  <path d="m25 26 5 5 10-10.5" fill="none" stroke="#fff" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="GovNavigator Ghana">
+  <!-- Brand favicon: the "Bearing" mark — a compass ring with a two-tone
+       needle — on the brand indigo tile. The kit ships it in navy #1B3A6B,
+       but the product's one confident accent is indigo (tailwind brand-600),
+       so the mark is recoloured rather than introducing a second brand blue.
+       Mirrors the in-header Mark (Shell.tsx) so the tab tile and the page
+       header are the same object. -->
+  <rect width="64" height="64" rx="14" fill="#4F46E5"/>
+  <g transform="translate(32 32) scale(.58) translate(-32 -32)">
+    <circle cx="32" cy="32" r="25.6" fill="none" stroke="#ffffff" stroke-width="4.5"/>
+    <polygon points="32,8.3 40.3,32 32,55.7" fill="#ffffff"/>
+    <polygon points="32,8.3 23.7,32 32,55.7" fill="#ffffff" opacity=".5"/>
+    <circle cx="32" cy="32" r="3.5" fill="#4F46E5"/>
+  </g>
 </svg>
